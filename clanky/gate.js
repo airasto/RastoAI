@@ -3,10 +3,10 @@
    ⚙️ KONFIGURÁCIA – vyplň rovnaké hodnoty ako v index.html
    ========================================================= */
 const CONFIG = {
-    EMAILJS_PUBLIC_KEY: "TVOJ_PUBLIC_KEY",        // EmailJS → Account → Public Key
-    EMAILJS_SERVICE_ID: "TVOJ_SERVICE_ID",        // EmailJS → Email Services
-    EMAILJS_TEMPLATE_NOTIFY: "TVOJ_TEMPLATE_NOTIFY", // notifikácia pre teba (rovnaká šablóna ako na hlavnej stránke)
-    NOTIFY_EMAIL: "rastislav.kozlik@balanced-hr.com"
+    EMAILJS_PUBLIC_KEY: "eNtSPPDobXrfI3feo",        // EmailJS → Account → Public Key
+    EMAILJS_SERVICE_ID: "service_ceutwej",        // EmailJS → Email Services
+    EMAILJS_TEMPLATE_NOTIFY: "template_zeubrt4", // notifikácia pre teba (rovnaká šablóna ako na hlavnej stránke)
+    NOTIFY_EMAIL: "rastislavkozlik@gmail.com"
 };
 
 /* ===== Dark mode toggle ===== */
