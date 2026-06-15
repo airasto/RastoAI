@@ -1032,6 +1032,17 @@ form.addEventListener('submit', async (e) => {
     const btn = document.getElementById('lead-submit');
     btn.disabled = true;
     showStatus('Odosielam…', true);
+    // Lead → Make (Google Sheet)
+fetch('https://hook.eu1.make.com/9yxgtskwr965eh6l8dgql6zaxm4vxccr', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        email: email,
+        zdroj: 'Prompty',
+        stranka: window.location.href,
+        datum: new Date().toLocaleString('sk-SK')
+    })
+}).catch(() => {});
 
     const params = {
         user_email: email,
