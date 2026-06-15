@@ -82,6 +82,17 @@ document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date
 
         btn.disabled = true;
         showStatus('Odomykám…', true);
+       // Lead → Make (Google Sheet)
+fetch('https://hook.eu1.make.com/9yxgtskwr965eh6l8dgql6zaxm4vxccr', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        email: email,
+        zdroj: 'Článok',
+        stranka: window.location.href,
+        datum: new Date().toLocaleString('sk-SK')
+    })
+}).catch(() => {});
 
         if (configured && window.emailjs) {
             try {
