@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /downloads/
-
-# ⚠️ Nahraď doménou po nasadení
-Sitemap: https://rastoai.sk/sitemap.xml
