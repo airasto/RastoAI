@@ -11,22 +11,25 @@
     <meta name="author" content="Rastislav Kozlík">
     <meta name="robots" content="index, follow">
     <!-- ⚠️ NAHRAĎ doménou po nasadení (pozri HANDBOOK.md) -->
-    <link rel="canonical" href="https://VASA-DOMENA.sk/">
+    <link rel="canonical" href="https://rastoai.sk/">
 
     <!-- Open Graph (LinkedIn, Facebook) -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="sk_SK">
     <meta property="og:title" content="Rasťo Kozlík | AI školenia a workshopy pre HR, Sales a firmy">
     <meta property="og:description" content="Praktické AI školenia pre firmy. 15 rokov praxe v HR, žiadna teória – AI v praxi. Hotové AI prompty na stiahnutie zadarmo.">
-    <meta property="og:url" content="https://VASA-DOMENA.sk/">
-    <meta property="og:image" content="https://VASA-DOMENA.sk/RKfoto.png">
+    <meta property="og:url" content="https://rastoai.sk/">
+    <meta property="og:image" content="https://rastoai.sk/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Rasťo Kozlík – Rasťo AI, AI lektor">
     <meta property="og:site_name" content="Rasťo Kozlík – AI Konzultant">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Rasťo Kozlík | AI školenia a workshopy pre HR, Sales a firmy">
     <meta name="twitter:description" content="Praktické AI školenia pre firmy. 15 rokov praxe v HR. Hotové AI prompty zadarmo.">
-    <meta name="twitter:image" content="https://VASA-DOMENA.sk/RKfoto.png">
+    <meta name="twitter:image" content="https://rastoai.sk/assets/og-image.png">
 
     <!-- Structured data -->
     <script type="application/ld+json">
@@ -35,13 +38,13 @@
       "@graph": [
         {
           "@type": "Person",
-          "@id": "https://VASA-DOMENA.sk/#osoba",
+          "@id": "https://rastoai.sk/#osoba",
           "name": "Rastislav Kozlík",
           "alternateName": "Rasťo Kozlík",
           "jobTitle": "AI lektor a konzultant",
           "description": "AI lektor a HR profesionál. Praktické využitie AI v HR, recruitingu, salese a firemných procesoch.",
-          "url": "https://VASA-DOMENA.sk/",
-          "image": "https://VASA-DOMENA.sk/RKfoto.png",
+          "url": "https://rastoai.sk/",
+          "image": "https://rastoai.sk/RKfoto.jpg",
           "email": "rastislav.kozlik@balanced-hr.com",
           "sameAs": ["https://www.linkedin.com/in/rastislavkozlik/"],
           "knowsAbout": ["Umelá inteligencia", "HR", "Recruitment", "Prompt engineering", "Microsoft Copilot", "Firemné vzdelávanie"]
@@ -49,8 +52,8 @@
         {
           "@type": "ProfessionalService",
           "name": "Rasťo Kozlík – AI školenia a konzultácie",
-          "url": "https://VASA-DOMENA.sk/",
-          "founder": { "@id": "https://VASA-DOMENA.sk/#osoba" },
+          "url": "https://rastoai.sk/",
+          "founder": { "@id": "https://rastoai.sk/#osoba" },
           "areaServed": "SK",
           "priceRange": "€€",
           "makesOffer": [
@@ -63,9 +66,45 @@
     }
     </script>
 
+    <!-- ===== Brand: favicon a ikony (Brand Kit 1 – červený) ===== -->
+    <link rel="icon" type="image/svg+xml" href="./assets/logo/favicon_RK_cervena.svg">
+    <link rel="alternate icon" type="image/png" href="./assets/logo/favicon_RK_cervena.png">
+    <link rel="apple-touch-icon" href="./assets/logo/favicon_RK_cervena.png">
+    <link rel="mask-icon" href="./assets/logo/favicon_RK_cervena.svg" color="#E60000">
+    <meta name="theme-color" content="#E60000" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+
+    <!-- ===== Brand: typografia Inter + JetBrains Mono ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { darkMode: 'class' };</script>
+    <script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Arial', 'sans-serif'],
+                    mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+                },
+                colors: {
+                    brand: {
+                        red: '#E60000',
+                        redDark: '#C80000',
+                        redDeep: '#AA0000',
+                        ink: '#111111',
+                        body: '#333333',
+                        muted: '#54595F',
+                        tint: '#FFF5F5'
+                    }
+                }
+            }
+        }
+    };
+    </script>
 
     <!-- Dark mode pred renderom (žiadne bliknutie) -->
     <script>
@@ -84,6 +123,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
 
     <style>
+        /* ===== Brand tokens – Rasťo AI, Kit 1 (červený) ===== */
+        :root {
+            --brand-red: #E60000;
+            --brand-red-dark: #C80000;
+            --brand-red-deep: #AA0000;
+            --brand-ink: #111111;
+            --brand-body: #333333;
+            --brand-muted: #54595F;
+            --brand-tint: #FFF5F5;
+        }
+        html, body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+        h1 { letter-spacing: -0.02em; }
+        h2, h3 { letter-spacing: -0.01em; }
+        code, pre, kbd, samp, .font-mono, .prompt { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+        /* ===== Brand: motív neurónovej siete ===== */
+        .brand-net {
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            pointer-events: none;
+            user-select: none;
+        }
+        /* Malý rohový akcent — pri tejto veľkosti sa ťahy siete
+           renderujú v pôvodnej hrúbke a motív pôsobí jemne. */
+        .brand-net--corner {
+            background-image: url('./assets/logo/siet_cervena.svg');
+            opacity: 0.28;
+        }
+        .dark .brand-net--corner { opacity: 0.34; }
+
         @keyframes blob {
             0% { transform: translate(0,0) scale(1); }
             33% { transform: translate(30px,-50px) scale(1.1); }
@@ -180,8 +252,13 @@
 <!-- ===== Navigácia ===== -->
 <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        <a href="#" class="flex items-center gap-2 font-bold text-2xl tracking-tighter text-black dark:text-white">
-            <span>Rasťo <span class="text-[#E60000]">Kozlík</span></span> <span class="text-[#54595F] font-light">|</span> <span class="text-sm uppercase tracking-widest font-medium mt-1 text-[#54595F] dark:text-gray-400">AI Konzultant</span>
+        <a href="#" class="flex items-center gap-3 font-bold text-2xl tracking-tighter text-black dark:text-white" aria-label="Rasťo Kozlík – AI Konzultant, domov">
+            <!-- Brand: značka RK (svetlý / tmavý variant) -->
+            <img src="./assets/logo/znacka_RK_svetla.svg" alt="Rasťo Kozlík – značka RK" width="132" height="50"
+                 class="h-9 sm:h-10 w-auto shrink-0 block dark:hidden">
+            <img src="./assets/logo/znacka_RK.svg" alt="" aria-hidden="true" width="132" height="50"
+                 class="h-9 sm:h-10 w-auto shrink-0 hidden dark:block">
+            <span class="hidden sm:inline">Rasťo <span class="text-[#E60000]">Kozlík</span></span> <span class="hidden sm:inline text-[#54595F] font-light">|</span> <span class="hidden sm:inline text-sm uppercase tracking-widest font-medium mt-1 text-[#54595F] dark:text-gray-400">AI Konzultant</span>
         </a>
         <div class="hidden lg:flex flex-col items-end gap-1">
             <!-- Primárny riadok -->
@@ -234,16 +311,18 @@
 <!-- ===== Hero ===== -->
 <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
     <div class="dots-fade-left absolute inset-0 z-0 opacity-5 dark:opacity-[0.07] bg-[radial-gradient(#E60000_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <!-- Brand: jemný rohový akcent siete (malý, mimo textu) -->
+    <div class="brand-net brand-net--corner hidden lg:block top-24 right-4 w-28 h-28 z-0" aria-hidden="true"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="flex flex-col lg:flex-row items-center gap-12">
             <div class="lg:w-1/2 space-y-8">
-                <div class="inline-flex items-center gap-2 bg-red-50 dark:bg-red-950/40 px-4 py-2 rounded-full border border-red-100 dark:border-red-900/50">
+                <div class="inline-flex items-center gap-2 bg-[#FFF5F5] dark:bg-[#E60000]/10 px-4 py-2 rounded-full border border-[#E60000]/20 dark:border-[#E60000]/30">
                     <span class="w-2 h-2 rounded-full bg-[#E60000] animate-pulse"></span>
-                    <span class="text-[#AA0000] dark:text-red-400 text-sm font-semibold tracking-wide uppercase">AI Lektor &amp; HR Expert</span>
+                    <span class="text-[#AA0000] dark:text-[#FF4D4D] text-sm font-semibold tracking-wide uppercase">AI Lektor &amp; HR Expert</span>
                 </div>
                 <h1 class="text-5xl lg:text-7xl font-extrabold text-black dark:text-white leading-tight">
                     AI dokáže veľa. <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#E60000] to-[#C80000]">V praxi však záleží na tom, čo s ňou dokážeš ty.</span>
+                    <span class="text-[#E60000]">V praxi však záleží na tom, čo s ňou dokážeš ty.</span>
                 </h1>
                 <p class="text-xl text-[#54595F] dark:text-gray-400 max-w-2xl leading-relaxed">
                     Spájam roky skúseností v HR s praktickým AI tréningom — pre každého, kto to chce robiť lepšie a rýchlejšie.
@@ -264,27 +343,27 @@
             </div>
             <div class="lg:w-1/2 relative flex flex-col items-center">
                 <div class="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white dark:border-[#161616] bg-gray-100 dark:bg-[#161616] aspect-square w-3/4 mx-auto">
-                    <img src="./RKfoto.png" alt="Rasťo Kozlík – AI lektor a konzultant pre HR a firemné vzdelávanie" width="600" height="600" loading="eager" class="w-full h-full object-cover">
+                    <img src="./RKfoto.jpg" alt="Rasťo Kozlík – AI lektor a konzultant pre HR a firemné vzdelávanie" width="600" height="600" loading="eager" class="w-full h-full object-cover">
                     <div class="hidden lg:block absolute bottom-8 left-8 bg-white/95 dark:bg-[#0f0f0f]/95 backdrop-blur-sm p-4 rounded-2xl shadow-lg border-l-4 border-[#E60000] max-w-xs">
                         <div class="flex items-start gap-3">
-                            <div class="bg-red-50 dark:bg-red-950/50 p-2 rounded-lg text-[#E60000]"><svg class="icon"><use href="#i-clock"/></svg></div>
+                            <div class="bg-[#FFF5F5] dark:bg-[#E60000]/10 p-2 rounded-lg text-[#E60000]"><svg class="icon"><use href="#i-target"/></svg></div>
                             <div>
-                                <p class="font-bold text-black dark:text-white">Expertíza overená časom</p>
-                                <p class="text-xs text-[#54595F] dark:text-gray-400">HR prax už od roku 2011.</p>
+                                <p class="font-bold text-black dark:text-white">AI naprieč oddeleniami</p>
+                                <p class="text-xs text-[#54595F] dark:text-gray-400">HR, obchod, manažment aj výroba.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="lg:hidden mt-6 bg-white/95 dark:bg-[#0f0f0f]/95 backdrop-blur-sm p-4 rounded-2xl shadow-lg border-l-4 border-[#E60000] max-w-xs mx-auto w-3/4 relative z-20">
                     <div class="flex items-start gap-3">
-                        <div class="bg-red-50 dark:bg-red-950/50 p-2 rounded-lg text-[#E60000]"><svg class="icon"><use href="#i-clock"/></svg></div>
+                        <div class="bg-[#FFF5F5] dark:bg-[#E60000]/10 p-2 rounded-lg text-[#E60000]"><svg class="icon"><use href="#i-target"/></svg></div>
                         <div>
-                            <p class="font-bold text-black dark:text-white">Expertíza overená časom</p>
-                            <p class="text-xs text-[#54595F] dark:text-gray-400">HR prax už od roku 2011.</p>
+                            <p class="font-bold text-black dark:text-white">AI naprieč oddeleniami</p>
+                            <p class="text-xs text-[#54595F] dark:text-gray-400">HR, obchod, manažment aj výroba.</p>
                         </div>
                     </div>
                 </div>
-                <div class="absolute -z-10 top-10 -right-10 w-72 h-72 bg-red-200 dark:bg-red-900/40 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-40 animate-blob"></div>
+                <div class="absolute -z-10 top-10 -right-10 w-72 h-72 bg-[#E60000]/30 dark:bg-[#E60000]/25 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-40 animate-blob"></div>
                 <div class="absolute -z-10 -bottom-10 -left-10 w-72 h-72 bg-gray-300 dark:bg-gray-700/40 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
             </div>
         </div>
@@ -298,7 +377,7 @@
         <div class="relative bg-white dark:bg-[#161616] rounded-3xl shadow-xl dark:shadow-black/40 border border-gray-100 dark:border-gray-800 overflow-hidden p-8 lg:p-12">
             <div class="grid lg:grid-cols-2 gap-10 items-center">
                 <div>
-                    <span class="inline-block bg-red-50 dark:bg-red-950/40 text-[#E60000] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">Expert 1:1</span>
+                    <span class="inline-block bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#E60000] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">Expert 1:1</span>
                     <h2 class="text-4xl lg:text-5xl font-extrabold italic text-black dark:text-white mt-5 leading-tight">Individuálna AI konzultácia</h2>
                     <p class="text-lg text-[#54595F] dark:text-gray-400 mt-5 leading-relaxed">
                         Potrebujete riešiť špecifické výzvy vášho pracovného dňa? 1:1 stretnutie je zamerané výhradne na <span class="font-bold text-black dark:text-white">vaše vlastné use cases</span> a okamžité nasadenie AI do vašej osobnej produktivity.
@@ -324,7 +403,7 @@
                 </div>
                 <div class="relative flex justify-center">
                     <div class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-gray-50 to-white dark:from-[#1c1c1c] dark:to-[#121212] shadow-inner flex flex-col items-center justify-center border border-gray-100 dark:border-gray-800">
-                        <div class="absolute inset-3 rounded-full border-2 border-dashed border-red-100 dark:border-red-900/40 animate-spin-slow"></div>
+                        <div class="absolute inset-3 rounded-full border-2 border-dashed border-[#E60000]/25 dark:border-[#E60000]/30 animate-spin-slow"></div>
                         <div class="absolute top-6 right-10 text-[#E60000] animate-float-slow"><svg class="icon w-[22px] h-[22px]"><use href="#i-sparkles"/></svg></div>
                         <div class="bg-[#E60000] text-white rounded-3xl p-6 shadow-lg"><svg class="icon w-16 h-16"><use href="#i-consult"/></svg></div>
                         <p class="mt-5 text-xs font-bold tracking-widest uppercase text-[#54595F] dark:text-gray-400 text-center leading-snug">Vlastné<br>zadania</p>
@@ -344,12 +423,12 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center max-w-3xl mx-auto">
-            <span class="inline-flex items-center gap-2 bg-[#E60000] text-white text-xs font-bold tracking-widest uppercase px-5 py-2 rounded-full shadow-lg shadow-red-900/40">
+            <span class="inline-flex items-center gap-2 bg-[#E60000] text-white text-xs font-bold tracking-widest uppercase px-5 py-2 rounded-full shadow-lg shadow-[#AA0000]/40">
                 <svg class="icon w-[15px] h-[15px]"><use href="#i-sparkles"/></svg> Top ponuka
             </span>
             <p class="text-[#E60000] font-semibold tracking-wide uppercase text-sm mt-6">Implementácia AI do HR a Biznisu</p>
             <h2 class="text-4xl lg:text-6xl font-extrabold mt-3 leading-tight">
-                Rasťo Kozlík – <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4D4D] to-[#E60000]">Interný AI tréner</span> na prenájom
+                Rasťo Kozlík – <span class="text-[#E60000]">Interný AI tréner</span> na prenájom
             </h2>
             <p class="text-lg text-gray-400 mt-5">Efektívne prepojenie technologických inovácií s procesmi náboru, riadenia ľudských zdrojov a firemného rozvoja.</p>
             <p class="text-gray-400 mt-6 leading-relaxed">
@@ -394,7 +473,7 @@
 
             <div class="flip-card h-[560px] md:-translate-y-4">
                 <div class="flip-inner">
-                    <div class="flip-face p-8 justify-between border bg-gradient-to-b from-[#1a1010] to-[#121212] border-[#E60000]">
+                    <div class="flip-face p-8 justify-between border bg-[#151515] border-[#E60000]">
                         <div>
                             <div class="flex items-center justify-between">
                                 <span class="text-6xl font-extrabold text-white/10">02</span>
@@ -466,22 +545,22 @@
             <h3 class="text-3xl lg:text-4xl font-bold text-center mb-12">Prečo spolupracovať <span class="text-[#E60000]">so mnou?</span></h3>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-[#141414] border border-gray-800 rounded-2xl p-6 hover:border-[#E60000] transition-colors">
-                    <div class="w-12 h-12 rounded-xl bg-red-950/50 text-[#E60000] flex items-center justify-center mb-4"><svg class="icon"><use href="#i-briefcase"/></svg></div>
+                    <div class="w-12 h-12 rounded-xl bg-[#E60000]/10 text-[#E60000] flex items-center justify-center mb-4"><svg class="icon"><use href="#i-briefcase"/></svg></div>
                     <h4 class="font-bold text-white mb-2 leading-snug">15+ rokov praxe v HR a biznise</h4>
                     <p class="text-gray-400 text-sm leading-relaxed">Nerozprávam k ľuďom ako programátor, ale ako človek, ktorý detailne pozná procesy náboru, agentúrne prostredie a riadenie tímov.</p>
                 </div>
                 <div class="bg-[#141414] border border-gray-800 rounded-2xl p-6 hover:border-[#E60000] transition-colors">
-                    <div class="w-12 h-12 rounded-xl bg-red-950/50 text-[#E60000] flex items-center justify-center mb-4"><svg class="icon"><use href="#i-target"/></svg></div>
+                    <div class="w-12 h-12 rounded-xl bg-[#E60000]/10 text-[#E60000] flex items-center justify-center mb-4"><svg class="icon"><use href="#i-target"/></svg></div>
                     <h4 class="font-bold text-white mb-2 leading-snug">Žiadna teória z učebníc</h4>
                     <p class="text-gray-400 text-sm leading-relaxed">Celé vzdelávanie prebieha formou „hands-on“ workshopov na reálnych zadaniach z vašej praxe.</p>
                 </div>
                 <div class="bg-[#141414] border border-gray-800 rounded-2xl p-6 hover:border-[#E60000] transition-colors">
-                    <div class="w-12 h-12 rounded-xl bg-red-950/50 text-[#E60000] flex items-center justify-center mb-4"><svg class="icon"><use href="#i-shield"/></svg></div>
+                    <div class="w-12 h-12 rounded-xl bg-[#E60000]/10 text-[#E60000] flex items-center justify-center mb-4"><svg class="icon"><use href="#i-shield"/></svg></div>
                     <h4 class="font-bold text-white mb-2 leading-snug">Zameranie na bezpečnosť</h4>
                     <p class="text-gray-400 text-sm leading-relaxed">Kladiem obrovský dôraz na správne narábanie s citlivými firemnými a osobnými údajmi (GDPR v ére AI).</p>
                 </div>
                 <div class="bg-[#141414] border border-gray-800 rounded-2xl p-6 hover:border-[#E60000] transition-colors">
-                    <div class="w-12 h-12 rounded-xl bg-red-950/50 text-[#E60000] flex items-center justify-center mb-4"><svg class="icon"><use href="#i-award"/></svg></div>
+                    <div class="w-12 h-12 rounded-xl bg-[#E60000]/10 text-[#E60000] flex items-center justify-center mb-4"><svg class="icon"><use href="#i-award"/></svg></div>
                     <h4 class="font-bold text-white mb-2 leading-snug">Silné zázemie a kontinuita</h4>
                     <p class="text-gray-400 text-sm leading-relaxed">Za mojou prácou stojí dlhoročná prax a stabilný prístup, čo garantuje profesionálnu úroveň a kontinuitu riešení.</p>
                 </div>
@@ -491,11 +570,11 @@
 </section>
 
 <!-- ===== Uzatvárací CTA blok ===== -->
-<section class="py-20 bg-gradient-to-br from-[#E60000] to-[#AA0000] text-white relative overflow-hidden">
+<section class="py-20 bg-[#E60000] text-white relative overflow-hidden">
     <div class="dots-fade-center absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1.5px,transparent_1.5px)] [background-size:24px_24px]"></div>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h2 class="text-3xl lg:text-4xl font-extrabold mb-4">Posuňte efektivitu vašich tímov na novú úroveň</h2>
-        <p class="text-lg text-red-100 mb-10 max-w-2xl mx-auto">Poďme sa nezáväzne porozprávať o možnostiach pre vašu firmu. Vyberte si, ako vám to viac vyhovuje.</p>
+        <p class="text-lg text-white/85 mb-10 max-w-2xl mx-auto">Poďme sa nezáväzne porozprávať o možnostiach pre vašu firmu. Vyberte si, ako vám to viac vyhovuje.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-5">
             <a href="https://calendly.com/rastislavkozlik/30min" target="_blank" rel="noreferrer" class="flex items-center justify-center gap-3 bg-white text-[#E60000] hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
                 <svg class="icon"><use href="#i-coffee"/></svg> Porozprávajme sa pri online káve
@@ -519,7 +598,7 @@
 
             <article class="group relative bg-white dark:bg-[#141414] rounded-3xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-[#E60000] dark:hover:border-[#E60000] transition-all duration-300 hover:shadow-xl flex flex-col h-full">
                 <div class="p-8 flex flex-col h-full relative z-10">
-                    <div class="w-16 h-16 bg-gradient-to-br from-[#333333] to-black dark:from-[#E60000] dark:to-[#AA0000] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 border border-[#54595F] dark:border-transparent text-white"><svg class="icon w-8 h-8"><use href="#i-users"/></svg></div>
+                    <div class="w-16 h-16 bg-[#333333] dark:bg-[#E60000] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 border border-[#54595F] dark:border-transparent text-white"><svg class="icon w-8 h-8"><use href="#i-users"/></svg></div>
                     <h3 class="text-2xl font-bold text-black dark:text-white mb-3">AI pre efektívne HR</h3>
                     <p class="text-[#54595F] dark:text-gray-400 mb-6 flex-grow">Transformujte nábor a riadenie talentov. Naučte sa tvoriť pútavé inzeráty, analyzovať životopisy a automatizovať komunikáciu s kandidátmi pomocou AI.</p>
                     <ul class="space-y-3 mb-8">
@@ -533,7 +612,7 @@
 
             <article class="group relative bg-white dark:bg-[#141414] rounded-3xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-[#E60000] dark:hover:border-[#E60000] transition-all duration-300 hover:shadow-xl flex flex-col h-full">
                 <div class="p-8 flex flex-col h-full relative z-10">
-                    <div class="w-16 h-16 bg-gradient-to-br from-[#333333] to-black dark:from-[#E60000] dark:to-[#AA0000] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 border border-[#54595F] dark:border-transparent text-white"><svg class="icon w-8 h-8"><use href="#i-trending"/></svg></div>
+                    <div class="w-16 h-16 bg-[#333333] dark:bg-[#E60000] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 border border-[#54595F] dark:border-transparent text-white"><svg class="icon w-8 h-8"><use href="#i-trending"/></svg></div>
                     <h3 class="text-2xl font-bold text-black dark:text-white mb-3">AI pre efektívny Sales</h3>
                     <p class="text-[#54595F] dark:text-gray-400 mb-6 flex-grow">Zvýšte svoje predajné čísla. Ukážem vám, ako využiť AI na generovanie leadov, prípravu na obchodné stretnutia a tvorbu neodmietnuteľných ponúk.</p>
                     <ul class="space-y-3 mb-8">
@@ -547,7 +626,7 @@
 
             <article class="group relative bg-white dark:bg-[#141414] rounded-3xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-[#E60000] dark:hover:border-[#E60000] transition-all duration-300 hover:shadow-xl flex flex-col h-full">
                 <div class="p-8 flex flex-col h-full relative z-10">
-                    <div class="w-16 h-16 bg-gradient-to-br from-[#333333] to-black dark:from-[#E60000] dark:to-[#AA0000] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 border border-[#54595F] dark:border-transparent text-white"><svg class="icon w-8 h-8"><use href="#i-rocket"/></svg></div>
+                    <div class="w-16 h-16 bg-[#333333] dark:bg-[#E60000] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 border border-[#54595F] dark:border-transparent text-white"><svg class="icon w-8 h-8"><use href="#i-rocket"/></svg></div>
                     <h3 class="text-2xl font-bold text-black dark:text-white mb-3">Krok do sveta AI</h3>
                     <p class="text-[#54595F] dark:text-gray-400 mb-6 flex-grow">Ideálny štart pre tímy. Od základov promptovania až po bezpečné používanie nástrojov ako ChatGPT či Copilot v každodennej praxi.</p>
                     <ul class="space-y-3 mb-8">
@@ -561,7 +640,7 @@
 
             <article class="group relative bg-white dark:bg-[#141414] rounded-3xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-[#E60000] dark:hover:border-[#E60000] transition-all duration-300 hover:shadow-xl flex flex-col h-full">
                 <div class="p-8 flex flex-col h-full relative z-10">
-                    <div class="w-16 h-16 bg-gradient-to-br from-[#333333] to-black dark:from-[#E60000] dark:to-[#AA0000] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 border border-[#54595F] dark:border-transparent text-white"><svg class="icon w-8 h-8"><use href="#i-brain"/></svg></div>
+                    <div class="w-16 h-16 bg-[#333333] dark:bg-[#E60000] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 border border-[#54595F] dark:border-transparent text-white"><svg class="icon w-8 h-8"><use href="#i-brain"/></svg></div>
                     <h3 class="text-2xl font-bold text-black dark:text-white mb-3">Pokročilé využitie AI</h3>
                     <p class="text-[#54595F] dark:text-gray-400 mb-6 flex-grow">Pre tých, ktorí chcú ísť do hĺbky. Komplexné workflows, automatizácia administratívy a pokročilé techniky pre HR aj Sales tímy.</p>
                     <ul class="space-y-3 mb-8">
@@ -604,14 +683,18 @@
     </div>
 </section>
 
-<!-- ===== Logá klientov (marquee) ===== -->
+<!-- ===== Logá klientov (marquee) — DOČASNE SKRYTÉ =====
+     Obrázky "Logo klienta*.png/jpg" v priečinku chýbajú.
+     Po doplnení log do koreňa priečinka odstráň tento komentár a sekcia sa znovu zobrazí. -->
+<!--
+<!&#45;&#45; ===== Logá klientov (marquee) ===== &#45;&#45;>
 <section id="klienti" class="py-14 bg-white dark:bg-[#0a0a0a] border-y border-gray-100 dark:border-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-center text-xs font-bold tracking-widest uppercase text-[#54595F] dark:text-gray-500 mb-8">Dôverujú nám lídri na trhu</p>
     </div>
     <div class="marquee" aria-label="Logá klientov">
         <div class="marquee-track">
-            <!-- Sada 1 (názvy presne podľa GitHub repa) -->
+            <!&#45;&#45; Sada 1 (názvy presne podľa GitHub repa) &#45;&#45;>
             <img src="./Logo klienta 1.png" alt="Logo klienta 1" loading="lazy">
             <img src="./Logo klienta 2.jpg" alt="Logo klienta 2" loading="lazy">
             <img src="./Logo klienta3.png" alt="Logo klienta 3" loading="lazy">
@@ -625,7 +708,7 @@
             <img src="./Logo klienta11.png" alt="Logo klienta 11" loading="lazy">
             <img src="./Logo klienta12.png" alt="Logo klienta 12" loading="lazy">
             <img src="./Logo klienta13.png" alt="Logo klienta 13" loading="lazy">
-            <!-- Sada 2 (kópia pre plynulú slučku) -->
+            <!&#45;&#45; Sada 2 (kópia pre plynulú slučku) &#45;&#45;>
             <img src="./Logo klienta 1.png" alt="" aria-hidden="true" loading="lazy">
             <img src="./Logo klienta 2.jpg" alt="" aria-hidden="true" loading="lazy">
             <img src="./Logo klienta3.png" alt="" aria-hidden="true" loading="lazy">
@@ -642,6 +725,7 @@
         </div>
     </div>
 </section>
+-->
 
 <!-- ===== Referencie (3D kocka) ===== -->
 <section id="referencie" class="py-24 bg-gray-50 dark:bg-[#0f0f0f] overflow-hidden">
@@ -696,7 +780,7 @@
 <section id="clanky" class="py-24 bg-white dark:bg-[#0a0a0a]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="inline-flex items-center gap-2 bg-red-50 dark:bg-red-950/40 text-[#E60000] text-xs font-bold tracking-widest uppercase px-5 py-2 rounded-full border border-red-100 dark:border-red-900/50">
+            <span class="inline-flex items-center gap-2 bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#E60000] text-xs font-bold tracking-widest uppercase px-5 py-2 rounded-full border border-[#E60000]/20 dark:border-[#E60000]/30">
                 <svg class="icon w-[15px] h-[15px]"><use href="#i-sparkles"/></svg> Praktické návody
             </span>
             <h2 class="text-4xl lg:text-5xl font-extrabold text-black dark:text-white mt-5 leading-tight">Články</h2>
@@ -707,7 +791,7 @@
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <a href="./clanky/microsoft-copilot-v-praci.html" class="group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-[#E60000] to-[#AA0000]"></div>
+                <div class="h-2 bg-[#E60000]"></div>
                 <div class="p-7 flex flex-col flex-grow">
                     <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Sprievodca</span>
                     <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">Microsoft Copilot v práci: praktický sprievodca pre firmy</h3>
@@ -719,7 +803,7 @@
                 </div>
             </a>
             <a href="./clanky/chatgpt-novinky-jun-2026.html" class="group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-[#E60000] to-[#AA0000]"></div>
+                <div class="h-2 bg-[#E60000]"></div>
                 <div class="p-7 flex flex-col flex-grow">
                     <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Novinky</span>
                     <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">ChatGPT novinky (jún 2026): písanie, e-maily a grafy</h3>
@@ -731,7 +815,7 @@
                 </div>
             </a>
             <a href="./clanky/gemini-flash-zadarmo.html" class="group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-[#E60000] to-[#AA0000]"></div>
+                <div class="h-2 bg-[#E60000]"></div>
                 <div class="p-7 flex flex-col flex-grow">
                     <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Pre začiatočníkov</span>
                     <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">Gemini 3.5 Flash zadarmo: rýchly štart pre pracovné využitie</h3>
@@ -743,7 +827,7 @@
                 </div>
             </a>
             <a href="./clanky/google-io-2026.html" class="group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-[#E60000] to-[#AA0000]"></div>
+                <div class="h-2 bg-[#E60000]"></div>
                 <div class="p-7 flex flex-col flex-grow">
                     <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Novinky</span>
                     <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">Google I/O 2026: čo nové oznámenia znamenajú pre vašu firmu</h3>
@@ -755,7 +839,7 @@
                 </div>
             </a>
             <a href="./clanky/ai-pre-male-firmy.html" class="group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-[#E60000] to-[#AA0000]"></div>
+                <div class="h-2 bg-[#E60000]"></div>
                 <div class="p-7 flex flex-col flex-grow">
                     <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Pre firmy</span>
                     <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">AI pre malé firmy: kde začať a čo sa reálne oplatí</h3>
@@ -767,7 +851,7 @@
                 </div>
             </a>
             <a href="./clanky/claude-opus-48-agenti.html" class="group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-[#E60000] to-[#AA0000]"></div>
+                <div class="h-2 bg-[#E60000]"></div>
                 <div class="p-7 flex flex-col flex-grow">
                     <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Novinky</span>
                     <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">Claude Opus 4.8: AI, ktorá si rozdelí prácu medzi tím pomocníkov</h3>
@@ -779,7 +863,7 @@
                 </div>
             </a>
             <a href="./clanky/ako-zacat-s-ai.html" class="group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-[#E60000] to-[#AA0000]"></div>
+                <div class="h-2 bg-[#E60000]"></div>
                 <div class="p-7 flex flex-col flex-grow">
                     <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Pre začiatočníkov</span>
                     <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">Ako začať s AI: sprievodca pre úplných začiatočníkov</h3>
@@ -791,7 +875,7 @@
                 </div>
             </a>
             <a href="./clanky/notebooklm-novinky-2026.html" class="group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-[#E60000] to-[#AA0000]"></div>
+                <div class="h-2 bg-[#E60000]"></div>
                 <div class="p-7 flex flex-col flex-grow">
                     <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Sprievodca</span>
                     <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">NotebookLM v roku 2026: 5 noviniek pre prácu s dokumentmi</h3>
@@ -811,7 +895,7 @@
     <div class="dots-fade-top absolute inset-0 z-0 opacity-5 dark:opacity-[0.07] bg-[radial-gradient(#E60000_1px,transparent_1px)] [background-size:16px_16px]"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="inline-flex items-center gap-2 bg-red-50 dark:bg-red-950/40 text-[#E60000] text-xs font-bold tracking-widest uppercase px-5 py-2 rounded-full border border-red-100 dark:border-red-900/50">
+            <span class="inline-flex items-center gap-2 bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#E60000] text-xs font-bold tracking-widest uppercase px-5 py-2 rounded-full border border-[#E60000]/20 dark:border-[#E60000]/30">
                 <svg class="icon w-[15px] h-[15px]"><use href="#i-gift"/></svg> Zadarmo pre vás
             </span>
             <h2 class="text-4xl lg:text-5xl font-extrabold text-black dark:text-white mt-5 leading-tight">AI Prompt Knižnica</h2>
@@ -822,7 +906,7 @@
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
             <div class="group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-[#E60000] to-[#AA0000]"></div>
+                <div class="h-2 bg-[#E60000]"></div>
                 <div class="p-7 flex flex-col flex-grow">
                     <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">HR</span>
                     <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">15 promptov pre HR</h3>
@@ -834,7 +918,7 @@
                 </div>
             </div>
             <div class="group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-[#E60000] to-[#AA0000]"></div>
+                <div class="h-2 bg-[#E60000]"></div>
                 <div class="p-7 flex flex-col flex-grow">
                     <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Sales</span>
                     <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">15 promptov pre Sales</h3>
@@ -846,7 +930,7 @@
                 </div>
             </div>
             <div class="group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-[#E60000] to-[#AA0000]"></div>
+                <div class="h-2 bg-[#E60000]"></div>
                 <div class="p-7 flex flex-col flex-grow">
                     <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Manažment</span>
                     <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">15 promptov pre manažérov</h3>
@@ -858,7 +942,7 @@
                 </div>
             </div>
             <div class="group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-[#E60000] to-[#AA0000]"></div>
+                <div class="h-2 bg-[#E60000]"></div>
                 <div class="p-7 flex flex-col flex-grow">
                     <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Pre každého</span>
                     <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">AI štartovací balík</h3>
@@ -908,14 +992,14 @@
         <h2 class="text-3xl lg:text-4xl font-bold text-black dark:text-white mb-6">Posuňte vašu firmu vpred</h2>
         <p class="text-xl text-[#54595F] dark:text-gray-400 mb-10">Máte záujem o workshop na mieru alebo sa chcete poradiť, ktorý kurz je pre vás vhodný?</p>
         <div class="flex flex-col sm:flex-row justify-center gap-6">
-            <a href="https://www.linkedin.com/in/rastislavkozlik/" target="_blank" rel="noreferrer" class="flex items-center justify-center gap-3 bg-[#0077b5] hover:bg-[#006396] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+            <a href="https://www.linkedin.com/in/rastislavkozlik/" target="_blank" rel="noreferrer" class="flex items-center justify-center gap-3 bg-[#E60000] hover:bg-[#C80000] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
                 <svg class="icon"><use href="#i-linkedin"/></svg> Napíšte mi na LinkedIn
             </a>
             <a href="mailto:rastislav.kozlik@balanced-hr.com" class="flex items-center justify-center gap-3 bg-white dark:bg-[#161616] hover:bg-gray-50 dark:hover:bg-[#1c1c1c] text-black dark:text-white border-2 border-gray-200 dark:border-gray-700 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:border-[#E60000] hover:text-[#E60000]">
                 <svg class="icon text-[#E60000]"><use href="#i-mail"/></svg> Kontaktovať mailom
             </a>
         </div>
-        <div class="mt-16 border-t border-red-200 dark:border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div class="mt-16 border-t border-[#E60000]/25 dark:border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <p class="text-[#54595F] dark:text-gray-500 text-sm">© <span id="year"></span> Rasťo Kozlík · AI Konzultant. Všetky práva vyhradené.</p>
             <span class="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
             <a href="./ochrana-sukromia.html" class="text-sm text-[#54595F] dark:text-gray-500 underline hover:text-[#E60000]">Ochrana súkromia a cookies</a>
@@ -932,13 +1016,13 @@
    ⚙️ KONFIGURÁCIA – vyplň podľa HANDBOOK.md
    ============================================================ */
 const CONFIG = {
-    EMAILJS_PUBLIC_KEY: "eNtSPPDobXrfI3feo",        // EmailJS → Account → Public Key
+    EMAILJS_PUBLIC_KEY: "eNtSPPDobXrfl3feo",        // EmailJS → Account → Public Key
     EMAILJS_SERVICE_ID: "service_ceutwej",        // EmailJS → Email Services
     EMAILJS_TEMPLATE_AUTOREPLY: "template_uuk1dsg", // šablóna pre záujemcu (s odkazmi na PDF)
     EMAILJS_TEMPLATE_NOTIFY: "template_zeubrt4",       // notifikácia pre teba
     // Po nasadení nahraď absolútnou URL, napr. https://tvojadomena.sk/downloads
-    DOWNLOAD_BASE: "https://rastorasto-web.github.io/Rasto_Kozlik_AI/downloads",
-    NOTIFY_EMAIL: "rastislavkozlik@gmail.com"
+    DOWNLOAD_BASE: "https://rastoai.sk/downloads",
+    NOTIFY_EMAIL: "rasto.kozlik.ai@gmail.com"
 };
 
 /* ===== Scroll-reveal sekcií ===== */
@@ -1018,7 +1102,7 @@ function showStatus(msg, ok) {
     statusEl.textContent = msg;
     statusEl.className = 'mt-5 text-center text-sm font-semibold rounded-xl px-4 py-3 ' +
         (ok ? 'bg-green-100 dark:bg-green-950/50 text-green-700 dark:text-green-400'
-            : 'bg-red-100 dark:bg-red-950/50 text-red-700 dark:text-red-400');
+            : 'bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#AA0000] dark:text-[#FF4D4D]');
 }
 
 form.addEventListener('submit', async (e) => {
@@ -1032,17 +1116,6 @@ form.addEventListener('submit', async (e) => {
     const btn = document.getElementById('lead-submit');
     btn.disabled = true;
     showStatus('Odosielam…', true);
-    // Lead → Make (Google Sheet)
-fetch('https://hook.eu1.make.com/9yxgtskwr965eh6l8dgql6zaxm4vxccr', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-        email: email,
-        zdroj: 'Prompty',
-        stranka: window.location.href,
-        datum: new Date().toLocaleString('sk-SK')
-    })
-}).catch(() => {});
 
     const params = {
         user_email: email,

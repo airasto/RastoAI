@@ -3,10 +3,10 @@
    ⚙️ KONFIGURÁCIA – vyplň rovnaké hodnoty ako v index.html
    ========================================================= */
 const CONFIG = {
-    EMAILJS_PUBLIC_KEY: "eNtSPPDobXrfI3feo",        // EmailJS → Account → Public Key
+    EMAILJS_PUBLIC_KEY: "eNtSPPDobXrfl3feo",        // EmailJS → Account → Public Key
     EMAILJS_SERVICE_ID: "service_ceutwej",        // EmailJS → Email Services
     EMAILJS_TEMPLATE_NOTIFY: "template_zeubrt4", // notifikácia pre teba (rovnaká šablóna ako na hlavnej stránke)
-    NOTIFY_EMAIL: "rastislavkozlik@gmail.com"
+    NOTIFY_EMAIL: "rasto.kozlik.ai@gmail.com"
 };
 
 /* ===== Dark mode toggle ===== */
@@ -82,17 +82,6 @@ document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date
 
         btn.disabled = true;
         showStatus('Odomykám…', true);
-       // Lead → Make (Google Sheet)
-fetch('https://hook.eu1.make.com/9yxgtskwr965eh6l8dgql6zaxm4vxccr', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-        email: email,
-        zdroj: 'Článok',
-        stranka: window.location.href,
-        datum: new Date().toLocaleString('sk-SK')
-    })
-}).catch(() => {});
 
         if (configured && window.emailjs) {
             try {

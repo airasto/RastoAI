@@ -8,16 +8,43 @@
     <meta name="description" content="Praktický sprievodca prvými krokmi s umelou inteligenciou: ktoré nástroje vyskúšať, ako písať zadania a ako z AI vyťažiť maximum bez technických znalostí.">
     <meta name="robots" content="index, follow">
     <!-- ⚠️ NAHRAĎ doménou po nasadení -->
-    <link rel="canonical" href="https://VASA-DOMENA.sk/clanky/ako-zacat-s-ai.html">
+    <link rel="canonical" href="https://rastoai.sk/clanky/ako-zacat-s-ai.html">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="sk_SK">
     <meta property="og:title" content="Ako začať s AI: sprievodca pre úplných začiatočníkov">
     <meta property="og:description" content="Ktoré nástroje vyskúšať ako prvé, ako písať zadania a ako z AI vyťažiť maximum bez technických znalostí.">
-    <meta property="og:url" content="https://VASA-DOMENA.sk/clanky/ako-zacat-s-ai.html">
+    <meta property="og:url" content="https://rastoai.sk/clanky/ako-zacat-s-ai.html">
 
     <!-- Tailwind CSS -->
+        <!-- ===== Brand: favicon a ikony (Brand Kit 1 – červený) ===== -->
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon_RK_cervena.svg">
+    <link rel="alternate icon" type="image/png" href="../assets/logo/favicon_RK_cervena.png">
+    <link rel="apple-touch-icon" href="../assets/logo/favicon_RK_cervena.png">
+    <meta name="theme-color" content="#E60000" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+
+    <!-- ===== Brand: typografia Inter + JetBrains Mono ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        html, body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+        h1 { letter-spacing: -0.02em; }
+        h2, h3 { letter-spacing: -0.01em; }
+        code, pre, kbd, samp, .font-mono, .prompt { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { darkMode: 'class' };</script>
+    <script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: { extend: { fontFamily: {
+            sans: ['Inter','ui-sans-serif','system-ui','-apple-system','Segoe UI','Arial','sans-serif'],
+            mono: ['JetBrains Mono','ui-monospace','SFMono-Regular','Menlo','monospace']
+        } } }
+    };
+    </script>
     <script>
         try {
             const s = localStorage.getItem('rk-theme');
@@ -61,8 +88,10 @@
 
 <nav class="sticky top-0 z-50 bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur border-b border-gray-100 dark:border-gray-800 py-3">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        <a href="../index.html" class="flex items-center gap-2 font-bold text-xl tracking-tighter text-black dark:text-white">
-            <span>Rasťo <span class="text-[#E60000]">Kozlík</span></span> <span class="hidden sm:inline text-[#54595F] font-light">|</span> <span class="hidden sm:inline text-xs uppercase tracking-widest font-medium mt-1 text-[#54595F] dark:text-gray-400">AI Konzultant</span>
+        <a href="../index.html" class="flex items-center gap-3 font-bold text-xl tracking-tighter text-black dark:text-white" aria-label="Rasťo Kozlík – AI Konzultant, domov">
+            <img src="../assets/logo/znacka_RK_svetla.svg" alt="Rasťo Kozlík – značka RK" width="106" height="40" class="h-8 w-auto shrink-0 block dark:hidden">
+            <img src="../assets/logo/znacka_RK.svg" alt="" aria-hidden="true" width="106" height="40" class="h-8 w-auto shrink-0 hidden dark:block">
+            <span class="hidden sm:inline">Rasťo <span class="text-[#E60000]">Kozlík</span></span> <span class="hidden sm:inline text-[#54595F] font-light">|</span> <span class="hidden sm:inline text-xs uppercase tracking-widest font-medium mt-1 text-[#54595F] dark:text-gray-400">AI Konzultant</span>
         </a>
         <div class="flex items-center gap-3">
             <a href="../index.html#clanky" class="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-gray-300 hover:text-[#E60000] transition-colors">
@@ -80,7 +109,7 @@
 <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
 
     <header class="mb-10">
-        <span class="inline-flex items-center gap-2 bg-red-50 dark:bg-red-950/40 text-[#E60000] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-red-100 dark:border-red-900/50">Pre začiatočníkov</span>
+        <span class="inline-flex items-center gap-2 bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#E60000] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-[#E60000]/20 dark:border-[#E60000]/30">Pre začiatočníkov</span>
         <h1 class="text-3xl lg:text-5xl font-extrabold text-black dark:text-white mt-5 leading-tight">Ako začať s AI: sprievodca pre úplných začiatočníkov</h1>
         <div class="flex items-center gap-4 mt-5 text-sm text-[#54595F] dark:text-gray-400">
             <span class="flex items-center gap-1.5"><svg class="icon w-4 h-4"><use href="#i-clock"/></svg> 10 min čítania</span>
@@ -123,7 +152,7 @@
                 <li><strong>Formát:</strong> tabuľka, odrážky, počet slov, jazyk.</li>
                 <li><strong>Iterácia:</strong> prvý výstup je draft – pýtajte si úpravy („skráť", „pridaj príklady", „formálnejšie").</li>
             </ul>
-            <div class="tip bg-red-50/60 dark:bg-red-950/20">
+            <div class="tip bg-[#FFF5F5] dark:bg-[#E60000]/8">
                 <p class="!mb-0"><strong>Tip zo školení:</strong> vytvorte si vlastnú zbierku promptov na opakované úlohy. Raz dobre napísané zadanie používate roky – len meníte vstupy.</p>
             </div>
 
