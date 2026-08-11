@@ -3,7 +3,7 @@
    ⚙️ KONFIGURÁCIA – vyplň rovnaké hodnoty ako v index.html
    ========================================================= */
 const CONFIG = {
-    EMAILJS_PUBLIC_KEY: "eNtSPPDobXrfl3feo",        // EmailJS → Account → Public Key
+    EMAILJS_PUBLIC_KEY: "eNtSPPDobXrfI3feo",        // EmailJS → Account → Public Key
     EMAILJS_SERVICE_ID: "service_ceutwej",        // EmailJS → Email Services
     EMAILJS_TEMPLATE_NOTIFY: "template_zeubrt4", // notifikácia pre teba (rovnaká šablóna ako na hlavnej stránke)
     NOTIFY_EMAIL: "rasto.kozlik.ai@gmail.com"
