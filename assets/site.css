@@ -1,0 +1,199 @@
+        /* ===== Brand tokens – Rasťo AI, Kit 1 (červený) ===== */
+        :root {
+            --brand-red: #E60000;
+            --brand-red-dark: #C80000;
+            --brand-red-deep: #AA0000;
+            --brand-ink: #111111;
+            --brand-body: #333333;
+            --brand-muted: #54595F;
+            --brand-tint: #FFF5F5;
+        }
+        html, body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+        h1 { letter-spacing: -0.02em; }
+        h2, h3 { letter-spacing: -0.01em; }
+        code, pre, kbd, samp, .font-mono, .prompt { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+        /* ===== Brand: motív neurónovej siete ===== */
+        .brand-net {
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            pointer-events: none;
+            user-select: none;
+        }
+        /* Malý rohový akcent — pri tejto veľkosti sa ťahy siete
+           renderujú v pôvodnej hrúbke a motív pôsobí jemne. */
+        .brand-net--corner {
+            background-image: url('./logo/siet_cervena.svg');
+            opacity: 0.28;
+        }
+        .dark .brand-net--corner { opacity: 0.34; }
+
+        @keyframes blob {
+            0% { transform: translate(0,0) scale(1); }
+            33% { transform: translate(30px,-50px) scale(1.1); }
+            66% { transform: translate(-20px,20px) scale(0.9); }
+            100% { transform: translate(0,0) scale(1); }
+        }
+        .animate-blob { animation: blob 7s infinite; }
+        .animation-delay-2000 { animation-delay: 2s; }
+        @keyframes float-slow { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(6deg); } }
+        .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+        @keyframes spin-slow { to { transform: rotate(360deg); } }
+        .animate-spin-slow { animation: spin-slow 22s linear infinite; }
+
+        .scene { perspective: 1000px; }
+        .cube { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .8s cubic-bezier(.4,0,.2,1); }
+        .cube-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 1.5rem; }
+        .face-0 { transform: rotateX(0) translateZ(160px); }
+        .face-1 { transform: rotateX(-90deg) translateZ(160px); }
+        .face-2 { transform: rotateX(-180deg) translateZ(160px); }
+        .face-3 { transform: rotateX(-270deg) translateZ(160px); }
+
+        .flip-card { perspective: 1600px; }
+        .flip-inner { position: relative; width: 100%; height: 100%; transition: transform .7s cubic-bezier(.4,0,.2,1); transform-style: preserve-3d; }
+        .flip-card.is-flipped .flip-inner { transform: rotateY(180deg); }
+        @media (hover:hover) and (pointer:fine) { .flip-card:hover .flip-inner { transform: rotateY(180deg); } }
+        .flip-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; display: flex; flex-direction: column; border-radius: 1.5rem; overflow: hidden; }
+        .flip-back { transform: rotateY(180deg); }
+
+        .icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+        /* ===== Marquee logá klientov ===== */
+        .marquee { overflow: hidden; position: relative; }
+        .marquee::before, .marquee::after { content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none; }
+        .marquee::before { left: 0; background: linear-gradient(to right, var(--marquee-fade, #ffffff), transparent); }
+        .marquee::after { right: 0; background: linear-gradient(to left, var(--marquee-fade, #ffffff), transparent); }
+        .dark .marquee { --marquee-fade: #0a0a0a; }
+        .marquee-track { display: flex; align-items: center; gap: 4.5rem; width: max-content; animation: marquee-scroll 40s linear infinite; padding: 0 2rem; }
+        .marquee:hover .marquee-track { animation-play-state: paused; }
+        .marquee-track img { height: 44px; width: auto; object-fit: contain; opacity: .75; filter: grayscale(1); transition: opacity .3s, filter .3s; }
+        .marquee-track img:hover { opacity: 1; filter: grayscale(0); }
+        @keyframes marquee-scroll { to { transform: translateX(-50%); } }
+        @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; } }
+
+        /* ===== Čisté pole pod textom v bodkovaných sekciách ===== */
+        /* Maska vyhladí bodky v zóne, kde je text – bodky zostanú len po okrajoch */
+        .dots-fade-top {
+            -webkit-mask-image: radial-gradient(ellipse 50% 36% at 50% 20%, transparent 0%, transparent 45%, black 72%);
+                    mask-image: radial-gradient(ellipse 50% 36% at 50% 20%, transparent 0%, transparent 45%, black 72%);
+        }
+        .dots-fade-center {
+            -webkit-mask-image: radial-gradient(ellipse 54% 62% at 50% 48%, transparent 0%, transparent 45%, black 74%);
+                    mask-image: radial-gradient(ellipse 54% 62% at 50% 48%, transparent 0%, transparent 45%, black 74%);
+        }
+        .dots-fade-left {
+            -webkit-mask-image: radial-gradient(ellipse 48% 52% at 33% 42%, transparent 0%, transparent 42%, black 68%);
+                    mask-image: radial-gradient(ellipse 48% 52% at 33% 42%, transparent 0%, transparent 42%, black 68%);
+        }
+
+        /* ===== Scroll-reveal ===== */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal.is-visible { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+/* ============================================================
+   Rozdelenie B2B / B2C — doplnené štýly
+   ============================================================ */
+
+/* ===== Rozcestník na homepage ===== */
+.split-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: transform .3s cubic-bezier(.4,0,.2,1), box-shadow .3s, border-color .3s;
+}
+.split-card:hover { transform: translateY(-6px); }
+@media (prefers-reduced-motion: reduce) { .split-card:hover { transform: none; } }
+
+/* ===== Kroky „Ako to funguje" ===== */
+.step-list { counter-reset: step; }
+.step-item { position: relative; padding-left: 4.25rem; }
+.step-item::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0; top: 0;
+    width: 2.75rem; height: 2.75rem;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 9999px;
+    background: var(--brand-red);
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.125rem;
+}
+.step-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 1.32rem; top: 3.1rem; bottom: -1.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--brand-red), transparent);
+    opacity: .35;
+}
+
+/* ===== Cenníkové karty ===== */
+.price-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.25rem;
+    border: 2px solid #E5E5E5;
+    background: #fff;
+    transition: border-color .25s, box-shadow .25s, transform .25s;
+}
+.dark .price-card { border-color: #262626; background: #131313; }
+.price-card:hover { border-color: var(--brand-red); box-shadow: 0 12px 32px rgba(230,0,0,.10); transform: translateY(-4px); }
+@media (prefers-reduced-motion: reduce) { .price-card:hover { transform: none; } }
+.price-card--featured { border-color: var(--brand-red); box-shadow: 0 12px 32px rgba(230,0,0,.12); }
+
+/* ===== FAQ (natívny <details>, bez JS) ===== */
+.faq-item { border-bottom: 1px solid #E5E5E5; }
+.dark .faq-item { border-bottom-color: #262626; }
+.faq-item > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.25rem 2.5rem 1.25rem 0;
+    position: relative;
+    font-weight: 700;
+    color: var(--brand-ink);
+    transition: color .2s;
+}
+.dark .faq-item > summary { color: #fff; }
+.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-item > summary:hover { color: var(--brand-red); }
+.faq-item > summary::after {
+    content: '';
+    position: absolute;
+    right: .5rem; top: 50%;
+    width: .6rem; height: .6rem;
+    border-right: 2px solid var(--brand-red);
+    border-bottom: 2px solid var(--brand-red);
+    transform: translateY(-70%) rotate(45deg);
+    transition: transform .25s;
+}
+.faq-item[open] > summary::after { transform: translateY(-30%) rotate(-135deg); }
+.faq-item > div { padding-bottom: 1.25rem; }
+
+/* ===== Formulár ===== */
+.field {
+    width: 100%;
+    border: 2px solid #E5E5E5;
+    background: #fff;
+    border-radius: .75rem;
+    padding: .8rem 1rem;
+    font-size: 1rem;
+    color: var(--brand-body);
+    transition: border-color .2s, box-shadow .2s;
+}
+.dark .field { border-color: #2a2a2a; background: #131313; color: #e5e5e5; }
+.field:focus {
+    outline: none;
+    border-color: var(--brand-red);
+    box-shadow: 0 0 0 3px rgba(230,0,0,.14);
+}
+.field::placeholder { color: #9ca3af; }
+.field-label { display: block; font-weight: 600; font-size: .9rem; margin-bottom: .4rem; color: var(--brand-ink); }
+.dark .field-label { color: #e5e5e5; }

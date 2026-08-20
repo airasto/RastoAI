@@ -1,0 +1,12 @@
+{
+  "name": "rastoai-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Statický web rastoai.sk – build Tailwind CSS",
+  "scripts": {
+    "build": "tailwindcss -c tailwind.config.js -i src/tailwind.css -o assets/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

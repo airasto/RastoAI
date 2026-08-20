@@ -23,28 +23,19 @@
     <meta name="theme-color" content="#E60000" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
 
-    <!-- ===== Brand: typografia Inter + JetBrains Mono ===== -->
+    <!-- ===== Brand: typografia Inter ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         html, body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
         h1 { letter-spacing: -0.02em; }
         h2, h3 { letter-spacing: -0.01em; }
-        code, pre, kbd, samp, .font-mono, .prompt { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+        code, pre, kbd, samp, .font-mono, .prompt { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
     </style>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    tailwind.config = {
-        darkMode: 'class',
-        theme: { extend: { fontFamily: {
-            sans: ['Inter','ui-sans-serif','system-ui','-apple-system','Segoe UI','Arial','sans-serif'],
-            mono: ['JetBrains Mono','ui-monospace','SFMono-Regular','Menlo','monospace']
-        } } }
-    };
-    </script>
+    <link rel="stylesheet" href="../assets/tailwind.css">
     <script>
         try {
             const s = localStorage.getItem('rk-theme');
@@ -212,7 +203,7 @@
     <aside class="mt-14 bg-gradient-to-br from-[#E60000] to-[#AA0000] text-white rounded-3xl p-8 lg:p-10">
         <h2 class="text-2xl font-extrabold mb-3">Prvé kroky s AI pre celý tím</h2>
         <p class="text-white/90 mb-6 leading-relaxed">Workshop <strong>Krok do sveta AI</strong> je presne o tomto – bezpečné základy, správne návyky a prvé use cases na vlastných úlohách. Pre tímy, ktoré chcú začať poriadne.</p>
-        <a href="../index.html#workshopy" class="inline-block bg-white text-[#E60000] px-7 py-3.5 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg">Pozrieť workshopy →</a>
+        <a href="../pre-firmy.html#workshopy" class="inline-block bg-white text-[#E60000] px-7 py-3.5 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg">Pozrieť workshopy →</a>
     </aside>
 </article>
 </main>

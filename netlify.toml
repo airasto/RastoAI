@@ -1,0 +1,8 @@
+# Netlify pri každom commite vygeneruje assets/tailwind.css z tried
+# použitých v HTML a JS. Bez tohto kroku by sa na web dostal starý CSS súbor.
+[build]
+  command = "npm run build"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "20"
