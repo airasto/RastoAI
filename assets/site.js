@@ -19,7 +19,7 @@ const CONFIG = {
 
     // ⚠️ DOPLNIŤ: odkaz na Calendly (napr. "https://calendly.com/rasto-kozlik/uvodny-hovor").
     // Kým je prázdny, tlačidlo „Rezervovať termín" plynulo odscrolluje na formulár.
-    CALENDLY_URL: "",
+    CALENDLY_URL: "https://calendly.com/rastislavkozlik/30min",
 
     // Google Analytics Measurement ID (property rastoai.sk).
     // Meranie sa spúšťa až po súhlase s analytickými cookies.
