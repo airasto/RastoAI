@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="sk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kolega prišiel na poradu v AI okuliaroch. Čo s tým? | Rasťo Kozlík</title>
+    <meta name="description" content="Meta zatvorila dieru v nahrávaní cez AI okuliare. Čo to znamená pre porady a pohovory a aké pravidlo si firma má napísať skôr, než ich niekto prinesie.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rastoai.sk/clanky/ai-okuliare-na-porade.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="sk_SK">
+    <meta property="og:title" content="Kolega prišiel na poradu v AI okuliaroch. Čo s tým?">
+    <meta property="og:description" content="Nahrávanie cez AI okuliare na poradách a pohovoroch: čo hovorí § 12 Občianskeho zákonníka a § 13 ods. 4 Zákonníka práce a aké pravidlo si napísať.">
+    <meta property="og:url" content="https://rastoai.sk/clanky/ai-okuliare-na-porade.html">
+
+    <!-- Tailwind CSS -->
+        <!-- ===== Brand: favicon a ikony (Brand Kit 1 – červený) ===== -->
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon_RK_cervena.svg">
+    <link rel="alternate icon" type="image/png" href="../assets/logo/favicon_RK_cervena.png">
+    <link rel="apple-touch-icon" href="../assets/logo/favicon_RK_cervena.png">
+    <meta name="theme-color" content="#E60000" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+
+    <!-- ===== Brand: typografia Inter ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html, body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+        h1 { letter-spacing: -0.02em; }
+        h2, h3 { letter-spacing: -0.01em; }
+        code, pre, kbd, samp, .font-mono, .prompt { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+
+    <link rel="stylesheet" href="../assets/tailwind.css">
+    <script>
+        try {
+            const s = localStorage.getItem('rk-theme');
+            if (s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+
+
+    <style>
+        .icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .art h2 { font-size: 1.6rem; line-height: 1.3; font-weight: 800; margin: 2.4rem 0 1rem; }
+        .art h3 { font-size: 1.2rem; font-weight: 700; margin: 1.8rem 0 .7rem; }
+        .art p  { margin: 0 0 1.1rem; line-height: 1.75; }
+        .art ul, .art ol { margin: 0 0 1.2rem 1.4rem; line-height: 1.7; }
+        .art ul { list-style: disc; }
+        .art ol { list-style: decimal; }
+        .art li { margin-bottom: .45rem; }
+        .art strong { font-weight: 700; }
+        .art .tip { border-left: 4px solid #E60000; padding: .9rem 1.2rem; border-radius: 0 .75rem .75rem 0; margin: 1.4rem 0; }
+        .art .prompt-box { font-family: ui-monospace, monospace; font-size: .9rem; padding: 1rem 1.2rem; border-radius: .75rem; margin: 1rem 0 1.4rem; }
+        .art table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .92rem; }
+        .art th { text-align: left; font-weight: 700; padding: .6rem .8rem; border-bottom: 2px solid #E60000; }
+        .art td { padding: .6rem .8rem; border-bottom: 1px solid rgba(128,128,128,.25); vertical-align: top; }
+        .gated-locked { max-height: 480px; overflow: hidden; }
+        .gated-locked > * { filter: blur(6px); user-select: none; pointer-events: none; }
+    </style>
+</head>
+<body class="font-sans text-[#333333] dark:text-gray-300 bg-white dark:bg-[#0a0a0a] min-h-screen transition-colors duration-300">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+</svg>
+
+<nav class="sticky top-0 z-50 bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur border-b border-gray-100 dark:border-gray-800 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <a href="../index.html" class="flex items-center gap-3 font-bold text-xl tracking-tighter text-black dark:text-white" aria-label="Rasťo Kozlík – AI Konzultant, domov">
+            <img src="../assets/logo/znacka_RK_svetla.svg" alt="Rasťo Kozlík – značka RK" width="106" height="40" class="h-8 w-auto shrink-0 block dark:hidden">
+            <img src="../assets/logo/znacka_RK.svg" alt="" aria-hidden="true" width="106" height="40" class="h-8 w-auto shrink-0 hidden dark:block">
+            <span class="hidden sm:inline">Rasťo <span class="text-[#E60000]">Kozlík</span></span> <span class="hidden sm:inline text-[#54595F] font-light">|</span> <span class="hidden sm:inline text-xs uppercase tracking-widest font-medium mt-1 text-[#54595F] dark:text-gray-400">AI Konzultant</span>
+        </a>
+        <div class="flex items-center gap-3">
+            <a href="../index.html#clanky" class="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-gray-300 hover:text-[#E60000] transition-colors">
+                <svg class="icon w-4 h-4"><use href="#i-back"/></svg> Všetky články
+            </a>
+            <button data-theme-toggle aria-label="Prepnúť svetlý/tmavý režim" class="p-2 rounded-full text-[#333333] dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <svg class="icon w-5 h-5 hidden dark:block"><use href="#i-sun"/></svg>
+                <svg class="icon w-5 h-5 dark:hidden"><use href="#i-moon"/></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main>
+<article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+    <header class="mb-10">
+        <span class="inline-flex items-center gap-2 bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#E60000] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-[#E60000]/20 dark:border-[#E60000]/30">Pre firmy</span>
+        <h1 class="text-3xl lg:text-5xl font-extrabold text-black dark:text-white mt-5 leading-tight">Kolega prišiel na poradu v AI okuliaroch. Čo s tým?</h1>
+        <div class="flex items-center gap-4 mt-5 text-sm text-[#54595F] dark:text-gray-400">
+            <span class="flex items-center gap-1.5"><svg class="icon w-4 h-4"><use href="#i-clock"/></svg> 8 min čítania</span>
+            <span>·</span><span>August 2026</span>
+            <span>·</span><span>Rasťo Kozlík</span>
+        </div>
+    </header>
+
+    <div class="art text-[17px]">
+        <p class="text-lg font-medium text-black dark:text-white">Meta koncom augusta zatvorila ďalšiu dieru v ochrane súkromia svojich okuliarov. Doteraz stačilo spustiť nahrávanie, počkať, kým sa rozsvieti kontrolka, a potom ju zakryť prstom alebo kúskom pásky. Kamera nahrávala ďalej, len o tom nikto v miestnosti nevedel. Po aktualizácii sa záznam pri zakrytej kontrolke sám zastaví.</p>
+
+        <p>Prešiel som si to z pohľadu firemnej praxe – porady, pohovory, výrobné prevádzky, rokovania s dodávateľmi. Záver je nepríjemný: pre Metu je to dobrá správa, pre vašu firmu nemení takmer nič. Problém, ktorý musíte vyriešiť, nie je technický a nevyrieši ho výrobca okuliarov.</p>
+
+        <h2 class="text-black dark:text-white">Čo sa presne zmenilo</h2>
+        <p>Ochrana kontrolky nahrávania sa u Mety tento rok vrstvila v troch krokoch:</p>
+        <ul>
+            <li><strong>Pôvodný stav:</strong> okuliare odmietli spustiť nahrávanie, ak bola kontrolka zakrytá už pred štartom.</li>
+            <li><strong>Júl 2026:</strong> kamera sa vypne, keď systém zistí manipuláciu s kontrolkou alebo jej poškodenie.</li>
+            <li><strong>August 2026:</strong> záznam sa zastaví aj vtedy, keď kontrolku zakryjete až počas nahrávania – teda presne v poradí, ktorým sa doterajšia ochrana obchádzala.</li>
+        </ul>
+        <p>Týka sa to modelov Ray-Ban Meta, Oakley Meta a Meta AI okuliarov. Zmenu oznámil Alex Himel, viceprezident Mety pre rozšírenú realitu.</p>
+        <p>Malá poznámka k presnosti: jeden zdroj píše, že sa aktualizácia už rozbieha, druhý z toho istého dňa ju popisuje ako pripravovanú. Nerátajte teda s tým, že opravu majú všetky okuliare vo vašom okolí. Softvérová ochrana je vždy len taká dobrá, ako aktualizácia na konkrétnom kuse.</p>
+
+        <h2 class="text-black dark:text-white">Prečo je to pre firmu stále rovnaký problém</h2>
+        <p>Sú dva dôvody, prečo by som si po tejto oprave nevydýchol.</p>
+        <p><strong>Kontrolku aj tak nikto nevidí.</strong> Je malá, na slnku prakticky neviditeľná a väčšina ľudí netuší, čo znamená. Ochrana, ktorá stojí na tom, že si okoloidúci všimne bodku na obrúčke a správne si ju vyloží, nie je ochrana. Je to formalita.</p>
+        <p><strong>Nahrávanie nie je jediná otázka.</strong> Druhá je, kde tie zábery skončia. Fortune tento rok popísal prípad z Kene, kde pracovníci pri tréningu modelov videli osobné momenty ľudí zo záznamov okuliarov. To nie je otázka toho, či kontrolka svieti – to je otázka celého reťazca spracovania.</p>
+        <p><em>Zaujímavosť na okraj, kam môže technológia smerovať:</em> podľa Financial Times testuje Meta prototyp takzvaného „super-sensing" – priebežné snímanie zvuku a fotografovanie každých pár sekúnd. Ide o neoficiálnu informáciu o prototype, nie o produkt, ktorý si dnes niekto kúpi, takže by som na tom nestaval žiadne rozhodnutie. Ale je dobré vedieť, že smer vývoja ide k viac, nie menej snímania.</p>
+
+        <h2 class="text-black dark:text-white">Regulátori to riešia a nie sú jednotní</h2>
+        <p>Toto nie je hypotetická téma. Európske dozorné úrady evidujú konkrétne prípady, keď zamestnanci nahrávali porady a výrobné linky a záznamy potom zverejnili alebo použili ako páku pri spore so zamestnávateľom.</p>
+        <p>Prístupy sa pritom líšia dosť dramaticky:</p>
+        <table>
+            <tr><th>Krajina</th><th>Postoj</th></tr>
+            <tr><td>Taliansko, Írsko</td><td>Už v roku 2021 riešili s Facebookom ochranu údajov pri Ray-Ban Stories</td></tr>
+            <tr><td>Nórsko</td><td>Vydalo pokyny: informovať okolie o nahrávaní, vyhnúť sa intímnym situáciám</td></tr>
+            <tr><td>Francúzsko</td><td>Akčný plán s výzvou na „zvýšenú kolektívnu ostražitosť"</td></tr>
+            <tr><td>Hamburg (Nemecko)</td><td>Komisár argumentuje za úplný zákaz s odvolaním na zákony proti skrytým nahrávacím zariadeniam</td></tr>
+        </table>
+        <p>Zhrnutie stavu je zatiaľ také, že EÚ sa spolieha najmä na spoločenskú akceptáciu – teda na to, že sa ľudia sami dohodnú, čo je slušné. Ako záruka pre firmu je to málo.</p>
+
+        <h2 class="text-black dark:text-white">Čo na to slovenské právo</h2>
+        <p>Nie som právnik a toto nie je právne stanovisko. Sú to dve ustanovenia, ktoré si pred rozhodovaním pozrite alebo dajte pozrieť.</p>
+        <p><strong>§ 12 Občianskeho zákonníka.</strong> „Písomnosti osobnej povahy, podobizne, obrazové snímky a zvukové záznamy týkajúce sa občana alebo jeho prejavov osobnej povahy smú sa použiť len s jeho privolením." Existujú zákonné licencie (úradná, vedecká, umelecká, spravodajská), ale bežná porada pod žiadnu z nich nespadá.</p>
+        <p><strong>§ 13 ods. 4 Zákonníka práce.</strong> „Zamestnávateľ nesmie bez vážnych dôvodov spočívajúcich v osobitnej povahe činností zamestnávateľa narúšať súkromie zamestnanca na pracovisku a v spoločných priestoroch zamestnávateľa tým, že ho monitoruje, vykonáva záznam telefonických hovorov uskutočňovaných technickými pracovnými zariadeniami zamestnávateľa a kontroluje elektronickú poštu odoslanú z pracovnej elektronickej adresy a doručenú na túto adresu bez toho, aby ho na to vopred upozornil. Ak zamestnávateľ zavádza kontrolný mechanizmus, je povinný prerokovať so zástupcami zamestnancov rozsah kontroly, spôsob jej uskutočnenia, ako aj dobu jej trvania a informovať zamestnancov o rozsahu kontroly, spôsobe jej uskutočnenia, ako aj o dobe jej trvania."</p>
+        <p>Všimnite si, čo tam je vymenované: monitorovanie, záznam telefonických hovorov, kontrola pracovnej e-mailovej schránky. Okuliare s kamerou tam pochopiteľne nie sú – ustanovenie je staršie než táto technológia.</p>
+        <div class="tip bg-[#FFF5F5] dark:bg-[#E60000]/8">
+            <p class="!mb-0"><strong>Tu je tá diera:</strong> Zákonník práce rieši situáciu, keď monitoruje zamestnávateľ. Nerieši situáciu, keď zamestnanec nahráva iného zamestnanca, alebo keď návšteva nahráva vaše rokovanie. Na to zákon interné pravidlo nenahradí – to pravidlo si musíte napísať sami.</p>
+        </div>
+
+        <h2 class="text-black dark:text-white">Kde to bolí podľa oddelení</h2>
+        <table>
+            <tr><th>Oddelenie</th><th>Riziko</th><th>Čo s tým</th></tr>
+            <tr><td><strong>HR</strong></td><td>Nahrávka z pohovoru alebo z disciplinárneho rozhovoru zverejnená alebo použitá v spore</td><td>Doplniť vetu o nahrávaní do pozvánky na pohovor a do zápisu z rozhovoru</td></tr>
+            <tr><td><strong>Výroba, kvalita</strong></td><td>Záber z linky s technológiou, rozpracovanou zákazkou alebo vadou</td><td>Zaradiť nositeľné kamery do rovnakého režimu ako mobily vo vyhradených zónach</td></tr>
+            <tr><td><strong>Obchod, vedenie</strong></td><td>Rokovanie o cenách, akvizícii alebo reorganizácii s tretími stranami</td><td>Na úvod citlivého rokovania jedna veta o nahrávaní, rovnako ako pri online porade</td></tr>
+            <tr><td><strong>IT, bezpečnosť</strong></td><td>Nositeľné zariadenie sa nedá spravovať cez firemný MDM</td><td>Doplniť do smernice o zariadeniach, nie riešiť ako IT problém</td></tr>
+        </table>
+
+        <h2 class="text-black dark:text-white">Úprimne k limitom</h2>
+        <p>Toto pravidlo si technicky nevynútite. Okuliare vyzerajú ako okuliare, nemáte detektor a nemáte ako zistiť, či niekto nahráva. Kto to poruší vedome, ten to poruší.</p>
+        <p>Zároveň sa dá ľahko prestreliť. Zákaz „všetkých zariadení s kamerou" by zakázal aj mobil na stole a smart hodinky, čo je nevymožiteľné a hlavne smiešne. Pravidlo, ktoré nikto nedodržiava, je horšie než žiadne, lebo naučí ľudí ignorovať aj tie ostatné.</p>
+        <p>Reálny prínos je inde: pravidlo posúva situáciu z „to sa nesmelo?" do „to bolo porušenie, ktoré má následok". A hlavne dáva človeku na porade oprávnenie sa ozvať. Väčšina ľudí sa dnes neozve nie preto, že by im to nevadilo, ale preto, že nevedia, či na to majú právo.</p>
+
+        <h2 class="text-black dark:text-white">Čo z toho má zmysel pre vašu firmu</h2>
+        <ul>
+            <li><strong>Hneď:</strong> jedna veta v pravidlách porád, že nahrávanie akýmkoľvek zariadením vyžaduje súhlas prítomných. Nič viac zatiaľ netreba.</li>
+            <li><strong>Po dohode s právnikom a HR:</strong> doplnenie do pracovného poriadku alebo smernice o používaní zariadení, aby porušenie malo definovaný následok. Toto je moment, keď treba prerokovanie so zástupcami zamestnancov, ak ich máte.</li>
+            <li><strong>Systémovo:</strong> zaradiť nositeľné zariadenia do prehľadu spracovateľských činností a do vstupných pravidiel pre návštevy a dodávateľov. Pri prevádzkach s chránenou technológiou aj do zmlúv.</li>
+        </ul>
+
+        <h2 class="text-black dark:text-white">Čo môžete spraviť tento týždeň</h2>
+        <ol>
+            <li><strong>Dnes, 15 minút:</strong> zistite, či už niekto vo firme takéto okuliare nosí. Nie kontrolou – jednoduchou otázkou na porade vedúcich.</li>
+            <li><strong>Tento týždeň:</strong> vložte do šablóny pozvánky na poradu a na pohovor jednu vetu o nahrávaní. Je to najlacnejšie opatrenie s najväčším dosahom.</li>
+            <li><strong>Tento týždeň:</strong> prejdite existujúcu smernicu o zariadeniach a pozrite sa, či pojem „zariadenie s kamerou" pokrýva aj to, čo má človek na hlave. Vo väčšine firiem nepokrýva.</li>
+            <li><strong>Do mesiaca:</strong> doplňte pravidlo do pracovného poriadku a povedzte o ňom na porade nahlas. Smernica, o ktorej sa nehovorí, neexistuje.</li>
+        </ol>
+        <p>Text na skopírovanie do smernice, ktorý používam ako východisko a ktorý si dajte skontrolovať právnikovi:</p>
+        <div class="prompt-box bg-gray-100 dark:bg-[#161616] text-black dark:text-gray-200">Vyhotovovanie obrazových, zvukových alebo obrazovo-zvukových záznamov z porád, pohovorov, rokovaní a z priestorov prevádzky je možné len s predchádzajúcim súhlasom všetkých zúčastnených osôb. Pravidlo sa vzťahuje na všetky zariadenia vrátane mobilných telefónov, hodiniek, okuliarov a iných nositeľných zariadení s kamerou alebo mikrofónom. Osoba, ktorá záznam vyhotovuje, je povinná o tom informovať pred začiatkom záznamu. To sa netýka záznamov vyhotovených zamestnávateľom podľa osobitných predpisov.</div>
+
+        <p>Nemyslím si, že AI okuliare treba vo firmách zakazovať. Myslím si, že ich treba pomenovať skôr, než ich niekto prinesie – pretože pravidlo napísané po incidente vyzerá vždy ako trest za konkrétneho človeka, nie ako pravidlo.</p>
+    </div>
+
+    <aside class="mt-14 bg-gradient-to-br from-[#E60000] to-[#AA0000] text-white rounded-3xl p-8 lg:p-10">
+        <h2 class="text-2xl font-extrabold mb-3">Máte vo firme napísané, kto čo smie nahrávať?</h2>
+        <p class="text-white/90 mb-6 leading-relaxed">Na workshope <strong>AI pre biznis</strong> prechádzame presne takéto rozhodnutia na vašich vlastných procesoch – kde AI a nové zariadenia dávajú zmysel, kde vytvárajú riziko a ako to zapísať tak, aby to ľudia dodržali.</p>
+        <a href="../pre-firmy.html#workshopy" class="inline-block bg-white text-[#E60000] px-7 py-3.5 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg">Pozrieť workshopy →</a>
+    </aside>
+</article>
+</main>
+
+<footer class="border-t border-gray-100 dark:border-gray-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-[#54595F] dark:text-gray-500">
+        <p>© <span data-year></span> Rasťo Kozlík · AI Konzultant. Všetky práva vyhradené.</p>
+        <span class="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
+        <a href="../ochrana-sukromia.html" class="underline hover:text-[#E60000]">Ochrana súkromia a cookies</a>
+    </div>
+</footer>
+
+</body>
+</html>
