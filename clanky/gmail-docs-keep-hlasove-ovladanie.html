@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="sk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gmail, Docs a Keep hlasom: čo to vie a čo zatiaľ nie | Rasťo Kozlík</title>
+    <meta name="description" content="Google spustil Gmail Live, Docs Live a Keep Live. Čo každá funkcia vie, v ktorej tarife ju nájdete a prečo zatiaľ beží len v angličtine.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rastoai.sk/clanky/gmail-docs-keep-hlasove-ovladanie.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="sk_SK">
+    <meta property="og:title" content="Gmail, Docs a Keep hlasom: čo to vie a čo zatiaľ nie">
+    <meta property="og:description" content="Google spustil Gmail Live, Docs Live a Keep Live. Čo každá funkcia vie, v ktorej tarife ju nájdete a prečo zatiaľ beží len v angličtine.">
+    <meta property="og:url" content="https://rastoai.sk/clanky/gmail-docs-keep-hlasove-ovladanie.html">
+
+    <!-- Tailwind CSS -->
+        <!-- ===== Brand: favicon a ikony (Brand Kit 1 – červený) ===== -->
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon_RK_cervena.svg">
+    <link rel="alternate icon" type="image/png" href="../assets/logo/favicon_RK_cervena.png">
+    <link rel="apple-touch-icon" href="../assets/logo/favicon_RK_cervena.png">
+    <meta name="theme-color" content="#E60000" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+
+    <!-- ===== Brand: typografia Inter ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html, body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+        h1 { letter-spacing: -0.02em; }
+        h2, h3 { letter-spacing: -0.01em; }
+        code, pre, kbd, samp, .font-mono, .prompt { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+
+    <link rel="stylesheet" href="../assets/tailwind.css">
+    <script>
+        try {
+            const s = localStorage.getItem('rk-theme');
+            if (s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+
+
+    <style>
+        .icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .art h2 { font-size: 1.6rem; line-height: 1.3; font-weight: 800; margin: 2.4rem 0 1rem; }
+        .art h3 { font-size: 1.2rem; font-weight: 700; margin: 1.8rem 0 .7rem; }
+        .art p  { margin: 0 0 1.1rem; line-height: 1.75; }
+        .art ul, .art ol { margin: 0 0 1.2rem 1.4rem; line-height: 1.7; }
+        .art ul { list-style: disc; }
+        .art ol { list-style: decimal; }
+        .art li { margin-bottom: .45rem; }
+        .art strong { font-weight: 700; }
+        .art .tip { border-left: 4px solid #E60000; padding: .9rem 1.2rem; border-radius: 0 .75rem .75rem 0; margin: 1.4rem 0; }
+        .art .prompt-box { font-family: ui-monospace, monospace; font-size: .9rem; padding: 1rem 1.2rem; border-radius: .75rem; margin: 1rem 0 1.4rem; }
+        .art table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .92rem; }
+        .art th { text-align: left; font-weight: 700; padding: .6rem .8rem; border-bottom: 2px solid #E60000; }
+        .art td { padding: .6rem .8rem; border-bottom: 1px solid rgba(128,128,128,.25); vertical-align: top; }
+        .gated-locked { max-height: 480px; overflow: hidden; }
+        .gated-locked > * { filter: blur(6px); user-select: none; pointer-events: none; }
+    </style>
+</head>
+<body class="font-sans text-[#333333] dark:text-gray-300 bg-white dark:bg-[#0a0a0a] min-h-screen transition-colors duration-300">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+</svg>
+
+<nav class="sticky top-0 z-50 bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur border-b border-gray-100 dark:border-gray-800 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <a href="../index.html" class="flex items-center gap-3 font-bold text-xl tracking-tighter text-black dark:text-white" aria-label="Rasťo Kozlík – AI Konzultant, domov">
+            <img src="../assets/logo/znacka_RK_svetla.svg" alt="Rasťo Kozlík – značka RK" width="106" height="40" class="h-8 w-auto shrink-0 block dark:hidden">
+            <img src="../assets/logo/znacka_RK.svg" alt="" aria-hidden="true" width="106" height="40" class="h-8 w-auto shrink-0 hidden dark:block">
+            <span class="hidden sm:inline">Rasťo <span class="text-[#E60000]">Kozlík</span></span> <span class="hidden sm:inline text-[#54595F] font-light">|</span> <span class="hidden sm:inline text-xs uppercase tracking-widest font-medium mt-1 text-[#54595F] dark:text-gray-400">AI Konzultant</span>
+        </a>
+        <div class="flex items-center gap-3">
+            <a href="../index.html#clanky" class="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-gray-300 hover:text-[#E60000] transition-colors">
+                <svg class="icon w-4 h-4"><use href="#i-back"/></svg> Všetky články
+            </a>
+            <button data-theme-toggle aria-label="Prepnúť svetlý/tmavý režim" class="p-2 rounded-full text-[#333333] dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <svg class="icon w-5 h-5 hidden dark:block"><use href="#i-sun"/></svg>
+                <svg class="icon w-5 h-5 dark:hidden"><use href="#i-moon"/></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main>
+<article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+    <header class="mb-10">
+        <span class="inline-flex items-center gap-2 bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#E60000] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-[#E60000]/20 dark:border-[#E60000]/30">Sprievodca</span>
+        <h1 class="text-3xl lg:text-5xl font-extrabold text-black dark:text-white mt-5 leading-tight">Gmail, Docs a Keep hlasom: čo to vie a čo zatiaľ nie</h1>
+        <div class="flex items-center gap-4 mt-5 text-sm text-[#54595F] dark:text-gray-400">
+            <span class="flex items-center gap-1.5"><svg class="icon w-4 h-4"><use href="#i-clock"/></svg> 9 min čítania</span>
+            <span>·</span><span>September 2026</span>
+            <span>·</span><span>Rasťo Kozlík</span>
+        </div>
+    </header>
+
+    <div class="art text-[17px]">
+        <p class="text-lg font-medium text-black dark:text-white">Google 3. septembra spustil tri hlasové režimy vo svojich aplikáciách: <strong>Gmail Live, Docs Live a Keep Live</strong>. Namiesto písania do chatovacieho okna sa s aplikáciou rozprávate. Gmail vám nájde údaj v pošte na položenú otázku, Docs vás prevedie k prvému draftu dokumentu, Keep premení voľné rozprávanie na usporiadaný zoznam. Google to v oznámení opisuje ako „conversational features", ktoré sa spúšťajú tento týždeň.</p>
+
+        <p>Prešiel som si oficiálne oznámenie aj podmienky dostupnosti z pohľadu firemnej praxe – administratíva, obchod, HR. Nižšie nájdete, čo presne každá z troch funkcií vie, kto sa k nej dostane a za koľko, jeden hotový postup na vyskúšanie a tri veci, ktoré Google v oznámení nespomína.</p>
+
+        <p>Jednu z nich poviem hneď na začiatku, aby ste nečítali osem minút o niečom, čo si potom nebudete vedieť zapnúť: <strong>všetky tri funkcie bežia zatiaľ výhradne v angličtine</strong>. Ak máte telefón a Gmail po slovensky, začnite tým, že si prepnete jazyk aplikácie.</p>
+
+        <h2 class="text-black dark:text-white">Prečo hlas a nie bežný chat</h2>
+        <p>Hlasové ovládanie AI nie je nové. Nové je to, že je <strong>priamo v aplikácii, kde tá práca vzniká</strong> – nie v samostatnom chate, z ktorého treba výstup kopírovať späť.</p>
+        <p>Doteraz to vyzeralo takto: otvoríte Gemini alebo ChatGPT, napíšete prompt, dostanete text, prekopírujete ho do dokumentu, upravíte formátovanie. Štyri kroky navyše, ktoré samy o sebe nie sú náročné, ale spolu spôsobia, že to väčšina ľudí po týždni prestane robiť.</p>
+        <p>Hlas nevyhráva presnosťou. Vyhráva momentom – dostane sa k vám tam, kde by ste klávesnicu neotvorili. Cesta z klienta, päť minút medzi stretnutiami, ruky plné niečoho iného.</p>
+        <div class="tip bg-[#FFF5F5] dark:bg-[#E60000]/8">
+            <p class="!mb-0"><strong>Pravidlo:</strong> hlasové režimy nasadzujte tam, kde nie je iná alternatíva – nie tam, kde by ste to aj tak spravili písaním rýchlejšie.</p>
+        </div>
+
+        <h2 class="text-black dark:text-white">1. Gmail Live – hľadanie v pošte položením otázky</h2>
+        <p>V mobilnom Gmaile pribudla ikona <strong>Live vo vyhľadávacom paneli</strong>. Po klepnutí sa s poštou rozprávate. Google uvádza ako príklad otázku „What's my flight's gate number?" – teda situáciu, keď viete, že údaj máte niekde v pošte, ale neviete, v ktorom maile.</p>
+        <p>Ako to fungovalo doteraz: <code>from:</code>, <code>has:attachment</code>, dátumový filter, potom scrollovanie a otváranie troch mailov, kým nenájdete ten správny.</p>
+        <p>Kde to využijete:</p>
+        <ul>
+            <li><strong>Obchod</strong> – cestou ku klientovi si vypýtate, čo bolo dohodnuté v poslednej komunikácii a aká cena tam padla.</li>
+            <li><strong>Administratíva</strong> – dohľadanie čísla objednávky, variabilného symbolu alebo termínu dodania bez otvárania desiatich vlákien.</li>
+            <li><strong>HR</strong> – kedy nastupuje konkrétny kandidát a čo sme mu naposledy poslali.</li>
+        </ul>
+        <p>Dostupnosť: Android aj iOS, tarify <strong>Google AI Plus, Pro a Ultra</strong>.</p>
+
+        <h2 class="text-black dark:text-white">2. Docs Live – prvý draft nadiktovaním</h2>
+        <p>V mobilnej aplikácii Docs kliknete na plávajúce tlačidlo a zvolíte <strong>„Create with voice"</strong>. Google to opisuje ako „thought partner and co-writer", ktorý vám pomôže dostať sa rýchlejšie k prvému draftu.</p>
+        <p>Podstatná časť je v tom, odkiaľ berie kontext: podľa Googlu vie ťahať relevantné detaily <strong>priamo z vášho Gmailu, Drive, Chatu a z webu</strong>. Nediktujete teda do prázdna – nadiktujete zámer a nástroj k nemu doplní podklady, ktoré už vo firme máte.</p>
+        <p>Kde to využijete:</p>
+        <ul>
+            <li>Zápis zo stretnutia nadiktovaný cestou späť do kancelárie, doplnený o to, čo bolo v pôvodnej pozvánke.</li>
+            <li>Kostra ponuky pre klienta, do ktorej sa dotiahnu údaje z predchádzajúcej korešpondencie.</li>
+            <li>Podklad na internú smernicu, ktorý ide potom človeku na dopracovanie.</li>
+        </ul>
+        <p>Dostupnosť: Android aj iOS, ale pozor – <strong>len tarify AI Pro a Ultra</strong>. V lacnejšom AI Plus Docs Live nie je. Je to jediná z trojice, ktorá je za drahším predplatným.</p>
+
+        <h2 class="text-black dark:text-white">3. Keep Live – z voľného rozprávania hotový zoznam</h2>
+        <p>Keep Live podľa Googlu „rozumie vášmu toku vedomia" a spracuje ho na pozadí do štruktúrovaných zoznamov. V praxi to znamená, že môžete tri minúty nesúvisle rozprávať, čo všetko treba spraviť, a na konci máte usporiadané body namiesto prepisu.</p>
+        <p>Toto je z celej trojice najmenej efektná a zároveň najpoužiteľnejšia vec. Väčšina úloh, ktoré vo firme zapadnú, zapadne preto, že v momente ich vzniku nebolo kam ich napísať.</p>
+        <p>Dostupnosť: zatiaľ <strong>iba Android</strong>, tarify AI Plus, Pro a Ultra.</p>
+
+        <h2 class="text-black dark:text-white">Prehľad dostupnosti</h2>
+        <table>
+            <tr><th>Funkcia</th><th>Platformy</th><th>Tarify</th><th>Kde sa spúšťa</th></tr>
+            <tr><td>Gmail Live</td><td>Android, iOS</td><td>AI Plus, Pro, Ultra</td><td>Ikona Live vo vyhľadávaní</td></tr>
+            <tr><td>Docs Live</td><td>Android, iOS</td><td><strong>AI Pro, Ultra</strong></td><td>Plávajúce tlačidlo → Create with voice</td></tr>
+            <tr><td>Keep Live</td><td><strong>Iba Android</strong></td><td>AI Plus, Pro, Ultra</td><td>Hlasová aktivácia v aplikácii</td></tr>
+        </table>
+        <p>Firemní zákazníci Google Workspace to podľa Googlu dostanú „čoskoro" – konkrétny termín oznámený nebol. Ak vo firme beží Workspace, zatiaľ to viete testovať len na súkromnom účte s AI predplatným.</p>
+        <p>Ceny na Slovensku: <strong>Google AI Plus 4,99 € mesačne</strong>, AI Pro 21,99 € mesačne. Rozdiel medzi nimi je pri týchto funkciách presne jedna vec – Docs Live.</p>
+
+        <h2 class="text-black dark:text-white">Workflow: od stretnutia k zápisu a follow-up mailu</h2>
+        <p>Toto je postup, ktorý dáva zmysel vyskúšať ako prvý, lebo spája všetky tri funkcie do jedného reťazca.</p>
+        <ol>
+            <li><strong>Hneď po stretnutí, ešte v aute alebo na chodbe</strong> – otvorte Keep a nadiktujte všetko, čo padlo. Nesnažte sa o štruktúru, na to je tam Gemini.</li>
+            <li><strong>Skontrolujte výstup.</strong> Keep vám vráti body. Doplňte, čo vypadlo, a vyhoďte, čo nie je úloha.</li>
+            <li><strong>Otvorte Docs a spustite Create with voice.</strong> Nadiktujte, že chcete zápis zo stretnutia s klientom, a nechajte nástroj dotiahnuť kontext z pôvodnej pozvánky a predchádzajúcej korešpondencie.</li>
+            <li><strong>Prejdite draft očami.</strong> Nie preto, že je zlý, ale preto, že pod zápis sa podpisujete vy.</li>
+            <li><strong>Follow-up mail</strong> napíšte klasicky. Pri komunikácii navonok je diktovanie zatiaľ skôr riziko než úspora.</li>
+        </ol>
+        <p>Celý reťazec zaberie asi desať minút. Manuálne to isté trvá dvadsať až tridsať a väčšinou sa to spraví až večer, keď si už polovicu nepamätáte.</p>
+
+        <h3 class="text-black dark:text-white">Hotové prompty na vyskúšanie</h3>
+        <p>Keďže funkcia beží len v angličtine, prompty sú po anglicky. Slovenský preklad je pod nimi, aby ste vedeli, čo diktujete.</p>
+        <p>Do Docs Live nadiktujte:</p>
+        <div class="prompt-box bg-gray-100 dark:bg-[#161616] text-black dark:text-gray-200">Create meeting notes from a client meeting. Split them into three parts: what we agreed on, what is still open, and who does what by when. Pull the context about this client from my email and Drive. Write it plainly, no intro, no summary.</div>
+        <p><em>(Priprav zápis zo stretnutia s klientom. Rozdeľ ho na tri časti: čo bolo dohodnuté, čo zostáva otvorené, a kto má čo spraviť do kedy. Kontext k tomuto klientovi si dotiahni z mojej pošty a z Drive. Píš vecne, bez úvodu a bez záveru.)</em></p>
+        <p>Do Gmail Live sa opýtajte:</p>
+        <div class="prompt-box bg-gray-100 dark:bg-[#161616] text-black dark:text-gray-200">Find my latest email thread with [company name]. Tell me what price was agreed, what deadline we set, and whether anything was left unanswered.</div>
+        <p><em>(Nájdi mi v pošte poslednú komunikáciu s firmou [názov firmy]. Povedz mi, aká cena tam padla, aký bol dohodnutý termín a či zostalo niečo nezodpovedané.)</em></p>
+
+        <h2 class="text-black dark:text-white">Na čo si dať pozor</h2>
+        <p><strong>Funguje to zatiaľ výhradne v angličtine.</strong> Android Authority uvádza, že funkcie sú na mobile dostupné „in English globally" – teda celosvetovo, ale len v angličtine. Slovenčina zatiaľ nie je nikde spomenutá a Google v oznámení podporované jazyky vôbec neuvádza.</p>
+        <p>Praktický dôsledok: ak vám ikona Live v Gmaile nenaskočila, nehľadajte chybu v tarife. Prepnite si najprv jazyk aplikácie na angličtinu a skúste to znova. Rátajte s tým, že diktovať budete musieť po anglicky – čo je pri poznámkach a zápisoch pre väčšinu slovenských firiem rozdiel medzi „denne to používam" a „vyskúšal som to raz".</p>
+        <p><strong>Docs Live je za drahšou tarifou.</strong> Ak si kúpite AI Plus za 4,99 € s očakávaním, že budete diktovať dokumenty, nebudete. Docs Live začína až na AI Pro za 21,99 €.</p>
+        <p><strong>Keep Live nie je na iPhone.</strong> Ak máte vo firme prevažne iOS, z tejto trojice vám zostávajú dve funkcie.</p>
+        <p><strong>Firemné Workspace účty to zatiaľ nemajú.</strong> Testovanie teda prebieha mimo firemného prostredia, čo je pri práci s reálnymi klientskymi dátami vec, ktorú treba vyriešiť skôr, než to niekomu odporučíte.</p>
+        <p><strong>Kontext z Gmailu a Drive znamená prístup k Gmailu a Drive.</strong> Docs Live ťahá podklady z vašej pošty a súborov. Pri osobnom účte je to vaša vec. Pri firemných dátach to je vec, ktorú má odobriť niekto zodpovedný za ochranu údajov, nie jednotlivec.</p>
+
+        <h2 class="text-black dark:text-white">Čo z toho má zmysel pre vašu firmu</h2>
+        <ul>
+            <li><strong>Hneď:</strong> nech si to na súkromnom účte vyskúšajú dvaja-traja ľudia, ktorí veľa cestujú alebo majú veľa stretnutí, a ktorým angličtina nerobí problém. Obchodníci a manažéri. Nech si prepnú jazyk aplikácie, týždeň to používajú na vlastné poznámky – nie na klientske dáta – a nech povedia, či to reálne používali alebo to po dvoch dňoch prestali otvárať.</li>
+            <li><strong>Po dohode s IT:</strong> overte, ako to bude s firemnými Workspace účtami, keď to Google sprístupní, a či je v poriadku, aby nástroj ťahal kontext z firemnej pošty a Drive. Bez tejto odpovede to nemá zmysel plošne odporúčať.</li>
+            <li><strong>Systémovo:</strong> ak sa potvrdí, že hlasový vstup ľudia reálne používajú, má zmysel prepísať proces zápisov zo stretnutí. Nie kúpiť licencie, ale zmeniť to, kedy a kde zápis vzniká. Väčšina firiem začína naopak – kúpi predplatné a až potom hľadá, na čo ho použiť.</li>
+        </ul>
+
+        <h2 class="text-black dark:text-white">Vyskúšajte ešte dnes</h2>
+        <ol>
+            <li><strong>Dnes (2 minúty):</strong> prepnite si v mobilnom Gmaile jazyk aplikácie na angličtinu a pozrite sa, či sa vo vyhľadávaní objaví ikona Live. Ak áno, položte jednu otázku po anglicky a máte odpoveď na to, či sa vám to oplatí riešiť ďalej.</li>
+            <li><strong>Dnes (5 minút):</strong> na Androide nadiktujte do Keep zoznam vecí na budúci týždeň. Bez štruktúry, tak ako vám to napadne.</li>
+            <li><strong>Tento týždeň:</strong> po najbližšom stretnutí prejdite celý päťkrokový reťazec vyššie a odmerajte si, koľko vám to trvalo oproti bežnému postupu.</li>
+            <li><strong>Do mesiaca:</strong> rozhodnite sa, či vám to za tú angličtinu stojí. Ak áno, riešte s IT firemné účty. Ak nie, nekupujte AI Pro len kvôli Docs Live.</li>
+        </ol>
+
+        <p>Hlasové ovládanie som roky považoval za funkciu, ktorú si každý raz vyskúša a potom sa vráti ku klávesnici. Toto je prvýkrát, čo mi to dáva zmysel – nie preto, že by rozpoznávanie reči bolo lepšie, ale preto, že nástroj konečne vie, o čom hovoríte, lebo má prístup k vašej pošte a súborom. Tá angličtina to zatiaľ drží v polohe „vyskúšajte si to sami", nie „zaveďte to celému tímu". Ale to je vec, ktorá sa pri Googlových funkciách rieši v mesiacoch, nie v rokoch.</p>
+    </div>
+
+    <aside class="mt-14 bg-gradient-to-br from-[#E60000] to-[#AA0000] text-white rounded-3xl p-8 lg:p-10">
+        <h2 class="text-2xl font-extrabold mb-3">Máte vo firme proces zápisov zo stretnutí, ktorý reálne funguje?</h2>
+        <p class="text-white/90 mb-6 leading-relaxed">Na workshope <strong>Krok do sveta AI</strong> prejdeme presne takéto úlohy na vašich vlastných dokumentoch a e-mailoch. Odnesiete si postupy, ktoré viete použiť hneď v pondelok, nie zoznam nástrojov na vyskúšanie.</p>
+        <a href="../pre-firmy.html#workshopy" class="inline-block bg-white text-[#E60000] px-7 py-3.5 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg">Pozrieť workshopy →</a>
+    </aside>
+</article>
+</main>
+
+<footer class="border-t border-gray-100 dark:border-gray-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-[#54595F] dark:text-gray-500">
+        <p>© <span data-year></span> Rasťo Kozlík · AI Konzultant. Všetky práva vyhradené.</p>
+        <span class="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
+        <a href="../ochrana-sukromia.html" class="underline hover:text-[#E60000]">Ochrana súkromia a cookies</a>
+    </div>
+</footer>
+
+</body>
+</html>
