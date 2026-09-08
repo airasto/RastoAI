@@ -84,4 +84,10 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://rastoai.sk/clanky/ai-zrucnosti-na-pohovore.html</loc>
+        <lastmod>2026-09-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
