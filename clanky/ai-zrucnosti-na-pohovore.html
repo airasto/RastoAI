@@ -82,7 +82,7 @@
             <span class="hidden sm:inline">Rasťo <span class="text-[#E60000]">Kozlík</span></span> <span class="hidden sm:inline text-[#54595F] font-light">|</span> <span class="hidden sm:inline text-xs uppercase tracking-widest font-medium mt-1 text-[#54595F] dark:text-gray-400">AI Konzultant</span>
         </a>
         <div class="flex items-center gap-3">
-            <a href="../index.html#clanky" class="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-gray-300 hover:text-[#E60000] transition-colors">
+            <a href="./" class="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-gray-300 hover:text-[#E60000] transition-colors">
                 <svg class="icon w-4 h-4"><use href="#i-back"/></svg> Všetky články
             </a>
             <button data-theme-toggle aria-label="Prepnúť svetlý/tmavý režim" class="p-2 rounded-full text-[#333333] dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
@@ -195,6 +195,20 @@
         <a href="../ochrana-sukromia.html" class="underline hover:text-[#E60000]">Ochrana súkromia a cookies</a>
     </div>
 </footer>
+
+<script>
+(function () {
+    document.querySelectorAll('[data-year]').forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+    });
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
+        b.addEventListener('click', function () {
+            var d = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('rk-theme', d ? 'dark' : 'light'); } catch (e) {}
+        });
+    });
+})();
+</script>
 
 </body>
 </html>

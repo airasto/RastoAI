@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="sk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Články o AI v praxi | Rasťo Kozlík</title>
+    <meta name="description" content="Návody a prehľady AI noviniek z pohľadu firemnej praxe. Vyhľadávajte podľa názvu alebo filtrujte podľa rubriky.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rastoai.sk/clanky/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="sk_SK">
+    <meta property="og:title" content="Články o AI v praxi">
+    <meta property="og:description" content="Návody a prehľady AI noviniek z pohľadu firemnej praxe. Vyhľadávajte podľa názvu alebo filtrujte podľa rubriky.">
+    <meta property="og:url" content="https://rastoai.sk/clanky/">
+
+    <!-- Tailwind CSS -->
+        <!-- ===== Brand: favicon a ikony (Brand Kit 1 – červený) ===== -->
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon_RK_cervena.svg">
+    <link rel="alternate icon" type="image/png" href="../assets/logo/favicon_RK_cervena.png">
+    <link rel="apple-touch-icon" href="../assets/logo/favicon_RK_cervena.png">
+    <meta name="theme-color" content="#E60000" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+
+    <!-- ===== Brand: typografia Inter ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html, body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+        h1 { letter-spacing: -0.02em; }
+        h2, h3 { letter-spacing: -0.01em; }
+        code, pre, kbd, samp, .font-mono, .prompt { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+
+    <link rel="stylesheet" href="../assets/tailwind.css">
+    <script>
+        try {
+            const s = localStorage.getItem('rk-theme');
+            if (s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+
+
+    <style>
+        .icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .art h2 { font-size: 1.6rem; line-height: 1.3; font-weight: 800; margin: 2.4rem 0 1rem; }
+        .art h3 { font-size: 1.2rem; font-weight: 700; margin: 1.8rem 0 .7rem; }
+        .art p  { margin: 0 0 1.1rem; line-height: 1.75; }
+        .art ul, .art ol { margin: 0 0 1.2rem 1.4rem; line-height: 1.7; }
+        .art ul { list-style: disc; }
+        .art ol { list-style: decimal; }
+        .art li { margin-bottom: .45rem; }
+        .art strong { font-weight: 700; }
+        .art .tip { border-left: 4px solid #E60000; padding: .9rem 1.2rem; border-radius: 0 .75rem .75rem 0; margin: 1.4rem 0; }
+        .art .prompt-box { font-family: ui-monospace, monospace; font-size: .9rem; padding: 1rem 1.2rem; border-radius: .75rem; margin: 1rem 0 1.4rem; }
+        .art table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .92rem; }
+        .art th { text-align: left; font-weight: 700; padding: .6rem .8rem; border-bottom: 2px solid #E60000; }
+        .art td { padding: .6rem .8rem; border-bottom: 1px solid rgba(128,128,128,.25); vertical-align: top; }
+        .gated-locked { max-height: 480px; overflow: hidden; }
+        .gated-locked > * { filter: blur(6px); user-select: none; pointer-events: none; }
+    </style>
+</head>
+<body class="font-sans text-[#333333] dark:text-gray-300 bg-white dark:bg-[#0a0a0a] min-h-screen transition-colors duration-300">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+</svg>
+
+<nav class="sticky top-0 z-50 bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur border-b border-gray-100 dark:border-gray-800 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <a href="../index.html" class="flex items-center gap-3 font-bold text-xl tracking-tighter text-black dark:text-white" aria-label="Rasťo Kozlík – AI Konzultant, domov">
+            <img src="../assets/logo/znacka_RK_svetla.svg" alt="Rasťo Kozlík – značka RK" width="106" height="40" class="h-8 w-auto shrink-0 block dark:hidden">
+            <img src="../assets/logo/znacka_RK.svg" alt="" aria-hidden="true" width="106" height="40" class="h-8 w-auto shrink-0 hidden dark:block">
+            <span class="hidden sm:inline">Rasťo <span class="text-[#E60000]">Kozlík</span></span> <span class="hidden sm:inline text-[#54595F] font-light">|</span> <span class="hidden sm:inline text-xs uppercase tracking-widest font-medium mt-1 text-[#54595F] dark:text-gray-400">AI Konzultant</span>
+        </a>
+        <div class="flex items-center gap-3">
+            <a href="../index.html" class="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-gray-300 hover:text-[#E60000] transition-colors">
+                <svg class="icon w-4 h-4"><use href="#i-back"/></svg> Domov
+            </a>
+            <button data-theme-toggle aria-label="Prepnúť svetlý/tmavý režim" class="p-2 rounded-full text-[#333333] dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <svg class="icon w-5 h-5 hidden dark:block"><use href="#i-sun"/></svg>
+                <svg class="icon w-5 h-5 dark:hidden"><use href="#i-moon"/></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main>
+<section class="py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="inline-flex items-center gap-2 bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#E60000] text-xs font-bold tracking-widest uppercase px-5 py-2 rounded-full border border-[#E60000]/20 dark:border-[#E60000]/30">Praktické návody</span>
+            <h1 class="text-4xl lg:text-5xl font-extrabold text-black dark:text-white mt-5 leading-tight">Články</h1>
+            <p class="text-lg text-[#54595F] dark:text-gray-400 mt-5 leading-relaxed">Vecné návody a prehľady AI noviniek z pohľadu firemnej praxe. Bez teórie – postupy a prompty, ktoré viete použiť ešte dnes.</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto mb-10">
+            <label for="hladanie" class="sr-only">Hľadať v článkoch</label>
+            <input type="search" id="hladanie" placeholder="Hľadať podľa názvu alebo témy…" autocomplete="off"
+                class="w-full px-5 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-[#0f0f0f] text-black dark:text-white focus:border-[#E60000] focus:outline-none transition-colors">
+            <div class="flex flex-wrap justify-center gap-2 mt-5">
+                <button type="button" data-filter="all" class="js-chip px-5 py-2 rounded-full text-sm font-bold transition-colors bg-[#E60000] text-white">Všetky</button>
+                <button type="button" data-filter="Novinky" class="js-chip px-5 py-2 rounded-full text-sm font-bold transition-colors border border-gray-200 dark:border-gray-700 text-[#54595F] dark:text-gray-400 hover:border-[#E60000] hover:text-[#E60000]">Novinky (3)</button>
+                <button type="button" data-filter="Sprievodca" class="js-chip px-5 py-2 rounded-full text-sm font-bold transition-colors border border-gray-200 dark:border-gray-700 text-[#54595F] dark:text-gray-400 hover:border-[#E60000] hover:text-[#E60000]">Sprievodca (3)</button>
+                <button type="button" data-filter="Pre firmy" class="js-chip px-5 py-2 rounded-full text-sm font-bold transition-colors border border-gray-200 dark:border-gray-700 text-[#54595F] dark:text-gray-400 hover:border-[#E60000] hover:text-[#E60000]">Pre firmy (3)</button>
+                <button type="button" data-filter="Pre začiatočníkov" class="js-chip px-5 py-2 rounded-full text-sm font-bold transition-colors border border-gray-200 dark:border-gray-700 text-[#54595F] dark:text-gray-400 hover:border-[#E60000] hover:text-[#E60000]">Pre začiatočníkov (2)</button>
+            </div>
+            <p id="pocet" class="text-sm text-[#54595F] dark:text-gray-500 text-center mt-5" aria-live="polite"></p>
+        </div>
+
+        <div id="zoznam" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="./ai-zrucnosti-na-pohovore.html" data-rubrika="Pre firmy" data-hladat="banka ubs chce od absolventov dokaz, ze vedia pracovat s ai preukazana praca s ai ako podmienka prijatia. sest otazok na pohovor, ktorymi zistite, ci ju uchadzac naozaj pouziva, alebo o nej len hovori. pre firmy" class="js-karta group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                <div class="h-2 bg-[#E60000]"></div>
+                <div class="p-7 flex flex-col flex-grow">
+                    <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Pre firmy</span>
+                    <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">Banka UBS chce od absolventov dôkaz, že vedia pracovať s AI</h3>
+                    <p class="text-sm text-[#54595F] dark:text-gray-400 leading-relaxed flex-grow">Preukázaná práca s AI ako podmienka prijatia. Šesť otázok na pohovor, ktorými zistíte, či ju uchádzač naozaj používa, alebo o nej len hovorí.</p>
+                    <div class="flex items-center justify-between mt-5 text-xs text-[#54595F] dark:text-gray-500">
+                        <span class="flex items-center gap-1.5"><svg class="icon w-3.5 h-3.5"><use href="#i-clock"/></svg> 9 min</span>
+                        <span class="font-bold text-[#E60000]">Čítať →</span>
+                    </div>
+                </div>
+            </a>
+            <a href="./gmail-docs-keep-hlasove-ovladanie.html" data-rubrika="Sprievodca" data-hladat="gmail, docs a keep hlasom: co to vie a co zatial nie google spustil gmail live, docs live a keep live. co kazda funkcia vie, v ktorej tarife ju najdete a preco zatial bezi len po anglicky. sprievodca" class="js-karta group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                <div class="h-2 bg-[#E60000]"></div>
+                <div class="p-7 flex flex-col flex-grow">
+                    <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Sprievodca</span>
+                    <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">Gmail, Docs a Keep hlasom: čo to vie a čo zatiaľ nie</h3>
+                    <p class="text-sm text-[#54595F] dark:text-gray-400 leading-relaxed flex-grow">Google spustil Gmail Live, Docs Live a Keep Live. Čo každá funkcia vie, v ktorej tarife ju nájdete a prečo zatiaľ beží len po anglicky.</p>
+                    <div class="flex items-center justify-between mt-5 text-xs text-[#54595F] dark:text-gray-500">
+                        <span class="flex items-center gap-1.5"><svg class="icon w-3.5 h-3.5"><use href="#i-clock"/></svg> 9 min</span>
+                        <span class="font-bold text-[#E60000]">Čítať →</span>
+                    </div>
+                </div>
+            </a>
+            <a href="./ai-okuliare-na-porade.html" data-rubrika="Pre firmy" data-hladat="kolega prisiel na poradu v ai okuliaroch. co s tym? meta zatvorila dieru v skrytom nahravani. co to znamena pre porady a pohovory – a ake pravidlo si napisat skor, nez ich niekto prinesie. pre firmy" class="js-karta group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                <div class="h-2 bg-[#E60000]"></div>
+                <div class="p-7 flex flex-col flex-grow">
+                    <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Pre firmy</span>
+                    <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">Kolega prišiel na poradu v AI okuliaroch. Čo s tým?</h3>
+                    <p class="text-sm text-[#54595F] dark:text-gray-400 leading-relaxed flex-grow">Meta zatvorila dieru v skrytom nahrávaní. Čo to znamená pre porady a pohovory – a aké pravidlo si napísať skôr, než ich niekto prinesie.</p>
+                    <div class="flex items-center justify-between mt-5 text-xs text-[#54595F] dark:text-gray-500">
+                        <span class="flex items-center gap-1.5"><svg class="icon w-3.5 h-3.5"><use href="#i-clock"/></svg> 8 min</span>
+                        <span class="font-bold text-[#E60000]">Čítať →</span>
+                    </div>
+                </div>
+            </a>
+            <a href="./microsoft-copilot-v-praci.html" data-rubrika="Sprievodca" data-hladat="microsoft copilot v praci: prakticky sprievodca pre firmy kde copilot realne setri cas vo worde, exceli, outlooku a teams – s konkretnymi promptami pre hr a manazment. sprievodca" class="js-karta group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                <div class="h-2 bg-[#E60000]"></div>
+                <div class="p-7 flex flex-col flex-grow">
+                    <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Sprievodca</span>
+                    <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">Microsoft Copilot v práci: praktický sprievodca pre firmy</h3>
+                    <p class="text-sm text-[#54595F] dark:text-gray-400 leading-relaxed flex-grow">Kde Copilot reálne šetrí čas vo Worde, Exceli, Outlooku a Teams – s konkrétnymi promptami pre HR a manažment.</p>
+                    <div class="flex items-center justify-between mt-5 text-xs text-[#54595F] dark:text-gray-500">
+                        <span class="flex items-center gap-1.5"><svg class="icon w-3.5 h-3.5"><use href="#i-clock"/></svg> 9 min</span>
+                        <span class="font-bold text-[#E60000]">Čítať →</span>
+                    </div>
+                </div>
+            </a>
+            <a href="./chatgpt-novinky-jun-2026.html" data-rubrika="Novinky" data-hladat="chatgpt novinky (jun 2026): pisanie, e-maily a grafy rezim pisania na celu obrazovku, prepojenie s e-mailom a automaticke grafy – co z toho ma zmysel pre firemnu prax. novinky" class="js-karta group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                <div class="h-2 bg-[#E60000]"></div>
+                <div class="p-7 flex flex-col flex-grow">
+                    <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Novinky</span>
+                    <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">ChatGPT novinky (jún 2026): písanie, e-maily a grafy</h3>
+                    <p class="text-sm text-[#54595F] dark:text-gray-400 leading-relaxed flex-grow">Režim písania na celú obrazovku, prepojenie s e-mailom a automatické grafy – čo z toho má zmysel pre firemnú prax.</p>
+                    <div class="flex items-center justify-between mt-5 text-xs text-[#54595F] dark:text-gray-500">
+                        <span class="flex items-center gap-1.5"><svg class="icon w-3.5 h-3.5"><use href="#i-clock"/></svg> 8 min</span>
+                        <span class="font-bold text-[#E60000]">Čítať →</span>
+                    </div>
+                </div>
+            </a>
+            <a href="./gemini-flash-zadarmo.html" data-rubrika="Pre začiatočníkov" data-hladat="gemini 3.5 flash zadarmo: rychly start pre pracovne vyuzitie ako spustit bezplatny rychly ai model od googlu a vyuzit ho na e-maily, zhrnutia, preklady aj brainstorming. pre zaciatocnikov" class="js-karta group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                <div class="h-2 bg-[#E60000]"></div>
+                <div class="p-7 flex flex-col flex-grow">
+                    <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Pre začiatočníkov</span>
+                    <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">Gemini 3.5 Flash zadarmo: rýchly štart pre pracovné využitie</h3>
+                    <p class="text-sm text-[#54595F] dark:text-gray-400 leading-relaxed flex-grow">Ako spustiť bezplatný rýchly AI model od Googlu a využiť ho na e-maily, zhrnutia, preklady aj brainstorming.</p>
+                    <div class="flex items-center justify-between mt-5 text-xs text-[#54595F] dark:text-gray-500">
+                        <span class="flex items-center gap-1.5"><svg class="icon w-3.5 h-3.5"><use href="#i-clock"/></svg> 8 min</span>
+                        <span class="font-bold text-[#E60000]">Čítať →</span>
+                    </div>
+                </div>
+            </a>
+            <a href="./google-io-2026.html" data-rubrika="Novinky" data-hladat="google i/o 2026: co nove oznamenia znamenaju pre vasu firmu gemini 4, ai agenti v androide a chytrejsi gmail – prehlad hlavnych tem z pohladu firemnej praxe. novinky" class="js-karta group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                <div class="h-2 bg-[#E60000]"></div>
+                <div class="p-7 flex flex-col flex-grow">
+                    <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Novinky</span>
+                    <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">Google I/O 2026: čo nové oznámenia znamenajú pre vašu firmu</h3>
+                    <p class="text-sm text-[#54595F] dark:text-gray-400 leading-relaxed flex-grow">Gemini 4, AI agenti v Androide a chytrejší Gmail – prehľad hlavných tém z pohľadu firemnej praxe.</p>
+                    <div class="flex items-center justify-between mt-5 text-xs text-[#54595F] dark:text-gray-500">
+                        <span class="flex items-center gap-1.5"><svg class="icon w-3.5 h-3.5"><use href="#i-clock"/></svg> 7 min</span>
+                        <span class="font-bold text-[#E60000]">Čítať →</span>
+                    </div>
+                </div>
+            </a>
+            <a href="./ai-pre-male-firmy.html" data-rubrika="Pre firmy" data-hladat="ai pre male firmy: kde zacat a co sa realne oplati postup pre majitelov a manazerov msp – ktore procesy automatizovat ako prve a ako nespravit drahe chyby. pre firmy" class="js-karta group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                <div class="h-2 bg-[#E60000]"></div>
+                <div class="p-7 flex flex-col flex-grow">
+                    <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Pre firmy</span>
+                    <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">AI pre malé firmy: kde začať a čo sa reálne oplatí</h3>
+                    <p class="text-sm text-[#54595F] dark:text-gray-400 leading-relaxed flex-grow">Postup pre majiteľov a manažérov MSP – ktoré procesy automatizovať ako prvé a ako nespraviť drahé chyby.</p>
+                    <div class="flex items-center justify-between mt-5 text-xs text-[#54595F] dark:text-gray-500">
+                        <span class="flex items-center gap-1.5"><svg class="icon w-3.5 h-3.5"><use href="#i-clock"/></svg> 10 min</span>
+                        <span class="font-bold text-[#E60000]">Čítať →</span>
+                    </div>
+                </div>
+            </a>
+            <a href="./claude-opus-48-agenti.html" data-rubrika="Novinky" data-hladat="claude opus 4.8: ai, ktora si rozdeli pracu medzi tim pomocnikov dynamic workflows – paralelni ai pomocnici so vzajomnou kontrolou. co to znamena pre firemnu prax. novinky" class="js-karta group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                <div class="h-2 bg-[#E60000]"></div>
+                <div class="p-7 flex flex-col flex-grow">
+                    <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Novinky</span>
+                    <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">Claude Opus 4.8: AI, ktorá si rozdelí prácu medzi tím pomocníkov</h3>
+                    <p class="text-sm text-[#54595F] dark:text-gray-400 leading-relaxed flex-grow">Dynamic Workflows – paralelní AI pomocníci so vzájomnou kontrolou. Čo to znamená pre firemnú prax.</p>
+                    <div class="flex items-center justify-between mt-5 text-xs text-[#54595F] dark:text-gray-500">
+                        <span class="flex items-center gap-1.5"><svg class="icon w-3.5 h-3.5"><use href="#i-clock"/></svg> 8 min</span>
+                        <span class="font-bold text-[#E60000]">Čítať →</span>
+                    </div>
+                </div>
+            </a>
+            <a href="./ako-zacat-s-ai.html" data-rubrika="Pre začiatočníkov" data-hladat="ako zacat s ai: sprievodca pre uplnych zaciatocnikov ktore nastroje vyskusat ako prve, ako pisat zadania a pat chyb, ktorym sa vyhnut. pre zaciatocnikov" class="js-karta group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                <div class="h-2 bg-[#E60000]"></div>
+                <div class="p-7 flex flex-col flex-grow">
+                    <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Pre začiatočníkov</span>
+                    <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">Ako začať s AI: sprievodca pre úplných začiatočníkov</h3>
+                    <p class="text-sm text-[#54595F] dark:text-gray-400 leading-relaxed flex-grow">Ktoré nástroje vyskúšať ako prvé, ako písať zadania a päť chýb, ktorým sa vyhnúť.</p>
+                    <div class="flex items-center justify-between mt-5 text-xs text-[#54595F] dark:text-gray-500">
+                        <span class="flex items-center gap-1.5"><svg class="icon w-3.5 h-3.5"><use href="#i-clock"/></svg> 10 min</span>
+                        <span class="font-bold text-[#E60000]">Čítať →</span>
+                    </div>
+                </div>
+            </a>
+            <a href="./notebooklm-novinky-2026.html" data-rubrika="Sprievodca" data-hladat="notebooklm v roku 2026: 5 noviniek pre pracu s dokumentmi video prehlady, infografiky, epub a chytrejsie kvizy – ako ich vyuzit na smernice a onboarding. sprievodca" class="js-karta group flex flex-col bg-white dark:bg-[#161616] rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#E60000] dark:hover:border-[#E60000] hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden">
+                <div class="h-2 bg-[#E60000]"></div>
+                <div class="p-7 flex flex-col flex-grow">
+                    <span class="text-xs font-bold tracking-widest uppercase text-[#E60000] mb-3">Sprievodca</span>
+                    <h3 class="text-lg font-bold text-black dark:text-white mb-3 leading-snug group-hover:text-[#E60000] transition-colors">NotebookLM v roku 2026: 5 noviniek pre prácu s dokumentmi</h3>
+                    <p class="text-sm text-[#54595F] dark:text-gray-400 leading-relaxed flex-grow">Video prehľady, infografiky, EPUB a chytrejšie kvízy – ako ich využiť na smernice a onboarding.</p>
+                    <div class="flex items-center justify-between mt-5 text-xs text-[#54595F] dark:text-gray-500">
+                        <span class="flex items-center gap-1.5"><svg class="icon w-3.5 h-3.5"><use href="#i-clock"/></svg> 8 min</span>
+                        <span class="font-bold text-[#E60000]">Čítať →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <p id="prazdne" class="hidden text-center text-[#54595F] dark:text-gray-400 py-16">Nič sa nenašlo. Skúste iné slovo alebo zrušte filter.</p>
+
+    </div>
+</section>
+</main>
+
+<footer class="border-t border-gray-100 dark:border-gray-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-[#54595F] dark:text-gray-500">
+        <p>© <span data-year></span> Rasťo Kozlík · AI Konzultant. Všetky práva vyhradené.</p>
+        <span class="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
+        <a href="../ochrana-sukromia.html" class="underline hover:text-[#E60000]">Ochrana súkromia a cookies</a>
+    </div>
+</footer>
+
+<script>
+(function () {
+    document.querySelectorAll('[data-year]').forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+    });
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
+        b.addEventListener('click', function () {
+            var d = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('rk-theme', d ? 'dark' : 'light'); } catch (e) {}
+        });
+    });
+
+    var pole = document.getElementById('hladanie');
+    var chipy = document.querySelectorAll('.js-chip');
+    var karty = document.querySelectorAll('.js-karta');
+    var prazdne = document.getElementById('prazdne');
+    var pocet = document.getElementById('pocet');
+    if (!pole || !karty.length) return;
+
+    var AKT = 'bg-[#E60000] text-white';
+    var NEAKT = 'border border-gray-200 dark:border-gray-700 text-[#54595F] dark:text-gray-400 hover:border-[#E60000] hover:text-[#E60000]';
+    var rubrika = 'all';
+
+    function bezDiakritiky(s) {
+        return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function prekresli() {
+        var q = bezDiakritiky(pole.value.trim().toLowerCase());
+        var vidno = 0;
+        karty.forEach(function (k) {
+            var sedi = (rubrika === 'all' || k.dataset.rubrika === rubrika) &&
+                       (q === '' || k.dataset.hladat.indexOf(q) !== -1);
+            k.classList.toggle('hidden', !sedi);
+            if (sedi) vidno++;
+        });
+        prazdne.classList.toggle('hidden', vidno !== 0);
+        pocet.textContent = vidno === karty.length
+            ? karty.length + ' článkov'
+            : vidno + ' z ' + karty.length + ' článkov';
+    }
+
+    pole.addEventListener('input', prekresli);
+    chipy.forEach(function (ch) {
+        ch.addEventListener('click', function () {
+            rubrika = ch.dataset.filter;
+            chipy.forEach(function (x) {
+                x.className = 'js-chip px-5 py-2 rounded-full text-sm font-bold transition-colors ' +
+                              (x === ch ? AKT : NEAKT);
+            });
+            prekresli();
+        });
+    });
+
+    prekresli();
+})();
+</script>
+
+</body>
+</html>
