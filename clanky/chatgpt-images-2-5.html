@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="sk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ChatGPT Images 2.5: načrtnite myšou, zvyšok dorobí model | Rasťo Kozlík</title>
+    <meta name="description" content="ChatGPT Images 2.5 prináša skicovanie, šablóny na plagáty a úpravy kliknutím. Čo z toho reálne použijete a na čo si dať pozor pri slovenčine.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rastoai.sk/clanky/chatgpt-images-2-5.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="sk_SK">
+    <meta property="og:title" content="ChatGPT Images 2.5: načrtnite myšou, zvyšok dorobí model">
+    <meta property="og:description" content="ChatGPT Images 2.5 prináša skicovanie, šablóny na plagáty a úpravy kliknutím. Čo z toho reálne použijete a na čo si dať pozor pri slovenčine.">
+    <meta property="og:url" content="https://rastoai.sk/clanky/chatgpt-images-2-5.html">
+    <meta property="og:image" content="https://rastoai.sk/assets/og/chatgpt-images-2-5.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Tailwind CSS -->
+        <!-- ===== Brand: favicon a ikony (Brand Kit 1 – červený) ===== -->
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon_RK_cervena.svg">
+    <link rel="alternate icon" type="image/png" href="../assets/logo/favicon_RK_cervena.png">
+    <link rel="apple-touch-icon" href="../assets/logo/favicon_RK_cervena.png">
+    <meta name="theme-color" content="#E60000" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+
+    <!-- ===== Brand: typografia Inter ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html, body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+        h1 { letter-spacing: -0.02em; }
+        h2, h3 { letter-spacing: -0.01em; }
+        code, pre, kbd, samp, .font-mono, .prompt { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+
+    <link rel="stylesheet" href="../assets/tailwind.css">
+    <script>
+        try {
+            const s = localStorage.getItem('rk-theme');
+            if (s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+
+
+    <style>
+        .icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .art h2 { font-size: 1.6rem; line-height: 1.3; font-weight: 800; margin: 2.4rem 0 1rem; }
+        .art h3 { font-size: 1.2rem; font-weight: 700; margin: 1.8rem 0 .7rem; }
+        .art p  { margin: 0 0 1.1rem; line-height: 1.75; }
+        .art ul, .art ol { margin: 0 0 1.2rem 1.4rem; line-height: 1.7; }
+        .art ul { list-style: disc; }
+        .art ol { list-style: decimal; }
+        .art li { margin-bottom: .45rem; }
+        .art strong { font-weight: 700; }
+        .art .tip { border-left: 4px solid #E60000; padding: .9rem 1.2rem; border-radius: 0 .75rem .75rem 0; margin: 1.4rem 0; }
+        .art .prompt-box { font-family: ui-monospace, monospace; font-size: .9rem; padding: 1rem 1.2rem; border-radius: .75rem; margin: 1rem 0 1.4rem; }
+        .art table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .92rem; }
+        .art th { text-align: left; font-weight: 700; padding: .6rem .8rem; border-bottom: 2px solid #E60000; }
+        .art td { padding: .6rem .8rem; border-bottom: 1px solid rgba(128,128,128,.25); vertical-align: top; }
+        .gated-locked { max-height: 480px; overflow: hidden; }
+        .gated-locked > * { filter: blur(6px); user-select: none; pointer-events: none; }
+    </style>
+</head>
+<body class="font-sans text-[#333333] dark:text-gray-300 bg-white dark:bg-[#0a0a0a] min-h-screen transition-colors duration-300">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+</svg>
+
+<nav class="sticky top-0 z-50 bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur border-b border-gray-100 dark:border-gray-800 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <a href="../index.html" class="flex items-center gap-3 font-bold text-xl tracking-tighter text-black dark:text-white" aria-label="Rasťo Kozlík – AI Konzultant, domov">
+            <img src="../assets/logo/znacka_RK_svetla.svg" alt="Rasťo Kozlík – značka RK" width="106" height="40" class="h-8 w-auto shrink-0 block dark:hidden">
+            <img src="../assets/logo/znacka_RK.svg" alt="" aria-hidden="true" width="106" height="40" class="h-8 w-auto shrink-0 hidden dark:block">
+            <span class="hidden sm:inline">Rasťo <span class="text-[#E60000]">Kozlík</span></span> <span class="hidden sm:inline text-[#54595F] font-light">|</span> <span class="hidden sm:inline text-xs uppercase tracking-widest font-medium mt-1 text-[#54595F] dark:text-gray-400">AI Konzultant</span>
+        </a>
+        <div class="flex items-center gap-3">
+            <a href="./" class="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-gray-300 hover:text-[#E60000] transition-colors">
+                <svg class="icon w-4 h-4"><use href="#i-back"/></svg> Všetky články
+            </a>
+            <button data-theme-toggle aria-label="Prepnúť svetlý/tmavý režim" class="p-2 rounded-full text-[#333333] dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <svg class="icon w-5 h-5 hidden dark:block"><use href="#i-sun"/></svg>
+                <svg class="icon w-5 h-5 dark:hidden"><use href="#i-moon"/></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main>
+<article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+    <header class="mb-10">
+        <span class="inline-flex items-center gap-2 bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#E60000] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-[#E60000]/20 dark:border-[#E60000]/30">Novinky</span>
+        <h1 class="text-3xl lg:text-5xl font-extrabold text-black dark:text-white mt-5 leading-tight">ChatGPT Images 2.5: načrtnite myšou, zvyšok dorobí model</h1>
+        <div class="flex items-center gap-4 mt-5 text-sm text-[#54595F] dark:text-gray-400">
+            <span class="flex items-center gap-1.5"><svg class="icon w-4 h-4"><use href="#i-clock"/></svg> 4 min čítania</span>
+            <span>·</span><span>September 2026</span>
+            <span>·</span><span>Rasťo Kozlík</span>
+        </div>
+    </header>
+
+    <div class="art text-[17px]">
+        <p class="text-lg font-medium text-black dark:text-white">OpenAI 8. septembra vydala ChatGPT Images 2.5. Na prvý pohľad je to ďalšia verzia generátora obrázkov, v praxi sa však zmenilo niečo dôležitejšie: prestali ste byť odkázaní na to, ako presne viete opísať slovami, čo chcete.</p>
+
+        <p>Prešiel som si novinky z pohľadu ľudí, ktorí nie sú grafici a raz za čas potrebujú plagát na podujatie, obrázok do prezentácie alebo vizuál na sociálne siete. Toto je krátky prehľad toho, čo je naozaj nové a čo z toho použijete.</p>
+
+        <p><strong>Tri veci, ktoré stoja za pozornosť:</strong></p>
+        <ul>
+            <li><strong>Skicovanie priamo v ChatGPT</strong> — načrtnete rozloženie a model sa ho drží.</li>
+            <li><strong>Šablóny</strong> — plagát, produktová fotka, merch. Model sa vás doptá na detaily.</li>
+            <li><strong>Úpravy kliknutím</strong> — namiesto ďalšieho zadania označíte miesto v obrázku a poviete, čo s ním.</li>
+        </ul>
+
+        <h2 class="text-black dark:text-white">1. Skica namiesto opisovania</h2>
+        <p>Najväčšia zmena. Do poľa na zadanie napíšete zavináč a začnete písať názov funkcie — v slovenskom rozhraní sa volá <strong>@Kresliť</strong> („Nakresliť a priložiť obrázok“), v anglickom <strong>@Sketch</strong>. Stačí napísať <code>@kre</code> a funkcia sa ponúkne sama.</p>
+        <p>Otvorí sa jednoduché kresliace okno a v ňom myšou načrtnete, čo kde má byť — nadpis hore, produkt vľavo, logo v rohu. Model tú skicu berie ako záväznú predlohu kompozície.</p>
+        <p>Nástroj vyzerá ako Skicár z Windows 95 a to je v poriadku. Nejde o kreslenie. Ide o to, aby ste nemuseli tri zadania za sebou vysvetľovať, že fotoaparát má byť vpravo a nie v strede.</p>
+
+        <h2 class="text-black dark:text-white">2. Šablóny pre bežné formáty</h2>
+        <p>Druhou novinkou sú predpripravené formáty — plagáty, produktové fotografie, merch. Vyberiete typ a ChatGPT vás prevedie sériou otázok namiesto toho, aby čakal na jedno dlhé zadanie.</p>
+        <p>Pre koho to má zmysel: firma bez grafika, ktorá potrebuje oznam na nástenku, vizuál na podujatie alebo jednoduchý príspevok. Nenahradí to grafika pri veciach, ktoré idú do tlače alebo majú držať vizuálnu identitu. Na interný oznam to stačí bohato.</p>
+
+        <h2 class="text-black dark:text-white">3. Úpravy kliknutím</h2>
+        <p>Doteraz ste opravu museli opísať a dúfať, že sa pri prepisovaní nezmení aj zvyšok obrázka. Teraz je tam editačný panel — odstránenie pozadia (Remove BG), mazanie prvkov (Erase), zmena pomeru strán (Resize) a komentáre priamo k miestam v obrázku.</p>
+        <p>Podstatné je, že úpravy sú lokálne. Zmeníte farbu jedného prvku a zvyšok kompozície zostane, ako bol. Pri predchádzajúcej verzii bola každá úprava lotéria.</p>
+
+        <h3 class="text-black dark:text-white">Hotové zadanie na vyskúšanie</h3>
+        <p>Skopírujte a nahraďte údaje vlastnými:</p>
+        <div class="prompt-box bg-gray-100 dark:bg-[#161616] text-black dark:text-gray-200">Potrebujem plagát na firemné podujatie vo formáte A3 na výšku.<br>Podujatie: Deň otvorených dverí, 12. októbra, 9:00–16:00.<br>Štýl: čistý, minimalistický, dve farby, veľa bieleho priestoru.<br>Nadpis hore, dátum a čas v spodnej tretine, miesto pre logo v pravom dolnom rohu.<br>Text nechaj zatiaľ v angličtine, doplním ho sám.</div>
+
+        <h2 class="text-black dark:text-white">Na čo si dať pozor</h2>
+        <p><strong>Text v obrázkoch.</strong> OpenAI k slovenčine ani k diakritike nehovorí nič. Generovanie textu vo vizuáloch je dlhodobo slabé miesto všetkých týchto nástrojov, takže pri nadpisoch s mäkčeňmi rátajte s tým, že to budete kontrolovať. Bezpečnejší postup: nechajte si vygenerovať grafiku a text doplňte v Canve.</p>
+        <p><strong>Kvalita nie je bezchybná.</strong> Recenzenti v generovaných obrázkoch stále nachádzajú šum a artefakty. Rýchlosť sa oproti aprílovej verzii zlepšila — OpenAI uvádza až o 50 % nižšiu latenciu — ale rýchlejšie neznamená čistejšie.</p>
+        <p><strong>Každý obrázok je označený.</strong> OpenAI ponecháva metadáta C2PA aj neviditeľný watermark. Je to dobrá správa pre transparentnosť a vec, ktorú treba vedieť, ak vizuál ide von v mene firmy.</p>
+        <p><strong>Firemná identita.</strong> Model nepozná vaše farby ani typografiu. Ak máte brand manuál, počítajte s dočisťovaním.</p>
+
+        <div class="tip bg-[#FFF5F5] dark:bg-[#E60000]/8">
+            <p class="!mb-0"><strong>Pravidlo:</strong> grafiku nechajte na model, text nechajte na seba. Ušetríte si kontrolu diakritiky pri každom výstupe.</p>
+        </div>
+
+        <h2 class="text-black dark:text-white">Vyskúšajte ešte dnes</h2>
+        <ol>
+            <li><strong>Dnes (10 minút):</strong> Otvorte ChatGPT, do poľa na zadanie napíšte <code>@kre</code> a vyberte <strong>Kresliť</strong>. Načrtnite rozloženie niečoho, čo reálne potrebujete — oznam, titulnú stranu prezentácie. Nechajte to vygenerovať a porovnajte so skicou.</li>
+            <li><strong>Tento týždeň:</strong> Skúste šablónu na plagát a prejdite si celý proces až po export. Zistíte, kde je hranica medzi „stačí to“ a „toto musí spraviť grafik“.</li>
+            <li><strong>Do mesiaca:</strong> Ak takéto veci robíte pravidelne, zapíšte si tri zadania, ktoré vám fungovali, a dajte ich kolegom. Ušetríte im týždeň hľadania.</li>
+        </ol>
+
+        <p>Dostupné je to naprieč všetkými plánmi vrátane bezplatného, na počítači aj v mobile. Nemusíte teda nič riešiť s IT ani nič platiť, aby ste si overili, či to vašej firme dáva zmysel.</p>
+
+        <p>Nečakám, že to nahradí grafika. Čakám, že to zníži počet vecí, ktoré grafik dostáva na stôl zbytočne — a to je pri malej firme rozdiel, ktorý je cítiť.</p>
+        </div>
+
+    <aside class="mt-14 bg-gradient-to-br from-[#E60000] to-[#AA0000] text-white rounded-3xl p-8 lg:p-10">
+        <h2 class="text-2xl font-extrabold mb-3">Potrebujete vo firme vizuály rýchlejšie, než ich stíha externista?</h2>
+        <p class="text-white/90 mb-6 leading-relaxed">Na workshope <strong>Krok do sveta AI</strong> prejdeme presne tieto nástroje na vašich vlastných úlohách. Odídete s vlastnými zadaniami a s jasnou predstavou, kde AI pomôže a kde vás bude zdržiavať.</p>
+        <a href="../pre-firmy.html#workshopy" class="inline-block bg-white text-[#E60000] px-7 py-3.5 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg">Pozrieť workshopy →</a>
+    </aside>
+</article>
+</main>
+
+<footer class="border-t border-gray-100 dark:border-gray-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-[#54595F] dark:text-gray-500">
+        <p>© <span data-year></span> Rasťo Kozlík · AI Konzultant. Všetky práva vyhradené.</p>
+        <span class="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
+        <a href="../ochrana-sukromia.html" class="underline hover:text-[#E60000]">Ochrana súkromia a cookies</a>
+        <span class="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
+        <a href="../obchodne-podmienky.html" class="underline hover:text-[#E60000]">Obchodné podmienky</a>
+    </div>
+    <p class="mt-3 px-4 text-center text-sm text-[#54595F] dark:text-gray-500">Ing. Rastislav Kozlík · Súvoz 1815/27, 911 01 Trenčín · IČO: 57 887 292</p>
+    <p class="mt-3 px-4 text-center text-sm text-[#54595F] dark:text-gray-500">Nie som platiteľ DPH. Uvedené ceny sú konečné.</p>
+</footer>
+
+<script>
+(function () {
+    document.querySelectorAll('[data-year]').forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+    });
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
+        b.addEventListener('click', function () {
+            var d = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('rk-theme', d ? 'dark' : 'light'); } catch (e) {}
+        });
+    });
+})();
+</script>
+
+</body>
+</html>

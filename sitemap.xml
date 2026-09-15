@@ -85,6 +85,12 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://rastoai.sk/clanky/chatgpt-images-2-5.html</loc>
+        <lastmod>2026-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://rastoai.sk/clanky/ai-zrucnosti-na-pohovore.html</loc>
         <lastmod>2026-09-08</lastmod>
         <changefreq>monthly</changefreq>
@@ -92,7 +98,7 @@
     </url>
     <url>
         <loc>https://rastoai.sk/clanky/</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
