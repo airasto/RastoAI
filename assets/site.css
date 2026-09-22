@@ -197,3 +197,21 @@
 .field::placeholder { color: #9ca3af; }
 .field-label { display: block; font-weight: 600; font-size: .9rem; margin-bottom: .4rem; color: var(--brand-ink); }
 .dark .field-label { color: #e5e5e5; }
+
+/* ===== Workshop karty s otočením (pre-firmy.html) =====
+   Obe strany ležia v tej istej bunke gridu, takže výška karty sa prispôsobí
+   dlhšej strane – nič sa neoreže a netreba pevnú výšku. */
+.wflip { perspective: 1800px; border-radius: 1.5rem; outline: none; -webkit-tap-highlight-color: transparent; }
+.wflip-inner { display: grid; height: 100%; transition: transform .7s cubic-bezier(.4,0,.2,1); transform-style: preserve-3d; }
+.wflip-face { grid-area: 1 / 1; display: flex; flex-direction: column; border-radius: 1.5rem; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.wflip-front { transform: rotateY(0deg); }
+.wflip-back { transform: rotateY(180deg); }
+.wflip.is-flipped .wflip-inner,
+.wflip:focus-visible .wflip-inner,
+.wflip:has(:focus-visible) .wflip-inner { transform: rotateY(180deg); }
+@media (hover: hover) and (pointer: fine) {
+    .wflip:hover .wflip-inner { transform: rotateY(180deg); }
+    .wflip:hover .wflip-front { box-shadow: 0 20px 40px -20px rgba(0,0,0,.25); }
+}
+.wflip:focus-visible .wflip-back { box-shadow: 0 0 0 4px rgba(230,0,0,.25); }
+@media (prefers-reduced-motion: reduce) { .wflip-inner { transition: none; } }

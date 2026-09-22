@@ -55,7 +55,7 @@ function loadGA() {
    ============================================================ */
 (function () {
     const map = {
-        '#ai-trener':   './pre-firmy.html#ai-trener',
+        '#ai-trener':   './pre-firmy.html#workshopy',   // sekcia zrušená 22. 9. 2026
         '#workshopy':   './pre-firmy.html#workshopy',
         '#prinos':      './pre-firmy.html#prinos',
         '#referencie':  './pre-firmy.html#referencie',
@@ -169,6 +169,54 @@ function loadGA() {
 document.querySelectorAll('.flip-card').forEach(card =>
     card.addEventListener('click', () => card.classList.toggle('is-flipped'))
 );
+
+/* ============================================================
+   Workshop karty (pre-firmy.html)
+   - desktop: otočenie prechodom myši (rieši CSS)
+   - dotykové zariadenia: otočenie ťuknutím
+   - klávesnica: otočenie pri fokuse (rieši CSS)
+   - „Mám záujem o tento workshop“ predvyplní workshop vo formulári
+   ============================================================ */
+(function () {
+    const cards = document.querySelectorAll('.wflip');
+    if (!cards.length) return;
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    cards.forEach(card => card.addEventListener('click', (e) => {
+        if (canHover || e.target.closest('a, button')) return;
+        card.classList.toggle('is-flipped');
+    }));
+
+    const select = document.getElementById('w-workshop');
+    const target = document.getElementById('dopyt');
+    if (!select || !target) return;
+
+    document.querySelectorAll('[data-workshop]').forEach(btn => btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        select.value = btn.dataset.workshop;
+
+        // Ak už bol dopyt odoslaný, ukáž formulár znova
+        const form = document.getElementById('workshop-form');
+        const success = document.getElementById('workshop-success');
+        if (form && form.classList.contains('hidden')) {
+            form.reset();
+            select.value = btn.dataset.workshop;
+            form.classList.remove('hidden');
+            if (success) success.classList.add('hidden');
+            const b = document.getElementById('w-submit');
+            if (b) b.disabled = false;
+        }
+
+        const card = btn.closest('.wflip');
+        if (card) card.classList.remove('is-flipped');
+
+        const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        target.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+        history.replaceState(null, '', '#dopyt');
+        const first = document.getElementById('w-meno');
+        if (first) setTimeout(() => first.focus({ preventScroll: true }), smooth ? 700 : 0);
+    }));
+})();
 
 /* ============================================================
    Rok v pätičke
@@ -302,6 +350,110 @@ document.querySelectorAll('.flip-card').forEach(card =>
             }
         });
     }
+})();
+
+/* ============================================================
+   Formulár: dopyt na firemný workshop (pre-firmy.html)
+   Posiela notifikáciu Rasťovi cez šablónu EMAILJS_TEMPLATE_NOTIFY.
+   Všetky údaje sú aj v premennej {{message}}, takže sa zobrazia
+   aj vtedy, ak šablóna nové premenné (company, phone…) ešte nepozná.
+   ============================================================ */
+(function () {
+    const form = document.getElementById('workshop-form');
+    const statusEl = document.getElementById('workshop-status');
+    const success = document.getElementById('workshop-success');
+    if (!form || !statusEl || !success) return;
+
+    const val = (id) => ((document.getElementById(id) || {}).value || '').trim();
+    const show = (msg, ok) => {
+        statusEl.textContent = msg;
+        statusEl.className = 'mt-5 text-center text-sm font-semibold rounded-xl px-4 py-3 ' +
+            (ok ? 'bg-green-100 dark:bg-green-950/50 text-green-700 dark:text-green-400'
+                : 'bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#AA0000] dark:text-[#FF4D4D]');
+    };
+    const fail = (msg, fieldId) => {
+        show(msg, false);
+        const f = document.getElementById(fieldId);
+        if (f) f.focus();
+    };
+    const done = () => {
+        form.classList.add('hidden');
+        success.classList.remove('hidden');
+        success.focus({ preventScroll: true });
+    };
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Pasca na spamboty – tvárime sa, že je všetko v poriadku
+        if (val('w-web')) { done(); return; }
+
+        const d = {
+            meno: val('w-meno'),
+            firma: val('w-firma'),
+            email: val('w-email'),
+            telefon: val('w-telefon'),
+            workshop: val('w-workshop'),
+            pocet: val('w-pocet') || 'Neuvedené',
+            sprava: val('w-sprava')
+        };
+        const consent = document.getElementById('w-consent').checked;
+
+        if (d.meno.length < 2) return fail('Vyplňte prosím svoje meno.', 'w-meno');
+        if (d.firma.length < 2) return fail('Vyplňte prosím názov firmy.', 'w-firma');
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email)) return fail('Zadajte platnú e-mailovú adresu.', 'w-email');
+        if (d.telefon && !/^\+?[0-9 ()\/-]{6,20}$/.test(d.telefon)) return fail('Skontrolujte prosím telefónne číslo.', 'w-telefon');
+        if (!d.workshop) return fail('Vyberte prosím workshop, o ktorý máte záujem.', 'w-workshop');
+        if (!consent) return fail('Bez súhlasu so spracovaním údajov vám nemôžem odpovedať.', 'w-consent');
+
+        if (typeof emailjs === 'undefined') {
+            show('Formulár sa nepodarilo načítať. Napíšte mi prosím priamo na ' + CONFIG.NOTIFY_EMAIL, false);
+            return;
+        }
+
+        const btn = document.getElementById('w-submit');
+        btn.disabled = true;
+        show('Odosielam…', true);
+
+        const message = [
+            'DOPYT NA WORKSHOP: ' + d.workshop,
+            '',
+            'Meno: ' + d.meno,
+            'Firma: ' + d.firma,
+            'E-mail: ' + d.email,
+            'Telefón: ' + (d.telefon || 'neuvedený'),
+            'Počet účastníkov: ' + d.pocet,
+            'Súhlas so spracovaním údajov: áno',
+            '',
+            'Správa:',
+            d.sprava || '(bez správy)'
+        ].join('\n');
+
+        const params = {
+            to_email: CONFIG.NOTIFY_EMAIL,
+            reply_to: d.email,
+            user_email: d.email,
+            user_name: d.meno,
+            message: message,
+            format: 'Workshop: ' + d.workshop,
+            workshop: d.workshop,
+            company: d.firma,
+            phone: d.telefon || 'neuvedený',
+            participants: d.pocet,
+            consent: 'áno',
+            page_url: window.location.href,
+            date: new Date().toLocaleString('sk-SK')
+        };
+
+        try {
+            await emailjs.send(CONFIG.EMAILJS_SERVICE_ID, CONFIG.EMAILJS_TEMPLATE_NOTIFY, params);
+            done();
+        } catch (err) {
+            console.error('EmailJS error:', err);
+            show('Dopyt sa nepodarilo odoslať. Skúste to znova, alebo mi napíšte priamo na ' + CONFIG.NOTIFY_EMAIL, false);
+            btn.disabled = false;
+        }
+    });
 })();
 
 /* ============================================================
