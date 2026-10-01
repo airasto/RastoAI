@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="sk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Novinky v Copilote (september 2026): delegovanie, triage v Outlooku a Vision | Rasťo Kozlík</title>
+    <meta name="description" content="Microsoft pridal do Copilota mazanie e-mailov, delegovanie zadaní cez Cowork a Vision na obrazovku. Čo z toho reálne použijete a akú licenciu potrebujete.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rastoai.sk/clanky/copilot-novinky-september-2026.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="sk_SK">
+    <meta property="og:title" content="Novinky v Copilote (september 2026): delegovanie, triage v Outlooku a Vision">
+    <meta property="og:description" content="Microsoft pridal do Copilota mazanie e-mailov, delegovanie zadaní cez Cowork a Vision na obrazovku. Čo z toho reálne použijete a akú licenciu potrebujete.">
+    <meta property="og:url" content="https://rastoai.sk/clanky/copilot-novinky-september-2026.html">
+
+    <!-- Tailwind CSS -->
+        <!-- ===== Brand: favicon a ikony (Brand Kit 1 – červený) ===== -->
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon_RK_cervena.svg">
+    <link rel="alternate icon" type="image/png" href="../assets/logo/favicon_RK_cervena.png">
+    <link rel="apple-touch-icon" href="../assets/logo/favicon_RK_cervena.png">
+    <meta name="theme-color" content="#E60000" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+
+    <!-- ===== Brand: typografia Inter ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html, body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+        h1 { letter-spacing: -0.02em; }
+        h2, h3 { letter-spacing: -0.01em; }
+        code, pre, kbd, samp, .font-mono, .prompt { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+
+    <link rel="stylesheet" href="../assets/tailwind.css">
+    <script>
+        try {
+            const s = localStorage.getItem('rk-theme');
+            if (s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+
+
+    <style>
+        .icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .art h2 { font-size: 1.6rem; line-height: 1.3; font-weight: 800; margin: 2.4rem 0 1rem; }
+        .art h3 { font-size: 1.2rem; font-weight: 700; margin: 1.8rem 0 .7rem; }
+        .art p  { margin: 0 0 1.1rem; line-height: 1.75; }
+        .art ul, .art ol { margin: 0 0 1.2rem 1.4rem; line-height: 1.7; }
+        .art ul { list-style: disc; }
+        .art ol { list-style: decimal; }
+        .art li { margin-bottom: .45rem; }
+        .art strong { font-weight: 700; }
+        .art .tip { border-left: 4px solid #E60000; padding: .9rem 1.2rem; border-radius: 0 .75rem .75rem 0; margin: 1.4rem 0; }
+        .art .prompt-box { font-family: ui-monospace, monospace; font-size: .9rem; padding: 1rem 1.2rem; border-radius: .75rem; margin: 1rem 0 1.4rem; }
+        .art table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .92rem; }
+        .art th { text-align: left; font-weight: 700; padding: .6rem .8rem; border-bottom: 2px solid #E60000; }
+        .art td { padding: .6rem .8rem; border-bottom: 1px solid rgba(128,128,128,.25); vertical-align: top; }
+    </style>
+</head>
+<body class="font-sans text-[#333333] dark:text-gray-300 bg-white dark:bg-[#0a0a0a] min-h-screen transition-colors duration-300">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+</svg>
+
+<nav class="sticky top-0 z-50 bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur border-b border-gray-100 dark:border-gray-800 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <a href="../index.html" class="flex items-center gap-3 font-bold text-xl tracking-tighter text-black dark:text-white" aria-label="Rasťo Kozlík – AI Konzultant, domov">
+            <img src="../assets/logo/znacka_RK_svetla.svg" alt="Rasťo Kozlík – značka RK" width="106" height="40" class="h-8 w-auto shrink-0 block dark:hidden">
+            <img src="../assets/logo/znacka_RK.svg" alt="" aria-hidden="true" width="106" height="40" class="h-8 w-auto shrink-0 hidden dark:block">
+            <span class="hidden sm:inline">Rasťo <span class="text-[#E60000]">Kozlík</span></span> <span class="hidden sm:inline text-[#54595F] font-light">|</span> <span class="hidden sm:inline text-xs uppercase tracking-widest font-medium mt-1 text-[#54595F] dark:text-gray-400">AI Konzultant</span>
+        </a>
+        <div class="flex items-center gap-3">
+            <a href="./" class="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-gray-300 hover:text-[#E60000] transition-colors">
+                <svg class="icon w-4 h-4"><use href="#i-back"/></svg> Všetky články
+            </a>
+            <button data-theme-toggle aria-label="Prepnúť svetlý/tmavý režim" class="p-2 rounded-full text-[#333333] dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <svg class="icon w-5 h-5 hidden dark:block"><use href="#i-sun"/></svg>
+                <svg class="icon w-5 h-5 dark:hidden"><use href="#i-moon"/></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main>
+<article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+    <header class="mb-10">
+        <span class="inline-flex items-center gap-2 bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#E60000] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-[#E60000]/20 dark:border-[#E60000]/30">Novinky</span>
+        <h1 class="text-3xl lg:text-5xl font-extrabold text-black dark:text-white mt-5 leading-tight">Novinky v Copilote (september 2026): delegovanie, triage v Outlooku a Vision</h1>
+        <div class="flex items-center gap-4 mt-5 text-sm text-[#54595F] dark:text-gray-400">
+            <span class="flex items-center gap-1.5"><svg class="icon w-4 h-4"><use href="#i-clock"/></svg> 8 min čítania</span>
+            <span>·</span><span>Október 2026</span>
+            <span>·</span><span>Rasťo Kozlík</span>
+        </div>
+    </header>
+
+    <div class="art text-[17px]">
+        <p class="text-lg font-medium text-black dark:text-white">Microsoft 23. septembra vydal dávku noviniek v Microsoft 365 Copilote za obdobie od 26. augusta. Nejde o zásadnú revolúciu. Tri z nich sa však priamo dotknú práce, ktorú vo firmách vidím každý týždeň: prehrabávanie sa v schránke, zháňanie podkladov z piatich miest a vysvetľovanie kolegovi po telefóne, čo vidím na obrazovke.</p>
+
+        <p>Prešiel som si celú dávku z pohľadu firemnej praxe — HR, administratíva, manažment, sales — a vyhodil z nej všetko, čo vás v tíme bežne nemusí trápiť. Zostalo šesť vecí. Štyri z nich majú zmysel skúšať tento týždeň, dve sú na sledovanie.</p>
+
+        <h2 class="text-black dark:text-white">Štyri novinky v skratke</h2>
+        <ul>
+            <li><strong>Copilot v Outlooku vie po novom mazať, presúvať a kategorizovať e-maily</strong> — a vytvárať pravidlá a priečinky. Doteraz zvládal len pripnúť a označiť príznakom.</li>
+            <li><strong>Copilot Cowork preberá namiesto čiastkových úloh rovno celé zadanie</strong> — poskladá si kontext z e-mailov, porád, chatov a súborov a vráti hotový výstup.</li>
+            <li><strong>Vision vidí vašu obrazovku na počítači a kameru na mobile</strong> — počas hlasovej konverzácie sa môžete baviť o tom, na čo sa práve pozeráte.</li>
+            <li><strong>Copilot pribudol do Microsoft Forms</strong> — od návrhu dotazníka po vyhodnotenie odpovedí, bez prelievania dát do Excelu.</li>
+        </ul>
+        <p>Všetko ostatné v tomto článku aj v tejto dávke platí len pre <strong>platenú licenciu Microsoft 365 Copilot</strong>. Bezplatný Copilot na webe toto nemá. Ak si nie ste istí, čo máte, je to prvá otázka na IT.</p>
+
+        <h2 class="text-black dark:text-white">1. Triage v Outlooku: konečne aj mazanie a presúvanie</h2>
+        <p>Toto je z celej dávky najpraktickejšia vec a zároveň najmenej zaujímavá na pohľad — presne preto o nej málokto bude písať.</p>
+        <p>Doteraz ste v Outlooku mohli Copilotovi povedať, aby e-mail pripnul alebo označil príznakom. Po novom zvládne <strong>mazanie, presúvanie, kopírovanie a kategorizovanie</strong> správ, a navyše <strong>vytváranie priečinkov a správu pravidiel schránky</strong>. Všetko normálnou vetou, bez zbytočného preklikávania nastavení.</p>
+        <p>Microsoft uvádza tieto príklady príkazov:</p>
+        <div class="prompt-box bg-gray-100 dark:bg-[#161616] text-black dark:text-gray-200">Zmaž všetky neprečítané newslettery z minulého týždňa.<br><br>Presuň e-maily od firmy Contoso o fakturácii do priečinka Finance.</div>
+        <p>Dôležitá poistka: pred zásahom do viac než piatich e-mailov alebo pred zmenou pravidiel schránky si Copilot vyžiada potvrdenie. Nedostanete sa teda do situácie, v ktorej jedna nešťastná veta vyprázdni celú schránku.</p>
+        <p>Funguje to v klasickom aj novom Outlooku pre Windows, v Outlooku na webe, na Macu aj v mobile — čo je pri novinkách v Copilote skôr výnimka, väčšina prichádza najprv len na web.</p>
+        <p><strong>Kde to vidím najviac:</strong> zdieľané schránky. Personálne, fakturačné a info schránky, do ktorých píše kadekto a kde sa pravidlá nikdy nenastavili, pretože to „nemal kto“. Tri vety Copilotovi nahradia pol hodiny v nastaveniach.</p>
+        <div class="tip bg-[#FFF5F5] dark:bg-[#E60000]/8">
+            <p class="!mb-0"><strong>Pravidlo:</strong> pravidlá schránky si po vytvorení vždy otvorte a prečítajte. Copilot ich vie založiť, ale zodpovednosť za to, že vám mesiace nepadajú dôležité e-maily do archívu, zostáva na vás.</p>
+        </div>
+
+        <h2 class="text-black dark:text-white">2. Copilot Cowork: zadanie namiesto čiastkových úloh</h2>
+        <p>Cowork je najväčšia zmena v prístupe. Doteraz ste Copilotovi zadávali úlohu — zhrň, napíš, porovnaj. Cowork má prevziať celý výsledok: popíšete, čo potrebujete mať hotové, a on si sám poskladá kontext z vašich e-mailov, porád, chatov, súborov a firemných dát, prejde cez viac nástrojov a vráti výstup.</p>
+        <p>Microsoft to podmieňuje dvoma vecami, ktoré treba čítať pozorne: viackrokové akcie vykonáva <strong>s vaším schválením</strong> a práca zostáva v rámci existujúcich bezpečnostných a compliance nastavení vašej organizácie. Čiže Cowork nevidí nič, na čo by ste sa nedostali vy.</p>
+        <p>Príklad zadania, ktoré do Coworku sedí:</p>
+        <div class="prompt-box bg-gray-100 dark:bg-[#161616] text-black dark:text-gray-200">Priprav podklad na poradu k projektu Novák: zhrň stav z našej e-mailovej komunikácie za posledné tri týždne, doplň otvorené úlohy zo zápisov z porád a vypíš tri rozhodnutia, ktoré na porade potrebujeme urobiť. Max jedna strana, odrážky.</div>
+        <p>Zbierať toto ručne znamená otvoriť schránku, dva zápisy a projektový súbor. To je tá polhodina pred každou poradou, ktorú nikto nerád robí.</p>
+        <p><strong>Úprimne:</strong> Cowork je nový a nemám ho zatiaľ odskúšaný na dostatočnom počte reálnych firemných zadaní, aby som vám povedal, kde presne sa láme. Zatiaľ ho berte ako vec na pilotné vyskúšanie na jednej opakovanej úlohe, zatiaľ na tom nestavajte celý proces.</p>
+
+        <h2 class="text-black dark:text-white">3. Vision: Copilot sa pozrie na to, čo vidíte vy</h2>
+        <p>Vision pridáva Copilotovi obraz. Na počítači mu nazdieľate obrazovku, na mobile zapnete počas hlasovej konverzácie kameru — prednú aj zadnú — a rozprávate sa s ním o tom, čo je pred vami. Analyzuje živý obraz v reálnom čase a odpovedá nahlas, s oporou vo firemných dátach aj na webe.</p>
+        <p>Kde to má zmysel mimo IT oddelenia:</p>
+        <table>
+            <tr><th>Oddelenie</th><th>Použitie</th></tr>
+            <tr><td>Výroba a kvalita</td><td>Kamerou na stroj alebo výrobok, otázka k postupu či chybe priamo pri linke</td></tr>
+            <tr><td>Administratíva</td><td>Nazdieľaná obrazovka s formulárom alebo portálom a otázka „čo tu mám vyplniť“</td></tr>
+            <tr><td>HR</td><td>Prechod zložitejšieho interného systému s novým človekom bez toho, aby pri ňom niekto sedel</td></tr>
+            <tr><td>Sales</td><td>Fotka konkurenčného produktu alebo cenníka na stánku a rýchle porovnanie</td></tr>
+        </table>
+        <p><strong>Na čo si dať pozor:</strong> v momente, keď zdieľate obrazovku, posielate všetko, čo na nej je. Otvorený e-mail s osobnými údajmi kandidáta, mzdová tabuľka v druhom okne, otvorený CRM s klientmi. Zďaleka nejde len o technický problém, je to predovšetkým organizačná výzva — a patrí do internej smernice predtým, ako funkciu niekomu zapnete.</p>
+
+        <h2 class="text-black dark:text-white">4. Copilot v Microsoft Forms</h2>
+        <p>Do Forms pribudol Copilot chat panel. Vie odporučiť vylepšenia dotazníka alebo kvízu, pripraviť a poslať pozvánky a <strong>vyhodnotiť odpovede</strong> priamo tam. Zatiaľ len na webe a len pre firemných používateľov s licenciou.</p>
+        <p>Pre HR je zaujímavý ten tretí bod. Dotazník spokojnosti alebo test po školení ste doteraz vyhodnocovali tak, že ste odpovede stiahli do Excelu a tam sa s nimi pasovali. Teraz sa na ne dá spýtať vo Forms.</p>
+        <div class="prompt-box bg-gray-100 dark:bg-[#161616] text-black dark:text-gray-200">Zhrň odpovede z tohto dotazníka: tri veci, ktoré ľudia chvália, tri, ktoré kritizujú, a kde sa odpovede najviac rozchádzajú medzi oddeleniami.</div>
+
+        <h2 class="text-black dark:text-white">A ešte tri veci, ktoré sa ľahko prehliadnu</h2>
+        <p><strong>Copilot Notebooks v aplikácii Microsoft 365 Copilot</strong> dostali nový dizajn a hlavne perzistentný kontext — súvisiace chaty, výstupy a zdroje držia pokope a Copilot z nich čerpá aj v ďalšej session. Prestávate teda pri každom návrate vysvetľovať to isté. Plnohodnotná verzia Notebooks zostáva v OneNote, v aplikácii je odľahčená.</p>
+        <p><strong>Vlastné skills v PowerPointe.</strong> Môžete si zadefinovať vlastné príkazy a postupy namiesto vstavaných. Užitočné, ak máte firemnú šablónu a opakujete tie isté úpravy na každej prezentácii. Zatiaľ len na webe.</p>
+        <p><strong>Excel priznáva, čo urobil Copilot.</strong> V paneli Show Changes je teraz pri zmenách vidieť, že ich urobil Copilot, a v odpovedi Copilota je odkaz, ktorý vás prenesie priamo na zmenené miesto v zošite. Na prvý pohľad kozmetika, v praxi to je prvá rozumná odpoveď na otázku „kto mi to prepísal“. Ak vo firme riešite, ako auditovať výstupy s AI, toto je presne ten typ funkcie, ktorý tú debatu posúva z princípov do praxe.</p>
+
+        <h2 class="text-black dark:text-white">Na čo si dať pozor pri celej dávke</h2>
+        <ul>
+            <li><strong>Licencia.</strong> Všetko vyššie vyžaduje Microsoft 365 Copilot. Bez nej nemá zmysel čítať ďalej.</li>
+            <li><strong>Postupné zavádzanie.</strong> Microsoft funkcie vypúšťa vlnami. Ak niektorú z nich dnes nevidíte, neznamená to, že ju nemáte — skúste o dva týždne.</li>
+            <li><strong>Platformy.</strong> Forms, Notebooks aj skills v PowerPointe sú zatiaľ len na webe. Triage v Outlooku, Cowork a Vision sú aj v desktope a mobile.</li>
+            <li><strong>Slovenčina.</strong> Microsoft v týchto poznámkach jazykovú podporu neuvádza a ja nemám odskúšané všetkých šesť funkcií po slovensky. Otestujte si to na troch vlastných príkazoch, kým to pustíte do tímu.</li>
+        </ul>
+
+        <h2 class="text-black dark:text-white">Čo z toho má zmysel pre vašu firmu</h2>
+        <ul>
+            <li><strong>Hneď:</strong> triage v Outlooku. Nepotrebuje nastavenie ani školenie, efekt je viditeľný prvý deň a riziko je nízke.</li>
+            <li><strong>Po dohode s IT:</strong> Vision a Copilot vo Forms. Obe sa dotýkajú dát, ktoré opúšťajú obrazovku jedného človeka — potrebujete vedieť, čo je povolené zdieľať.</li>
+            <li><strong>Systémovo:</strong> Cowork a Notebooks. Majú zmysel až vtedy, keď máte pomenované opakované procesy, do ktorých ich zasadíte. Bez toho z nich bude len lepší chat.</li>
+        </ul>
+
+        <h2 class="text-black dark:text-white">Vyskúšajte ešte dnes</h2>
+        <ol>
+            <li><strong>Dnes:</strong> v Outlooku napíšte Copilotovi „zmaž všetky neprečítané newslettery z minulého týždňa“ a pozrite sa, ako vyzerá potvrdzovací dialóg.</li>
+            <li><strong>Dnes:</strong> v Outlooku si nechajte vytvoriť jeden priečinok a jedno pravidlo — a potom si to pravidlo otvorte a prečítajte.</li>
+            <li><strong>Tento týždeň:</strong> zadajte Coworku jednu opakovanú úlohu, ktorú robíte pred poradou. Porovnajte s tým, ako dlho vám to trvá ručne.</li>
+            <li><strong>Do mesiaca:</strong> doplňte do internej smernice jednu vetu o zdieľaní obrazovky s AI. Ideálne predtým, ako Vision niekomu zapnete.</li>
+        </ol>
+
+        <p>Z tejto dávky nebude firemná transformácia. Bude z nej pol hodiny týždenne pre každého, kto si spraví poriadok v schránke — a to je presne ten druh kroku, ktorý sa zaplatí sám.</p>
+        </div>
+
+    <aside class="mt-14 bg-gradient-to-br from-[#E60000] to-[#AA0000] text-white rounded-3xl p-8 lg:p-10">
+        <h2 class="text-2xl font-extrabold mb-3">Používa váš tím z Copilota aspoň polovicu toho, čo platíte?</h2>
+        <p class="text-white/90 mb-6 leading-relaxed">Na workshopoch <strong>Copilot</strong> prejdeme presne tieto veci na vašich vlastných dokumentoch a schránkach. Odnesiete si knižnicu vlastných príkazov a jasné pravidlá, čo do Copilota patrí a čo nie.</p>
+        <a href="../pre-firmy.html#workshop-copilot-1" class="inline-block bg-white text-[#E60000] px-7 py-3.5 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg">Pozrieť workshopy →</a>
+    </aside>
+</article>
+</main>
+
+<footer class="border-t border-gray-100 dark:border-gray-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-[#54595F] dark:text-gray-500">
+        <p>© <span data-year></span> Rasťo Kozlík · AI Konzultant. Všetky práva vyhradené.</p>
+        <span class="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
+        <a href="../ochrana-sukromia.html" class="underline hover:text-[#E60000]">Ochrana súkromia a cookies</a>
+        <span class="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
+        <a href="../obchodne-podmienky.html" class="underline hover:text-[#E60000]">Obchodné podmienky</a>
+    </div>
+    <p class="mt-3 px-4 text-center text-sm text-[#54595F] dark:text-gray-500">Ing. Rastislav Kozlík · Súvoz 1815/27, 911 01 Trenčín · IČO: 57 887 292</p>
+    <p class="mt-3 px-4 text-center text-sm text-[#54595F] dark:text-gray-500">Nie som platiteľ DPH. Uvedené ceny sú konečné.</p>
+</footer>
+
+<script>
+(function () {
+    document.querySelectorAll('[data-year]').forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+    });
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
+        b.addEventListener('click', function () {
+            var d = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('rk-theme', d ? 'dark' : 'light'); } catch (e) {}
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
