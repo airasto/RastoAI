@@ -228,6 +228,22 @@
     box-shadow: 0 0 0 3px rgba(230,0,0,.14);
 }
 .field::placeholder { color: #9ca3af; }
+
+/* Poďakovanie po odoslaní formulára.
+   Animácia sa spustí sama vo chvíli, keď skript odstráni triedu „hidden“. */
+@keyframes form-success-in {
+    from { opacity: 0; transform: translateY(var(--distance-base)); filter: blur(var(--blur-small)); }
+}
+@keyframes form-check-pop {
+    from { opacity: 0; transform: scale(.5); filter: blur(var(--blur-large)); }
+}
+@keyframes form-fade-in { from { opacity: 0; } }
+.form-success { animation: form-success-in var(--duration-slow) var(--ease-smooth-out) both; }
+.form-success-icon { animation: form-check-pop var(--duration-very-slow) var(--ease-bounce) var(--duration-micro) both; }
+@media (prefers-reduced-motion: reduce) {
+    .form-success { animation: form-fade-in var(--duration-quick) linear both; }
+    .form-success-icon { animation: none; }
+}
 .field-label { display: block; font-weight: 600; font-size: .9rem; margin-bottom: .4rem; color: var(--brand-ink); }
 .dark .field-label { color: #e5e5e5; }
 

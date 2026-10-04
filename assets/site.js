@@ -305,6 +305,36 @@ document.querySelectorAll('.flip-card').forEach(card =>
 })();
 
 /* ============================================================
+   Pohyb vo formulároch – len vzhľad, logiku formulárov nemení
+   - zjavStav: hlásenie pod formulárom sa vysunie zhora (250 ms),
+     chybové hlásenie sa namiesto toho krátko zatrasie
+   - zatras: krátke zatrasenie poľa s chybou
+   Pri prefers-reduced-motion sa nič nehýbe.
+   ============================================================ */
+function motionOK() {
+    return !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+function zatras(el) {
+    if (!el || !el.animate || !motionOK()) return;
+    el.animate(
+        { transform: ['translateX(0)', 'translateX(-8px)', 'translateX(8px)', 'translateX(-6px)', 'translateX(6px)', 'translateX(0)'] },
+        { duration: 400, easing: 'ease-in-out' }   // 5 úsekov po 80 ms
+    );
+}
+function zjavStav(el, ok) {
+    if (!el || !el.animate || !motionOK()) return;
+    if (ok) {
+        el.animate(
+            { opacity: [0, 1], transform: ['translateY(-8px)', 'none'] },
+            { duration: 250, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }
+        );
+    } else {
+        el.animate({ opacity: [0, 1] }, { duration: 150, easing: 'ease-out' });
+        zatras(el);
+    }
+}
+
+/* ============================================================
    EmailJS
    ============================================================ */
 (function () {
@@ -321,6 +351,7 @@ document.querySelectorAll('.flip-card').forEach(card =>
             statusEl.className = 'mt-5 text-center text-sm font-semibold rounded-xl px-4 py-3 ' +
                 (ok ? 'bg-green-100 dark:bg-green-950/50 text-green-700 dark:text-green-400'
                     : 'bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#AA0000] dark:text-[#FF4D4D]');
+            zjavStav(statusEl, ok);
         };
 
         form.addEventListener('submit', async (e) => {
@@ -369,6 +400,7 @@ document.querySelectorAll('.flip-card').forEach(card =>
             kStatus.className = 'mt-5 text-center text-sm font-semibold rounded-xl px-4 py-3 ' +
                 (ok ? 'bg-green-100 dark:bg-green-950/50 text-green-700 dark:text-green-400'
                     : 'bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#AA0000] dark:text-[#FF4D4D]');
+            zjavStav(kStatus, ok);
         };
 
         kForm.addEventListener('submit', async (e) => {
@@ -431,11 +463,13 @@ document.querySelectorAll('.flip-card').forEach(card =>
         statusEl.className = 'mt-5 text-center text-sm font-semibold rounded-xl px-4 py-3 ' +
             (ok ? 'bg-green-100 dark:bg-green-950/50 text-green-700 dark:text-green-400'
                 : 'bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#AA0000] dark:text-[#FF4D4D]');
+        zjavStav(statusEl, ok);
     };
     const fail = (msg, fieldId) => {
         show(msg, false);
         const f = document.getElementById(fieldId);
         if (f) f.focus();
+        zatras(f);
     };
     const done = () => {
         form.classList.add('hidden');
