@@ -130,7 +130,9 @@
     height: 100%;
     border-radius: 1.5rem;
     overflow: hidden;
-    transition: transform .3s cubic-bezier(.4,0,.2,1), box-shadow .3s, border-color .3s;
+    transition: transform var(--duration-fast) var(--ease-smooth-out),
+                box-shadow var(--duration-fast) var(--ease-smooth-out),
+                border-color var(--duration-fast) var(--ease-smooth-out);
 }
 .split-card:hover { transform: translateY(-6px); }
 @media (prefers-reduced-motion: reduce) { .split-card:hover { transform: none; } }
@@ -167,7 +169,9 @@
     border-radius: 1.25rem;
     border: 2px solid #E5E5E5;
     background: #fff;
-    transition: border-color .25s, box-shadow .25s, transform .25s;
+    transition: border-color var(--duration-fast) var(--ease-smooth-out),
+                box-shadow var(--duration-fast) var(--ease-smooth-out),
+                transform var(--duration-fast) var(--ease-smooth-out);
 }
 .dark .price-card { border-color: #262626; background: #131313; }
 .price-card:hover { border-color: var(--brand-red); box-shadow: 0 12px 32px rgba(230,0,0,.10); transform: translateY(-4px); }
