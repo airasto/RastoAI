@@ -23,6 +23,25 @@ module.exports = {
                     muted: '#54595F',
                     tint: '#FFF5F5'
                 }
+            },
+            // ===== Pohyb – spoločné hodnoty (motion tokens) =====
+            // Rovnaké hodnoty sú ako CSS premenné (--duration-*, --ease-*)
+            // v assets/site.css. Pri zmene upravte obe miesta.
+            transitionDuration: {
+                stagger: '40ms',      // odstup medzi položkami v rade
+                micro: '80ms',        // krátke oneskorenie, úsek zatrasenia
+                quick: '150ms',       // zatvorenie, výmena textu
+                fast: '250ms',        // otvorenie, hover, akordeón
+                medium: '350ms',      // zatvorenie panelu
+                slow: '400ms',        // otvorenie panelu, zjavenie obsahu
+                'very-slow': '500ms'  // dôrazné momenty (úspech, úvodné zjavenie)
+            },
+            transitionTimingFunction: {
+                'smooth-out': 'cubic-bezier(0.22, 1, 0.36, 1)',  // predvolené plynulé dobiehanie
+                bounce: 'cubic-bezier(0.34, 1.36, 0.64, 1)'      // jemný odraz pri zjavení
+            },
+            transitionProperty: {
+                lift: 'transform, box-shadow, border-color'      // nadvihnutie karty
             }
         }
     },

@@ -7,6 +7,26 @@
             --brand-body: #333333;
             --brand-muted: #54595F;
             --brand-tint: #FFF5F5;
+
+            /* ===== Pohyb – spoločné hodnoty (motion tokens) =====
+               Rovnaké hodnoty sú aj v tailwind.config.js. */
+            --duration-stagger: 40ms;
+            --duration-micro: 80ms;
+            --duration-quick: 150ms;
+            --duration-fast: 250ms;
+            --duration-medium: 350ms;
+            --duration-slow: 400ms;
+            --duration-very-slow: 500ms;
+            --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+            --ease-in-out: ease-in-out;
+            --ease-bounce: cubic-bezier(0.34, 1.36, 0.64, 1);
+            --distance-micro: 4px;
+            --distance-small: 6px;
+            --distance-base: 8px;
+            --distance-medium: 12px;
+            --blur-small: 2px;
+            --blur-medium: 3px;
+            --blur-large: 8px;
         }
         html, body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
