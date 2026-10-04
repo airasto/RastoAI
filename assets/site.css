@@ -59,6 +59,23 @@
         }
         .animate-blob { animation: blob 7s infinite; }
         .animation-delay-2000 { animation-delay: 2s; }
+        /* Nekonečné dekoratívne pohyby vypnúť pri prefers-reduced-motion */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-blob, .animate-float-slow, .animate-spin-slow { animation: none; }
+        }
+
+        /* ===== Hlavná sekcia: postupné zjavenie pri načítaní =====
+           Každý prvok má v HTML poradie --i; oneskorenie = --i × 50 ms
+           (spolu najviac 250 ms, aby posledný prvok nemeškal). */
+        @keyframes hero-in {
+            from { opacity: 0; transform: translateY(var(--distance-medium)); filter: blur(var(--blur-medium)); }
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-in {
+                animation: hero-in var(--duration-very-slow) var(--ease-smooth-out) backwards;
+                animation-delay: calc(var(--i, 5) * 50ms);
+            }
+        }
         @keyframes float-slow { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(6deg); } }
         .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
         @keyframes spin-slow { to { transform: rotate(360deg); } }

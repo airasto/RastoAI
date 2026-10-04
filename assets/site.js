@@ -73,7 +73,8 @@ function loadGA() {
    ============================================================ */
 (function () {
     if (!('IntersectionObserver' in window)) return;
-    const els = document.querySelectorAll('section > div, header.relative > div');
+    // Hlavná sekcia úvodnej stránky (data-hero) má vlastné zjavenie (.hero-in)
+    const els = document.querySelectorAll('section > div, header.relative:not([data-hero]) > div');
     if (!els.length) return;
     els.forEach(el => el.classList.add('reveal'));
     const io = new IntersectionObserver((entries) => {
