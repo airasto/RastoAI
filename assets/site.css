@@ -110,7 +110,12 @@
         }
 
         /* ===== Scroll-reveal ===== */
-        .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(var(--distance-medium));
+            transition: opacity var(--duration-slow) var(--ease-smooth-out),
+                        transform var(--duration-slow) var(--ease-smooth-out);
+        }
         .reveal.is-visible { opacity: 1; transform: none; }
         @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 /* ============================================================
