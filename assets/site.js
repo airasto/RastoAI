@@ -219,6 +219,67 @@ document.querySelectorAll('.flip-card').forEach(card =>
 })();
 
 /* ============================================================
+   FAQ – plynulé rozbalenie a zbalenie odpovede
+   Natívny <details> funguje aj bez tohto bloku. Skript len pridá
+   prechod výšky (250 ms, rovnako oboma smermi) a jemné zjavenie textu.
+   Pri prefers-reduced-motion sa otvára naraz ako predtým.
+   ============================================================ */
+(function () {
+    const items = document.querySelectorAll('.faq-item');
+    if (!items.length || !('animate' in Element.prototype)) return;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const DURATION = 250;
+    const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
+
+    items.forEach(item => {
+        const summary = item.querySelector('summary');
+        const body = item.querySelector(':scope > div');
+        if (!summary || !body) return;
+        let anim = null;
+
+        // Výška zatvorenej položky = otázka + spodný rámik
+        const closedHeight = () => summary.offsetHeight + (item.offsetHeight - item.clientHeight);
+
+        const finish = () => {
+            anim = null;
+            item.classList.remove('is-animating');
+            item.style.height = '';
+        };
+
+        summary.addEventListener('click', (e) => {
+            if (reduced.matches) return;      // nechaj natívne správanie
+            e.preventDefault();
+
+            const start = item.offsetHeight;  // aj uprostred bežiaceho prechodu
+            if (anim) anim.cancel();
+            item.classList.add('is-animating');
+
+            const opening = !item.open || item.dataset.closing === '1';
+            if (opening) {
+                delete item.dataset.closing;
+                item.open = true;
+                item.style.height = 'auto';
+                const end = item.offsetHeight;
+                anim = item.animate({ height: [start + 'px', end + 'px'] }, { duration: DURATION, easing: EASE });
+                body.animate(
+                    { opacity: [0, 1], transform: ['translateY(-4px)', 'none'] },
+                    { duration: DURATION, easing: 'ease-in-out' }
+                );
+                anim.onfinish = finish;
+            } else {
+                item.dataset.closing = '1';
+                anim = item.animate({ height: [start + 'px', closedHeight() + 'px'] }, { duration: DURATION, easing: EASE });
+                anim.onfinish = () => {
+                    delete item.dataset.closing;
+                    item.open = false;
+                    finish();
+                };
+            }
+        });
+    });
+})();
+
+/* ============================================================
    Rok v pätičke
    ============================================================ */
 (function () {
