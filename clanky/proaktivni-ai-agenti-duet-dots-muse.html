@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="sk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Od chatu k agentovi, ktorý sa ozve prvý. Čo sa tým mení na našej práci | Rasťo Kozlík</title>
+    <meta name="description" content="Claude Duet, dots a Muse sú tretí stupeň delegovania: agent, ktorý sa ozve prvý. Čo to mení na práci v HR a administratíve a čo si pripraviť už dnes.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rastoai.sk/clanky/proaktivni-ai-agenti-duet-dots-muse.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="sk_SK">
+    <meta property="og:title" content="Od chatu k agentovi, ktorý sa ozve prvý. Čo sa tým mení na našej práci">
+    <meta property="og:description" content="Claude Duet, dots a Muse sú tretí stupeň delegovania: agent, ktorý sa ozve prvý. Čo to mení na práci v HR a administratíve a čo si pripraviť už dnes.">
+    <meta property="og:url" content="https://rastoai.sk/clanky/proaktivni-ai-agenti-duet-dots-muse.html">
+
+    <!-- Tailwind CSS -->
+        <!-- ===== Brand: favicon a ikony (Brand Kit 1 – červený) ===== -->
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon_RK_cervena.svg">
+    <link rel="alternate icon" type="image/png" href="../assets/logo/favicon_RK_cervena.png">
+    <link rel="apple-touch-icon" href="../assets/logo/favicon_RK_cervena.png">
+    <meta name="theme-color" content="#E60000" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+
+    <!-- ===== Brand: typografia Inter ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html, body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+        h1 { letter-spacing: -0.02em; }
+        h2, h3 { letter-spacing: -0.01em; }
+        code, pre, kbd, samp, .font-mono, .prompt { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+
+    <link rel="stylesheet" href="../assets/tailwind.css">
+    <script>
+        try {
+            const s = localStorage.getItem('rk-theme');
+            if (s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+
+
+    <style>
+        .icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .art h2 { font-size: 1.6rem; line-height: 1.3; font-weight: 800; margin: 2.4rem 0 1rem; }
+        .art h3 { font-size: 1.2rem; font-weight: 700; margin: 1.8rem 0 .7rem; }
+        .art p  { margin: 0 0 1.1rem; line-height: 1.75; }
+        .art ul, .art ol { margin: 0 0 1.2rem 1.4rem; line-height: 1.7; }
+        .art ul { list-style: disc; }
+        .art ol { list-style: decimal; }
+        .art li { margin-bottom: .45rem; }
+        .art strong { font-weight: 700; }
+        .art .tip { border-left: 4px solid #E60000; padding: .9rem 1.2rem; border-radius: 0 .75rem .75rem 0; margin: 1.4rem 0; }
+        .art .prompt-box { font-family: ui-monospace, monospace; font-size: .9rem; padding: 1rem 1.2rem; border-radius: .75rem; margin: 1rem 0 1.4rem; }
+        .art table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .92rem; }
+        .art th { text-align: left; font-weight: 700; padding: .6rem .8rem; border-bottom: 2px solid #E60000; }
+        .art td { padding: .6rem .8rem; border-bottom: 1px solid rgba(128,128,128,.25); vertical-align: top; }
+    </style>
+</head>
+<body class="font-sans text-[#333333] dark:text-gray-300 bg-white dark:bg-[#0a0a0a] min-h-screen transition-colors duration-300">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+</svg>
+
+<nav class="sticky top-0 z-50 bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur border-b border-gray-100 dark:border-gray-800 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <a href="../index.html" class="flex items-center gap-3 font-bold text-xl tracking-tighter text-black dark:text-white" aria-label="Rasťo Kozlík – AI Konzultant, domov">
+            <img src="../assets/logo/znacka_RK_svetla.svg" alt="Rasťo Kozlík – značka RK" width="106" height="40" class="h-8 w-auto shrink-0 block dark:hidden">
+            <img src="../assets/logo/znacka_RK.svg" alt="" aria-hidden="true" width="106" height="40" class="h-8 w-auto shrink-0 hidden dark:block">
+            <span class="hidden sm:inline">Rasťo <span class="text-[#E60000]">Kozlík</span></span> <span class="hidden sm:inline text-[#54595F] font-light">|</span> <span class="hidden sm:inline text-xs uppercase tracking-widest font-medium mt-1 text-[#54595F] dark:text-gray-400">AI Konzultant</span>
+        </a>
+        <div class="flex items-center gap-3">
+            <a href="./" class="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-gray-300 hover:text-[#E60000] transition-colors">
+                <svg class="icon w-4 h-4"><use href="#i-back"/></svg> Všetky články
+            </a>
+            <button data-theme-toggle aria-label="Prepnúť svetlý/tmavý režim" class="p-2 rounded-full text-[#333333] dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <svg class="icon w-5 h-5 hidden dark:block"><use href="#i-sun"/></svg>
+                <svg class="icon w-5 h-5 dark:hidden"><use href="#i-moon"/></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main>
+<article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+    <header class="mb-10">
+        <span class="inline-flex items-center gap-2 bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#E60000] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-[#E60000]/20 dark:border-[#E60000]/30">Pre firmy</span>
+        <h1 class="text-3xl lg:text-5xl font-extrabold text-black dark:text-white mt-5 leading-tight">Od chatu k agentovi, ktorý sa ozve prvý. Čo sa tým mení na našej práci</h1>
+        <div class="flex items-center gap-4 mt-5 text-sm text-[#54595F] dark:text-gray-400">
+            <span class="flex items-center gap-1.5"><svg class="icon w-4 h-4"><use href="#i-clock"/></svg> 9 min čítania</span>
+            <span>·</span><span>Október 2026</span>
+            <span>·</span><span>Rasťo Kozlík</span>
+        </div>
+    </header>
+
+    <div class="art text-[17px]">
+        <p class="text-lg font-medium text-black dark:text-white">Za posledných sedem týždňov predstavili Meta, OpenAI aj Anthropic ten istý typ produktu. Meta spustila <strong>Muse</strong> 8. septembra, OpenAI predstavilo <strong>dots</strong> 29. septembra a Anthropic oznámil <strong>Claude Duet</strong> 21. októbra. Všetky tri sú agenti, ktorí bežia na vlastnom počítači v cloude, sami sa pozerajú do pripojených aplikácií a sami sa ozvú, keď niečo považujú za dôležité.</p>
+
+        <p>To je tretí diel do skladačky. Najprv sme mali chat, ktorý odpovedal na otázku. Potom agenta, ktorý vykonal zadanie. Teraz prichádza agent, ktorý rozhoduje, čo si zaslúži vašu pozornosť. Prešiel som si dokumentáciu všetkých troch z pohľadu firemnej praxe a nezaujíma ma, ktorý je lepší. Zaujíma ma, čo sa tým posúva v tom, ako vyzerá bežný pracovný deň v HR, administratíve a u majiteľa menšej firmy.</p>
+
+        <h2 class="text-black dark:text-white">Tri stupne delegovania</h2>
+        <div class="overflow-x-auto">
+        <table>
+            <tr><th></th><th>1. Chat</th><th>2. Agent na zadanie</th><th>3. Proaktívny agent</th></tr>
+            <tr><td><strong>Kto začína</strong></td><td>vy</td><td>vy</td><td>agent</td></tr>
+            <tr><td><strong>Čo zadávate</strong></td><td>otázku</td><td>cieľ a prístupy</td><td>čo je pre vás dôležité</td></tr>
+            <tr><td><strong>Kde to beží</strong></td><td>v okne prehliadača</td><td>na vašom zariadení alebo v cloude</td><td>na vlastnom virtuálnom stroji, aj keď máte zavretý notebook</td></tr>
+            <tr><td><strong>Čo kontrolujete</strong></td><td>výstup</td><td>postup aj výstup</td><td>aj jeho úsudok, čo stálo za upozornenie</td></tr>
+            <tr><td><strong>Čo delegujete</strong></td><td>formulovanie</td><td>vykonanie</td><td>triedenie a iniciatívu</td></tr>
+            <tr><td><strong>Príklady</strong></td><td>ChatGPT, Copilot v okne</td><td>Claude Code, agenti v Copilote, Grok Bot</td><td>Muse, dots, Claude Duet</td></tr>
+        </table>
+        </div>
+        <p>Prvý stupeň nás naučil písať zadania. Druhý stupeň nás naučil dávať prístupy a kontrolovať postup. Tretí stupeň od nás chce niečo, čo sme doteraz nikomu nedávali: <strong>právo rozhodnúť, čo je dôležité.</strong></p>
+        <p>Aby bolo jasné, že to nie je abstraktné. Claude Duet podľa Anthropicu posiela každé ráno krátke zhrnutie najdôležitejších vecí z pripojených aplikácií a cez deň kontroluje účty každých pár hodín. dots dokážu spúšťať naplánované úlohy a robiť výskum na pozadí, kde majú nástroje nastavené len na čítanie. Muse podľa Mety robí návrhy nevyžiadane a koná aj na základe detailu, ktorý ste spomenuli raz.</p>
+
+        <h2 class="text-black dark:text-white">Čo sa tým mení prvé: mizne bariéra spustenia</h2>
+        <p>Doteraz platilo, že úžitok z AI bol priamo úmerný tomu, či si na to sadnete. Poznám to z workshopov. Ľudia odídu nabudení, prvé dva týždne ChatGPT používajú, potom príde kvartálny uzávierkový týždeň a vrátia sa k starému postupu, lebo na otvorenie nového okna nemajú kapacitu.</p>
+        <p>Proaktívny agent túto bariéru odstraňuje a to je jeho najväčšia hodnota aj najväčšie riziko. Hodnota: ranné zhrnutie dostanete aj v týždni, keď by ste si AI nespustili ani raz. Riziko: nepoužívanie prestáva byť bezpečná predvolená voľba. Doteraz sa nič nestalo, keď ste si AI nespustili. Teraz sa niečo stane, kým sa nepozeráte.</p>
+        <div class="tip bg-[#FFF5F5] dark:bg-[#E60000]/8">
+            <p class="!mb-0"><strong>Pravidlo:</strong> čím menej od vás nástroj potrebuje na spustenie, tým presnejšie musíte mať napísané, čo smie spraviť bez vás.</p>
+        </div>
+
+        <h2 class="text-black dark:text-white">Čo sa mení druhé: vaša práca sa presúva na kontrolu cudzej práce</h2>
+        <p>Toto je podľa mňa najväčší posun v náplni práce a najmenej sa o ňom hovorí.</p>
+        <p>Keď agent pripraví desať vecí a šesť z nich treba odklepnúť, vaša práca prestala byť „vyrobiť“ a stala sa „prečítať a rozhodnúť“. To je iná zručnosť. Vyrábať sa učí každý desať rokov v praxi. Kontrolovať cudziu prácu vie dobre menšina ľudí, zvyčajne tí, čo viedli tím.</p>
+        <p>A kontrola podpísaného výstupu je zradná vec. Keď vám agent predloží slušne vyzerajúci e-mail klientovi, mozog ide do režimu „toto je hotové, len to odklepnem“. Pri vlastnom texte ten režim nemáte. Preto odporúčam pri schvaľovaní čítať najprv to, čo tam nie je, a až potom to, čo tam je.</p>
+        <p>Všetci traja výrobcovia s tým počítajú a schvaľovanie postavili do jadra produktu:</p>
+        <ul>
+            <li><strong>Claude Duet</strong> pracuje sám, ale pýta si súhlas pred odoslaním správy, platbou, podpisom dokumentu a mazaním. Niektoré veci nespraví ani s vaším povolením, konkrétne obchodovanie s cennými papiermi a presuny peňazí medzi účtami. Heslá a prihlasovacie tokeny nevidí vôbec.</li>
+            <li><strong>dots</strong> majú Custom Rules, ktoré každej akcii priradia jedno zo štyroch správaní: konaj bez opýtania, konaj, ak je to predschválené, najprv sa opýtaj, alebo to odovzdaj mne. Nad tým beží Auto-review, ktorý Custom Rules nedokážu vypnúť, a monitoring, ktorý vie agenta pozastaviť.</li>
+            <li><strong>Muse</strong> má samostatného agenta Sentinel, ktorý beží na tom istom stroji, je od Muse systémovo oddelený a platí u neho jedna veta: nič z toho, čo Muse spraví, neopustí stroj smerom na internet, kým to Sentinel neschváli. K tomu audit trail minulých aj plánovaných akcií.</li>
+        </ul>
+        <p>Všimnite si, že to nie je marketing. Je to priznanie, že agent sa bude mýliť, a architektúra postavená okolo toho priznania.</p>
+
+        <h2 class="text-black dark:text-white">Čo sa mení tretie: pozornosť je nové úzke hrdlo</h2>
+        <p>Agent, ktorý sa ozýva, je ďalší kanál, ktorý na vás hovorí. K e-mailu, Teams, Slacku a telefónu pridáte entitu, ktorá má vlastný úsudok o tom, čo je urgentné.</p>
+        <p>Výrobcovia to vedia. Duet necháva nastaviť, o čom a ako často sa má ozývať. dots píšu do Slacku alebo Teams. Ale nastaviť to musíte vy a tu robia firmy prvú chybu: nastavia agenta na „hovor mi o všetkom dôležitom“, čo je rovnako užitočné ako filter na všetky e-maily.</p>
+        <p>Ak si z článku odnesiete jednu vec, nech je to táto: <strong>pri proaktívnom agentovi je definícia toho, o čom sa ozývať nemá, dôležitejšia než definícia toho, o čom sa ozývať má.</strong></p>
+
+        <h2 class="text-black dark:text-white">Čo to robí s konkrétnymi pozíciami</h2>
+        <ul>
+            <li><strong>HR:</strong> najväčší úžitok pri sledovaní vecí s termínom, ktoré nikto nevlastní. Skúšobné doby, lekárske prehliadky, nedokončené onboardingy. Najväčšie riziko: agent s prístupom do personálnej agendy vidí zdravotné a platové údaje. Duet zdieľa zdravotné a osobné finančné údaje len na výslovný pokyn, ale to je vecou nastavenia. V našich zemepisných šírkach sa takýto agent nesmie používať na personálnu agendu bez splnenia zákonných podmienok ochrany osobných údajov a príslušných požiadaviek AI Actu.</li>
+            <li><strong>Administratíva:</strong> tu sa zmení najviac. Značná časť tej práce je presne triedenie a pripravovanie na rozhodnutie, čiže to, čo tretí stupeň preberá. Neznamená to menej ľudí, ale posun z vyrábania obsahu na jeho kontrolu.</li>
+            <li><strong>Manažment a majitelia:</strong> ranný briefing z pripojených aplikácií je po prvý raz niečo, čo konkuruje tomu, čo vám povie asistentka. S jedným rozdielom: asistentka vie, čo vám nemá hovoriť.</li>
+            <li><strong>Obchod:</strong> agent pred stretnutím s klientom sám pripraví stručný prehľad poslednej komunikácie, otvorených požiadaviek a dohodnutých krokov. Obchodník nemusí prehľadávať e-maily a môže sa sústrediť na rozhovor.</li>
+        </ul>
+
+        <h2 class="text-black dark:text-white">Dostupnosť pre slovenské firmy: možnosti a obmedzenia</h2>
+        <p>Pre firmy v EÚ nie je ani jeden z tých troch zatiaľ dostupný.</p>
+        <p>Claude Duet je waitlist pre predplatiteľov Pro a Max v USA. Muse beží v USA, Kanade a od 23. októbra v Japonsku, pre žiadnu z 30 krajín EHP nie je ohlásený termín. dots sú na tarife Pro vylúčené pre EHP, Švajčiarsko a Spojené kráľovstvo. Dôvod ani termín nezverejnil nikto z nich.</p>
+        <p>Jediná možná cesta vedie cez <strong>ChatGPT Business Premium</strong>, ktorý podľa nápovedy OpenAI zahŕňa dots vo všetkých podporovaných regiónoch. Tu musím byť presný: EHP tam nie je výslovne vymenovaný a nikto zo zdrojov, ktoré som čítal, to netestoval na európskom účte. Ak nad tým uvažujete, pýtajte sa podpory OpenAI a odpoveď si nechajte písomne.</p>
+        <p>Prečo Európa vypadla, nepovedal ani jeden výrobca. Podľa môjho názoru je autonómny agent konajúci za spotrebiteľa presne ten typ nasadenia, ktorý sa pod AI Act dokumentuje najhoršie. Z toho by vyplývalo, že prístup príde skôr pre firemné tarify so správcom než pre bežné plány.</p>
+
+        <h2 class="text-black dark:text-white">Obmedzenia a riziká proaktívnych agentov</h2>
+        <p>Anthropic k Duetu sám píše, že môže nesprávne prečítať vlákno alebo zle vyhodnotiť, čo je urgentné. Prehliadač vám zatiaľ nedokáže ukázať, čiže nevidíte, čo presne robil. A kontroly na pozadí plus väčšie úlohy výrazne ukrajujú z limitov plánu.</p>
+        <p>U dots platí, že zmazanie pamäti agenta zmaže aj samotného agenta, telefonovať nevedia a vlastnú e-mailovú adresu nemajú.</p>
+        <p>A čo mi na celej kategórii chýba najviac: nezávislé overenie. Všetky bezpečnostné tvrdenia pochádzajú od výrobcov alebo od nimi zaplatených testovaní. Reprodukovateľné hodnotenie tretej strany som k žiadnemu z produktov nenašel. Pri produkte, ktorý má prístup do vašej pošty a účtovníctva, je to podstatná chýbajúca položka.</p>
+
+        <h2 class="text-black dark:text-white">Čo z toho má zmysel pre vašu firmu</h2>
+        <ul>
+            <li><strong>Hneď:</strong> nič nekupovať, aj keby ste mohli. Namiesto toho si odpovedzte na jednu otázku: ktoré rozhodnutia o tom, čo je dôležité, ste ochotní nechať na softvér? Odpoveď potrebujete bez ohľadu na to, ktorý produkt sa u nás otvorí.</li>
+            <li><strong>Po dohode s IT:</strong> prejdite, či na vašich účtoch viete oddeliť právo čítať od práva konať. Väčšina firiem, s ktorými pracujem, to oddelené nemá a je to jediná vec z celého článku, ktorú viete riešiť dnes.</li>
+            <li><strong>Systémovo:</strong> jasne určte, ktoré kroky musí vždy schváliť človek, napríklad platby, odosielanie správ mimo firmy, mazanie údajov či podpisovanie dokumentov. Pri každom uveďte, kto ho schvaľuje. Ak sa títo agenti sprístupnia aj v Európe, túto prípravu určite využijete, budete mať vopred jasno v tom, čo môžu robiť samostatne a kde potrebujú súhlas človeka.</li>
+        </ul>
+
+        <h2 class="text-black dark:text-white">Čo môžete spraviť tento týždeň</h2>
+        <ol>
+            <li><strong>Dnes:</strong> prejdite si posledných 10 úloh, ktoré ste odkladali. Označte tie, pri ktorých viete presne zadať, čo treba urobiť, ale chýbal vám čas na ich vykonanie. To sú kandidáti na delegovanie agentovi, ktorý pracuje na vaše zadanie. Potom označte úlohy, na ktoré ste zabudli a pri ktorých by vám pomohlo včasné upozornenie. Tam môže mať zmysel proaktívny agent, ktorý sleduje dohodnuté termíny a podmienky a sám vás upozorní, že treba konať.</li>
+            <li><strong>Tento týždeň:</strong> spustite si audit s týmto promptom, hranaté zátvorky nahraďte:</li>
+        </ol>
+        <div class="prompt-box bg-gray-100 dark:bg-[#161616] text-black dark:text-gray-200">Som [pozícia] v [typ firmy, počet ľudí]. Nižšie je zoznam mojich opakovaných pracovných činností.<br><br>[zoznam činností]<br><br>Pre každú rozlíš, či ide o:<br>A) vykonanie úlohy, ktorú si zadám sám<br>B) rozhodnutie, čo si zaslúži moju pozornosť<br>C) rozhodnutie s dôsledkom navonok (voči klientovi, úradu, zamestnancovi)<br><br>Pri každej B uveď, podľa akého kritéria to dnes triedim ja.<br>Pri každej C uveď najhoršiu vec, ktorá sa stane pri chybe.<br><br>Výstup daj ako tabuľku. Nenavrhuj nástroje.</div>
+        <p>Stĺpec B je zoznam toho, čo by proaktívny agent preberal. Stĺpec C je zoznam toho, čo nesmie nikdy prevziať.</p>
+        <ol start="3">
+            <li><strong>Tento týždeň:</strong> ak máte ChatGPT Business, napíšte podpore, či vo vašom regióne dots sú, a odpoveď si uložte.</li>
+            <li><strong>Do mesiaca:</strong> jedna strana pravidiel o schvaľovaní. Nie preto, že agenta zavediete zajtra, ale preto, že ju aj tak potrebujete.</li>
+        </ol>
+
+        <p>Pri prvých dvoch stupňoch sme riešili, či nám AI ušetrí čas. Pri treťom riešime, kto v procese stlačí tlačidlo. To je oveľa vážnejšia otázka a budem rád, keď si na ňu firmy odpovedia skôr, než im produkt sprístupnia.</p>
+        </div>
+
+    <aside class="mt-14 bg-gradient-to-br from-[#E60000] to-[#AA0000] text-white rounded-3xl p-8 lg:p-10">
+        <h2 class="text-2xl font-extrabold mb-3">Viete, ktoré rozhodnutia u vás môže AI spraviť bez človeka?</h2>
+        <p class="text-white/90 mb-6 leading-relaxed">Na workshope <strong>AI pre biznis</strong> prejdeme presne toto na vašich procesoch: čo pustiť samo, kde dať schvaľovanie a ako to napísať tak, aby sa to dalo dodržať. Odnesiete si hotové pravidlo pre vašu firmu, nie teóriu o agentoch.</p>
+        <a href="../pre-firmy.html#workshopy" class="inline-block bg-white text-[#E60000] px-7 py-3.5 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg">Pozrieť workshopy →</a>
+    </aside>
+</article>
+</main>
+
+<footer class="border-t border-gray-100 dark:border-gray-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-[#54595F] dark:text-gray-500">
+        <p>© <span data-year></span> Rasťo Kozlík · AI Konzultant. Všetky práva vyhradené.</p>
+        <span class="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
+        <a href="../ochrana-sukromia.html" class="underline hover:text-[#E60000]">Ochrana súkromia a cookies</a>
+        <span class="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
+        <a href="../obchodne-podmienky.html" class="underline hover:text-[#E60000]">Obchodné podmienky</a>
+    </div>
+    <p class="mt-3 px-4 text-center text-sm text-[#54595F] dark:text-gray-500">Ing. Rastislav Kozlík · Súvoz 1815/27, 911 01 Trenčín · IČO: 57 887 292</p>
+    <p class="mt-3 px-4 text-center text-sm text-[#54595F] dark:text-gray-500">Nie som platiteľ DPH. Uvedené ceny sú konečné.</p>
+</footer>
+
+<script>
+(function () {
+    document.querySelectorAll('[data-year]').forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+    });
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
+        b.addEventListener('click', function () {
+            var d = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('rk-theme', d ? 'dark' : 'light'); } catch (e) {}
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
