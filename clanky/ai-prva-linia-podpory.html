@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="sk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Podpora sa obracia naopak: AI ide prvá, človek rieši zvyšok | Rasťo Kozlík</title>
+    <meta name="description" content="Kiwi pustilo AI pred ľudí v podpore a nie je samo. Gartner: 85 % šéfov podpory pridáva operátorom úlohy. Čo to znamená pre váš tím.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rastoai.sk/clanky/ai-prva-linia-podpory.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="sk_SK">
+    <meta property="og:title" content="Podpora sa obracia naopak: AI ide prvá, človek rieši zvyšok">
+    <meta property="og:description" content="Kiwi pustilo AI pred ľudí v podpore a nie je samo. Gartner: 85 % šéfov podpory pridáva operátorom úlohy. Čo to znamená pre váš tím.">
+    <meta property="og:url" content="https://rastoai.sk/clanky/ai-prva-linia-podpory.html">
+
+    <!-- Tailwind CSS -->
+        <!-- ===== Brand: favicon a ikony (Brand Kit 1 – červený) ===== -->
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon_RK_cervena.svg">
+    <link rel="alternate icon" type="image/png" href="../assets/logo/favicon_RK_cervena.png">
+    <link rel="apple-touch-icon" href="../assets/logo/favicon_RK_cervena.png">
+    <meta name="theme-color" content="#E60000" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+
+    <!-- ===== Brand: typografia Inter ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html, body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+        h1 { letter-spacing: -0.02em; }
+        h2, h3 { letter-spacing: -0.01em; }
+        code, pre, kbd, samp, .font-mono, .prompt { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+
+    <link rel="stylesheet" href="../assets/tailwind.css">
+    <script>
+        try {
+            const s = localStorage.getItem('rk-theme');
+            if (s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+
+
+    <style>
+        .icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .art h2 { font-size: 1.6rem; line-height: 1.3; font-weight: 800; margin: 2.4rem 0 1rem; }
+        .art h3 { font-size: 1.2rem; font-weight: 700; margin: 1.8rem 0 .7rem; }
+        .art p  { margin: 0 0 1.1rem; line-height: 1.75; }
+        .art ul, .art ol { margin: 0 0 1.2rem 1.4rem; line-height: 1.7; }
+        .art ul { list-style: disc; }
+        .art ol { list-style: decimal; }
+        .art li { margin-bottom: .45rem; }
+        .art strong { font-weight: 700; }
+        .art .tip { border-left: 4px solid #E60000; padding: .9rem 1.2rem; border-radius: 0 .75rem .75rem 0; margin: 1.4rem 0; }
+        .art .prompt-box { font-family: ui-monospace, monospace; font-size: .9rem; padding: 1rem 1.2rem; border-radius: .75rem; margin: 1rem 0 1.4rem; }
+        .art table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .92rem; }
+        .art th { text-align: left; font-weight: 700; padding: .6rem .8rem; border-bottom: 2px solid #E60000; }
+        .art td { padding: .6rem .8rem; border-bottom: 1px solid rgba(128,128,128,.25); vertical-align: top; }
+    </style>
+</head>
+<body class="font-sans text-[#333333] dark:text-gray-300 bg-white dark:bg-[#0a0a0a] min-h-screen transition-colors duration-300">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+</svg>
+
+<nav class="sticky top-0 z-50 bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur border-b border-gray-100 dark:border-gray-800 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <a href="../index.html" class="flex items-center gap-3 font-bold text-xl tracking-tighter text-black dark:text-white" aria-label="Rasťo Kozlík – AI Konzultant, domov">
+            <img src="../assets/logo/znacka_RK_svetla.svg" alt="Rasťo Kozlík – značka RK" width="106" height="40" class="h-8 w-auto shrink-0 block dark:hidden">
+            <img src="../assets/logo/znacka_RK.svg" alt="" aria-hidden="true" width="106" height="40" class="h-8 w-auto shrink-0 hidden dark:block">
+            <span class="hidden sm:inline">Rasťo <span class="text-[#E60000]">Kozlík</span></span> <span class="hidden sm:inline text-[#54595F] font-light">|</span> <span class="hidden sm:inline text-xs uppercase tracking-widest font-medium mt-1 text-[#54595F] dark:text-gray-400">AI Konzultant</span>
+        </a>
+        <div class="flex items-center gap-3">
+            <a href="./" class="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-gray-300 hover:text-[#E60000] transition-colors">
+                <svg class="icon w-4 h-4"><use href="#i-back"/></svg> Všetky články
+            </a>
+            <button data-theme-toggle aria-label="Prepnúť svetlý/tmavý režim" class="p-2 rounded-full text-[#333333] dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <svg class="icon w-5 h-5 hidden dark:block"><use href="#i-sun"/></svg>
+                <svg class="icon w-5 h-5 dark:hidden"><use href="#i-moon"/></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main>
+<article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+    <header class="mb-10">
+        <span class="inline-flex items-center gap-2 bg-[#FFF5F5] dark:bg-[#E60000]/10 text-[#E60000] text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-[#E60000]/20 dark:border-[#E60000]/30">Pre firmy</span>
+        <h1 class="text-3xl lg:text-5xl font-extrabold text-black dark:text-white mt-5 leading-tight">Podpora sa obracia naopak: AI ide prvá, človek rieši zvyšok</h1>
+        <div class="flex items-center gap-4 mt-5 text-sm text-[#54595F] dark:text-gray-400">
+            <span class="flex items-center gap-1.5"><svg class="icon w-4 h-4"><use href="#i-clock"/></svg> 5 min čítania</span>
+            <span>·</span><span>November 2026</span>
+            <span>·</span><span>Rasťo Kozlík</span>
+        </div>
+    </header>
+
+    <div class="art text-[17px]">
+        <p class="text-lg font-medium text-black dark:text-white">Český predajca leteniek Kiwi.com má v zákazníckej podpore agenta, ktorý sa volá <strong>Nathan</strong>, a každá požiadavka ide najprv na neho. Podľa firmy ich 85 % dorieši sám. Za ten istý čas Kiwi zoškrtalo externých operátorov o viac ako tri štvrtiny, na asi 200 ľudí. Čísla priniesol 10. novembra server e15 v rozhovore s technologickým riaditeľom Stanislavom Komancom.</p>
+
+        <p>AI ako prvá línia prestáva byť experiment a stáva sa predvoleným nastavením. Kiwi je len jedna z mála firiem, ktorá k tomu dala konkrétne čísla.</p>
+
+        <h2 class="text-black dark:text-white">Dve osemdesiatpäťky, ktoré spolu dávajú celý obrázok</h2>
+        <p>Gartner sa od septembra do októbra 2025 pýtal 321 šéfov zákazníckej podpory po celom svete. Vyšlo mu, že <strong>85 % z nich pridáva operátorom v prvej línii nové úlohy a zodpovednosti</strong>, pretože AI uberá objem a práca sa presúva k zložitejším veciam. Ďalších 75 % posúva operátorov do úplne nových rolí v rámci podpory.</p>
+        <p>Vedľa seba tie dve čísla hovoria toto:</p>
+        <div class="overflow-x-auto">
+        <table>
+            <tr><th></th><th>Kiwi</th><th>Gartner</th></tr>
+            <tr><td><strong>Čo meria 85 %</strong></td><td>podiel požiadaviek, ktoré zavrie AI</td><td>podiel šéfov podpory, ktorí pridávajú ľuďom úlohy</td></tr>
+            <tr><td><strong>Čo z toho vyplýva</strong></td><td>objem odchádza od ľudí</td><td>zostávajúca práca sa rozširuje</td></tr>
+        </table>
+        </div>
+        <p>Podpora sa teda nezmenšuje. Rozdeľuje sa na dve veci, ktoré majú málo spoločného: na veľký objem jednoduchých požiadaviek, ktorý preberá softvér, a na menší zvyšok, ktorý je zložitejší, než býval priemer.</p>
+        <div class="tip bg-[#FFF5F5] dark:bg-[#E60000]/8">
+            <p class="!mb-0"><strong>Pravidlo:</strong> keď AI preberie prvú líniu, človeku nezostane menej práce rovnakého druhu. Zostane mu iná práca.</p>
+        </div>
+
+        <h2 class="text-black dark:text-white">Čo sa tým mení na práci operátora</h2>
+        <p>Gartner k tomu dodáva čísla, ktoré sa ťažko čítajú, ak riadite tím:</p>
+        <ul>
+            <li><strong>31 %</strong> firiem už prepúšťa v prvej línii kvôli AI alebo to plánuje do prvého kvartálu 2027.</li>
+            <li><strong>63 %</strong> znižuje počty postupne, prirodzeným odchodom ľudí.</li>
+            <li><strong>80 %</strong> cíti tlak na zmenu v tíme, pretože AI uberá objem a zvyšuje efektivitu.</li>
+        </ul>
+        <p>Veľké vlny prepúšťania teda zostávajú výnimkou. Prevláda tichšia verzia: miesto po odchádzajúcom operátorovi sa neobsadí.</p>
+        <p>To má praktický dôsledok, ktorý sa pri rozpočte prehliada. Operátor, ktorý rieši len eskalácie, pracuje celý deň na prípadoch, pri ktorých už niekto raz zlyhal a zákazník je o jedno kolo nervóznejší. Bez jednoduchých tiketov medzi tým, ktoré doteraz fungovali ako prestávka. Taký človek potrebuje väčšie právomoci a kratšiu cestu k rozhodnutiu, nie prísnejší skript.</p>
+        <p>Kiwi to nepriamo potvrdzuje: podľa firmy sú zákazníci na automatizovanej podpore o 30 % spokojnejší než u operátora a Komanec to pripisuje hlavne rýchlosti odpovede. Nie tomu, že by AI odpovedala lepšie. Tomu, že odpovedá hneď.</p>
+        <p>V samostatnom prieskume Gartnera medzi 5 801 zákazníkmi v USA dôverovalo 54 % ľudí pri odporúčaní produktu alebo služby viac človeku než AI. AI dôverovalo viac 32 %. Rýchlosť teda vyhráva pri jednoduchej otázke. Pri rozhodnutí, ktoré niečo stojí, stále vyhrávajú ľudia.</p>
+
+        <h2 class="text-black dark:text-white">Na čo si dať pozor</h2>
+        <ul>
+            <li><strong>Výkonnostné čísla Kiwi pochádzajú od firmy</strong> alebo z jej interných testov, nikto ich neoveril nezávisle.</li>
+            <li><strong>Kiwi počíta požiadavku za doriešenú vtedy, keď sa zákazník do 24 hodín neozve znova.</strong> Pri tejto definícii sa do 85 % zmestí aj človek, ktorý to vzdal a kúpil letenku inde. Ak si také číslo nastavujete u seba, definujte si ho prísnejšie.</li>
+            <li><strong>Prepúšťanie v Kiwi nie je dokázateľne dôsledkom AI.</strong> Oznámil ho CEO Oliver Dlouhý v januári 2026 ako reštrukturalizáciu a Skift vtedy AI vôbec nespomína. Firma sama odmieta úspory vyčísliť, pretože súčasne rušila jednu úroveň riadenia.</li>
+            <li><strong>Prieskum Gartnera je z jesene 2025</strong>, teda rok starý. Trend ukazuje dobre, aktuálne podiely nie.</li>
+        </ul>
+
+        <h2 class="text-black dark:text-white">Čo môžete spraviť</h2>
+        <p><strong>Dnes:</strong> otestujte ako zákazník vlastný kontaktný kanál a zmerajte, za ako dlho sa dostanete k človeku. Pri AI v prvej línii je to tá najdôležitejšia hodnota, ktorú o svojej podpore máte.</p>
+        <p><strong>Tento týždeň:</strong> roztrieďte si požiadavky za posledný mesiac podľa toho, čo zákazník naozaj chcel. Vyjde vám z toho, aký podiel objemu je kandidát na automatizáciu a čo zostane ľuďom.</p>
+        <p><strong>Do mesiaca:</strong> vyberte jeden typ požiadavky s najväčším objemom a najmenším rizikom a nasaďte naň automatickú odpoveď. Merajte pri ňom návraty do siedmich dní, nie do 24 hodín. A zároveň prepočítajte normy pre tím, ktorý bude riešiť zvyšok, lebo jeho práca sa zmení skôr než jeho popis pozície.</p>
+
+        <p>Otázka pre najbližší rok nie je, či AI zvládne prvú líniu podpory. Tú si vo väčšine firiem vezme tak či tak. Otázka je, či si pripravíte ľudí na to, čo zostane za ňou.</p>
+        </div>
+
+    <aside class="mt-14 bg-gradient-to-br from-[#E60000] to-[#AA0000] text-white rounded-3xl p-8 lg:p-10">
+        <h2 class="text-2xl font-extrabold mb-3">Viete, ktorú časť vašej podpory má zmysel automatizovať?</h2>
+        <p class="text-white/90 mb-6 leading-relaxed">Na workshope <strong>AI pre biznis</strong> prejdeme toto rozdelenie na vašich vlastných procesoch. Odnesiete si roztriedený objem požiadaviek a zoznam metrík, ktoré nemerajú len ticho zákazníka.</p>
+        <a href="../pre-firmy.html#workshopy" class="inline-block bg-white text-[#E60000] px-7 py-3.5 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg">Pozrieť workshopy →</a>
+    </aside>
+</article>
+</main>
+
+<footer class="border-t border-gray-100 dark:border-gray-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-[#54595F] dark:text-gray-500">
+        <p>© <span data-year></span> Rasťo Kozlík · AI Konzultant. Všetky práva vyhradené.</p>
+        <span class="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
+        <a href="../ochrana-sukromia.html" class="underline hover:text-[#E60000]">Ochrana súkromia a cookies</a>
+        <span class="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
+        <a href="../obchodne-podmienky.html" class="underline hover:text-[#E60000]">Obchodné podmienky</a>
+    </div>
+    <p class="mt-3 px-4 text-center text-sm text-[#54595F] dark:text-gray-500">Ing. Rastislav Kozlík · Súvoz 1815/27, 911 01 Trenčín · IČO: 57 887 292</p>
+    <p class="mt-3 px-4 text-center text-sm text-[#54595F] dark:text-gray-500">Nie som platiteľ DPH. Uvedené ceny sú konečné.</p>
+</footer>
+
+<script>
+(function () {
+    document.querySelectorAll('[data-year]').forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+    });
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
+        b.addEventListener('click', function () {
+            var d = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('rk-theme', d ? 'dark' : 'light'); } catch (e) {}
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
